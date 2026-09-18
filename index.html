@@ -3,10 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Project</title>
+    <title>Musa - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Glowing Background Particle Effect */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0,210,255,0.15) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+        }
+
+        /* Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #00d2ff;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: #a0aec0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00d2ff;
+        }
+
+        .btn-main {
+            background: linear-gradient(90deg, #00d2ff, #0072ff);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.8);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 85vh;
+            padding: 0 8%;
+            gap: 40px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .tag {
+            background: rgba(0, 210, 255, 0.1);
+            color: #00d2ff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-text p {
+            color: #a0aec0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: #00d2ff;
+            color: #00d2ff;
+        }
+
+        /* Image / Card Section */
+        .hero-image {
+            position: relative;
+        }
+
+        .card-box {
+            width: 320px;
+            height: 400px;
+            background: #131927;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-box::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            width: 150px;
+            height: 150px;
+            background: #00d2ff;
+            filter: blur(80px);
+            z-index: 0;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #1a233a;
+            border: 3px solid #00d2ff;
+            margin-bottom: 15px;
+            z-index: 1;
+            object-fit: cover;
+        }
+
+        .card-box h3 {
+            z-index: 1;
+            font-size: 1.3rem;
+        }
+
+        .card-box p {
+            z-index: 1;
+            color: #a0aec0;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Responsive Mobile Layout */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>Welcome to my website.</p>
+
+    <header>
+        <div class="logo">Musa.dev</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Projects</a>
+            <a href="#">Skills</a>
+        </nav>
+        <a href="https://github.com/musa965" target="_blank" class="btn-main">GitHub Profile</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <span class="tag">DEVELOPER & INNOVATOR</span>
+            <h1>BUILDING THE FUTURE WEB.</h1>
+            <p>Hi, I'm Musa. A passionate developer creating modern, highly optimized, and visual web applications and digital tools.</p>
+            <div class="hero-btns">
+                <a href="#" class="btn-main">Send Message</a>
+                <a href="#" class="btn-outline">View Projects</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="card-box">
+                <!-- Chobi thakle src="tamar-photo-url" dite paro -->
+                <img src="https://via.placeholder.com/120" alt="Musa Profile" class="avatar">
+                <h3>Musa</h3>
+                <p>Web Developer & Student</p>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
