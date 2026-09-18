@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahbubur Rahman Musa - Portfolio</title>
+    <title>Musa - Developer Portfolio</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
         body {
@@ -18,12 +18,12 @@
             line-height: 1.6;
         }
 
-        /* Navigation Header */
+        /* 1. Navigation Bar */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
+            padding: 15px 6%;
             background-color: #0d1829;
             position: sticky;
             top: 0;
@@ -31,119 +31,293 @@
             border-bottom: 1px solid #1e2d42;
         }
 
-        .logo {
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: #00e6a8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0b1320;
+            font-weight: bold;
+        }
+
+        .logo-text {
             font-size: 1.2rem;
             font-weight: bold;
-            color: #00e6a8;
         }
 
         nav a {
             color: #a2b4c7;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 12px;
             font-size: 0.95rem;
         }
 
-        nav a:hover, nav a.active {
+        nav a.active {
             color: #ffffff;
+            background-color: #172a45;
+            padding: 6px 14px;
+            border-radius: 4px;
+            border: 1px solid #233b5d;
         }
 
-        /* m2: Hero Section */
+        .lang-btn {
+            background: #00e6a8;
+            color: #0b1320;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* 2. m2: Hero Section Style */
         .hero {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 80px 8%;
-            min-height: 80vh;
-            background: #0b1320;
+            padding: 60px 6%;
+            gap: 30px;
         }
 
         .hero-left {
-            max-width: 50%;
+            max-width: 600px;
+        }
+
+        .badge {
+            color: #00e6a8;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: inline-block;
         }
 
         .hero-left h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.1;
             margin-bottom: 20px;
         }
 
         .hero-left p {
-            color: #a2b4c7;
-            margin-bottom: 30px;
+            color: #94a3b8;
             font-size: 1.1rem;
+            margin-bottom: 30px;
         }
 
-        .btn-group {
+        .hero-btns {
             display: flex;
             gap: 15px;
         }
 
-        .btn {
-            padding: 12px 28px;
+        .btn-green {
+            background-color: #00e6a8;
+            color: #0b1320;
+            padding: 12px 24px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.95rem;
-            transition: 0.3s;
         }
 
-        .btn-yellow {
-            background-color: #ffc107;
-            color: #000;
+        .btn-outline {
+            border: 1px solid #00e6a8;
+            color: #00e6a8;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .btn-black {
-            background-color: #172a45;
-            color: #fff;
-            border: 1px solid #233b5d;
+        .hero-right {
+            position: relative;
         }
 
-        .hero-right img {
-            width: 350px;
+        .profile-card {
+            background-color: #111e30;
+            border: 1px solid #1e2f47;
+            padding: 15px;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            filter: grayscale(20%);
+            width: 320px;
+            text-align: center;
         }
 
-        /* c2: Blog Section */
-        .blog-section {
-            padding: 80px 8%;
-            background-color: #0d1829;
+        .profile-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 8px;
+            background-color: #1a2c45;
+        }
+
+        /* Global Section Layout */
+        .section {
+            padding: 50px 6%;
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 50px;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            font-weight: bold;
         }
 
-        .section-title h2 {
-            font-size: 2.2rem;
-            color: #fff;
+        .section-tag {
+            color: #00e6a8;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        .section-title p {
-            color: #a2b4c7;
+        /* 3. Info Cards (About, Contact, Focus) */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background-color: #111e30;
+            border: 1px solid #1e2f47;
+            border-radius: 10px;
+            padding: 25px;
+            position: relative;
+        }
+
+        .num-badge {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background-color: #0b1320;
+            border: 1px solid #00e6a8;
+            color: #00e6a8;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .info-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            margin-top: 5px;
+        }
+
+        .info-card p, .info-card ul {
+            color: #94a3b8;
             font-size: 0.95rem;
         }
 
-        .blog-container {
+        .info-card ul {
+            list-style: none;
+        }
+
+        /* 4. Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #111e30;
+            border: 1px solid #1e2f47;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background-color: #172a45;
+            color: #00e6a8;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .project-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* 5. Skills & Method */
+        .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
 
+        .skills-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .pill {
+            background-color: #172a45;
+            color: #00e6a8;
+            border: 1px solid #233b5d;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .method-step {
+            margin-bottom: 15px;
+        }
+
+        .method-step h5 {
+            font-size: 1rem;
+            color: #ffffff;
+        }
+
+        .method-step p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* 6. c2: Blog Section */
+        .blog-section {
+            padding: 50px 6%;
+            background-color: #0d1829;
+            border-top: 1px solid #1e2d42;
+            border-bottom: 1px solid #1e2d42;
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
         .primary-card {
-            background: #172a45;
+            background: #111e30;
             border-radius: 10px;
             padding: 20px;
-            border: 1px solid #233b5d;
+            border: 1px solid #1e2f47;
         }
 
         .primary-card img {
             width: 100%;
-            height: 250px;
+            height: 240px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 15px;
@@ -152,14 +326,14 @@
         .secondary-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 15px;
         }
 
         .small-card {
-            background: #172a45;
+            background: #111e30;
             padding: 15px;
             border-radius: 8px;
-            border: 1px solid #233b5d;
+            border: 1px solid #1e2f47;
         }
 
         .small-card img {
@@ -178,24 +352,59 @@
         .read-more {
             color: #00e6a8;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: inline-block;
             margin-top: 10px;
+            font-weight: bold;
         }
 
-        /* c1: Contact Form Section */
+        /* 7. Contributors Section */
+        .contributors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .contributor-card {
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 150px;
+            color: #ffffff;
+        }
+
+        .bg-green {
+            background-color: #0d5c46;
+            border: 1px solid #138a69;
+        }
+
+        .bg-pink {
+            background-color: #8b1e4b;
+            border: 1px solid #b82864;
+        }
+
+        .contributor-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .contributor-card p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* 8. c1: Contact Form Section */
         .contact-section {
-            padding: 80px 8%;
+            padding: 50px 6%;
             background-color: #0b1320;
         }
 
         .contact-box {
             max-width: 700px;
             margin: 0 auto;
-            background: #0d1829;
-            padding: 40px;
+            background: #111e30;
+            padding: 35px;
             border-radius: 12px;
-            border: 1px solid #1e2d42;
+            border: 1px solid #1e2f47;
         }
 
         .contact-box h2 {
@@ -218,14 +427,14 @@
 
         .form-group label {
             margin-bottom: 8px;
-            color: #a2b4c7;
+            color: #94a3b8;
             font-size: 0.9rem;
         }
 
         .form-group input, .form-group textarea {
             padding: 12px;
-            background: #172a45;
-            border: 1px solid #233b5d;
+            background: #0b1320;
+            border: 1px solid #1e2f47;
             border-radius: 6px;
             color: #fff;
             outline: none;
@@ -249,56 +458,188 @@
             margin-top: 10px;
         }
 
-        /* Footer */
+        /* 9. Footer */
         footer {
-            text-align: center;
-            padding: 20px;
-            background: #070c14;
-            color: #a2b4c7;
+            background-color: #080d17;
+            padding: 40px 6% 20px 6%;
+            border-top: 1px solid #152238;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-left p {
+            color: #64748b;
             font-size: 0.85rem;
+            margin-top: 10px;
+            max-width: 300px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-col h5 {
+            color: #00e6a8;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero, .two-col, .blog-container, .form-row {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+            .hero-left h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- 1. NAVIGATION BAR -->
     <header>
-        <div class="logo">MUSA PORTFOLIO</div>
+        <div class="logo-container">
+            <div class="logo-icon">M</div>
+            <div class="logo-text">Musa OWN VISION</div>
+        </div>
         <nav>
-            <a href="#" class="active">Home</a>
+            <a href="#">Home</a>
+            <a href="#projects">Projects</a>
             <a href="#blogs">Blogs</a>
             <a href="#contact">Contact</a>
+            <a href="#" class="active">Developer</a>
         </nav>
+        <a href="#" class="lang-btn">বাংলা</a>
     </header>
 
-    <!-- m2: Hero Section -->
+    <!-- 2. HERO SECTION (m2 Style) -->
     <section class="hero">
         <div class="hero-left">
-            <h1>WELCOME<br>I'M MAHBUBUR R.</h1>
-            <p>Student developer from Dhaka College. Building modern web projects, clean interface designs, and experimental applications.</p>
-            <div class="btn-group">
-                <a href="#blogs" class="btn btn-yellow">READ MY BLOG</a>
-                <a href="#contact" class="btn btn-black">WATCH VIDEOS</a>
+            <span class="badge">DEVELOPER</span>
+            <h1>MAHBUBUR RAHMAN MUSA</h1>
+            <p>Student developer from Dhaka COLLEGE, building useful my first personal web, personal project systems, and small experimental web applications.</p>
+            <div class="hero-btns">
+                <a href="https://www.facebook.com/share/1Hy5Lds5ZX/" target="_blank" class="btn-green">Send Message</a>
+                <a href="#projects" class="btn-outline">My Projects</a>
             </div>
         </div>
         <div class="hero-right">
-            <img src="https://ibb.co.com/5hcK0tX2" alt="Mahbubur Rahman Musa">
+            <div class="profile-card">
+                <img src="https://i.ibb.co.com/fd0DgBVQ/Whats-App-Image-2026-07-21-at-10-39-09-PM.jpg" alt="Musa Picture" class="profile-img">
+            </div>
         </div>
     </section>
 
-    <!-- c2: Blog Section -->
-    <section class="blog-section" id="blogs">
-        <div class="section-title">
-            <h2>My Latest Blog</h2>
-            <p>Unveiling the latest trends in web design and development</p>
+    <!-- 3. INFO CARDS (About, Contact, Focus) -->
+    <section class="section">
+        <div class="info-grid">
+            <div class="info-card">
+                <span class="num-badge">01</span>
+                <h3>About</h3>
+                <p>I am Musa, a passionate web student and developer. I like building clean, helpful, and easy-to-use web projects for everyone.</p>
+            </div>
+            <div class="info-card">
+                <span class="num-badge">02</span>
+                <h3>Contact</h3>
+                <ul>
+                    <li><strong>Email:</strong> mahbuburrahmanmusa99@gmail.com</li>
+                    <li><strong>College/School:</strong> Dhaka College</li>
+                    <li><strong>Group:</strong> Science</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <span class="num-badge">03</span>
+                <h3>Focus</h3>
+                <p>Building responsive UI, web applications, portfolio design, learning modern frontend frameworks, and practical web tools.</p>
+            </div>
         </div>
+    </section>
+
+    <!-- 4. FEATURED PROJECTS SECTION -->
+    <section class="section" id="projects">
+        <span class="section-tag">FEATURED PROJECTS</span>
+        <h2 class="section-title">Website Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <span class="project-tag">Blog</span>
+                <h4>myblog.blogspot.com</h4>
+                <p>Personal writing, learning notes, and web presence.</p>
+            </div>
+            <div class="project-card">
+                <span class="project-tag">Literature</span>
+                <h4>creative-hub.com</h4>
+                <p>Creative writing and Bangla content project.</p>
+            </div>
+            <div class="project-card">
+                <span class="project-tag">Tool</span>
+                <h4>OWN thought</h4>
+                <p>upcoming very soon please wait for soma times</p>
+            </div>
+            <div class="project-card">
+                <span class="project-tag">Portfolio</span>
+                <h4>Personal Website</h4>
+                <p>Student, result, gallery, and information hub.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SKILLS & PROJECT METHOD -->
+    <section class="section">
+        <div class="two-col">
+            <div>
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-pills">
+                    <span class="pill">HTML</span>
+                    <span class="pill">CSS</span>
+                    <span class="pill">JavaScript</span>
+                    <span class="pill">C++</span>
+                    <span class="pill">GitHub Pages</span>
+                    <span class="pill">Static Websites</span>
+                </div>
+            </div>
+            <div>
+                <h2 class="section-title">Project Method</h2>
+                <div class="method-step">
+                    <h5>Collect</h5>
+                    <p>.</p>
+                </div>
+                <div class="method-step">
+                    <h5>Build</h5>
+                    <p>Turn the information into clean pages and useful features.</p>
+                </div>
+                <div class="method-step">
+                    <h5>Improve</h5>
+                    <p>Update design, mobile view, and content based on real feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. c2: BLOG SECTION -->
+    <section class="blog-section" id="blogs">
+        <span class="section-tag">MY BLOGS</span>
+        <h2 class="section-title">My Lasted blog</h2>
+        <p style="color: #94a3b8; margin-top: -15px; margin-bottom: 20px;">Unveiling the Latest Trends in Web & Tech</p>
         
         <div class="blog-container">
             <!-- Primary Big Card -->
             <div class="primary-card">
-                <img src="https://via.placeholder.com/500x300" alt="Blog Main Image">
-                <h3>Mastering the Art of Modern Web Design</h3>
-                <p>Learn how to build clean, minimalist, and high-performance dark mode interfaces from scratch.</p>
+                <img src="https://via.placeholder.com/500x300" alt="Mastering the Art">
+                <h3 style="margin-bottom: 8px;">Mastering the Art of Web Design</h3>
+                <p style="color: #94a3b8; font-size: 0.9rem;">Building modern dark-themed responsive websites step by step.</p>
                 <a href="#" class="read-more">Read More ↗</a>
             </div>
 
@@ -307,32 +648,48 @@
                 <div class="small-card">
                     <img src="https://via.placeholder.com/200x120" alt="Thumbnail">
                     <div class="rating">★★★★★</div>
-                    <h4>HTML & CSS Basics</h4>
+                    <h4 style="font-size: 0.95rem; margin-top: 5px;">HTML & CSS Tips</h4>
                     <a href="#" class="read-more">Read More ↗</a>
                 </div>
                 <div class="small-card">
                     <img src="https://via.placeholder.com/200x120" alt="Thumbnail">
                     <div class="rating">★★★★★</div>
-                    <h4>JavaScript Layouts</h4>
+                    <h4 style="font-size: 0.95rem; margin-top: 5px;">JavaScript Logic</h4>
                     <a href="#" class="read-more">Read More ↗</a>
                 </div>
                 <div class="small-card">
                     <img src="https://via.placeholder.com/200x120" alt="Thumbnail">
                     <div class="rating">★★★★★</div>
-                    <h4>UI/UX Design Tips</h4>
+                    <h4 style="font-size: 0.95rem; margin-top: 5px;">C++ Programming</h4>
                     <a href="#" class="read-more">Read More ↗</a>
                 </div>
                 <div class="small-card">
                     <img src="https://via.placeholder.com/200x120" alt="Thumbnail">
                     <div class="rating">★★★★★</div>
-                    <h4>GitHub Workflow</h4>
+                    <h4 style="font-size: 0.95rem; margin-top: 5px;">GitHub Deploy</h4>
                     <a href="#" class="read-more">Read More ↗</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- c1: Contact Form Section -->
+    <!-- 7. CONTRIBUTORS SECTION -->
+    <section class="section">
+        <span class="section-tag">CONTRIBUTORS</span>
+        <h2 class="section-title">Project Contributors</h2>
+        <div class="contributors-grid">
+            <div class="contributor-card bg-green">
+                <h4>Content Helper</h4>
+                <p>Helps collect student data, event descriptions, and updates.</p>
+            </div>
+            <div class="contributor-card bg-pink">
+                <h4>Dreamer</h4>
+                <p>I have many dream iknow that is very dificult dream but i also know i can di it!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. c1: CONTACT FORM SECTION -->
     <section class="contact-section" id="contact">
         <div class="contact-box">
             <h2>GET IN TOUCH</h2>
@@ -349,16 +706,35 @@
                 </div>
                 <div class="form-group" style="margin-bottom: 20px;">
                     <label>About Project*</label>
-                    <textarea placeholder="Write your message here..." required></textarea>
+                    <textarea placeholder="Write your project message here..." required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Submit</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 9. FOOTER -->
     <footer>
-        <p>&copy; 2026 Mahbubur Rahman Musa. All rights reserved.</p>
+        <div class="footer-left">
+            <div class="logo-container">
+                <div class="logo-icon">M</div>
+                <div class="logo-text">Musa Portfolio</div>
+            </div>
+            <p>This website is developed by <strong>Musa</strong>. Currently under development as an experimental project.</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <a href="#projects">Projects</a>
+                <a href="#blogs">Blogs</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h5>Social</h5>
+                <a href="https://github.com/musa965" target="_blank">GitHub</a>
+                <a href="https://www.facebook.com/share/1Hy5Lds5ZX/" target="_blank">Facebook</a>
+            </div>
+        </div>
     </footer>
 
 </body>
