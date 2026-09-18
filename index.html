@@ -3,121 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musa - Portfolio</title>
+    <title>Musa - Developer Portfolio</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
         body {
-            background-color: #0b0f19;
+            background-color: #0b1320;
             color: #ffffff;
-            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* Glowing Background Particle Effect */
-        body::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(0,210,255,0.15) 0%, rgba(0,0,0,0) 70%);
-            z-index: -1;
-        }
-
-        /* Navbar */
+        /* Navigation Bar */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background: rgba(11, 15, 25, 0.8);
-            backdrop-filter: blur(10px);
+            padding: 15px 6%;
+            background-color: #0d1829;
             position: sticky;
             top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+            border-bottom: 1px solid #1e2d42;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: #00d2ff;
-            text-transform: uppercase;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: #00e6a8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0b1320;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: bold;
         }
 
         nav a {
-            color: #a0aec0;
+            color: #a2b4c7;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 12px;
             font-size: 0.95rem;
-            transition: 0.3s;
         }
 
-        nav a:hover {
-            color: #00d2ff;
+        nav a.active {
+            color: #ffffff;
+            background-color: #172a45;
+            padding: 6px 14px;
+            border-radius: 4px;
+            border: 1px solid #233b5d;
         }
 
-        .btn-main {
-            background: linear-gradient(90deg, #00d2ff, #0072ff);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 6px;
+        .lang-btn {
+            background: #00e6a8;
+            color: #0b1320;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-weight: bold;
             text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
-            transition: 0.3s;
-        }
-
-        .btn-main:hover {
-            box-shadow: 0 0 25px rgba(0, 210, 255, 0.8);
-            transform: translateY(-2px);
+            font-size: 0.9rem;
         }
 
         /* Hero Section */
         .hero {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            min-height: 85vh;
-            padding: 0 8%;
-            gap: 40px;
+            align-items: center;
+            padding: 60px 6%;
+            gap: 30px;
         }
 
-        .hero-text {
+        .hero-left {
             max-width: 600px;
         }
 
-        .tag {
-            background: rgba(0, 210, 255, 0.1);
-            color: #00d2ff;
-            padding: 6px 14px;
-            border-radius: 20px;
+        .badge {
+            color: #00e6a8;
             font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid rgba(0, 210, 255, 0.3);
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
             display: inline-block;
-            margin-bottom: 20px;
         }
 
-        .hero-text h1 {
-            font-size: 3.8rem;
-            font-weight: 900;
+        .hero-left h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
             line-height: 1.1;
             margin-bottom: 20px;
-            letter-spacing: -1px;
         }
 
-        .hero-text p {
-            color: #a0aec0;
+        .hero-left p {
+            color: #94a3b8;
             font-size: 1.1rem;
-            line-height: 1.6;
             margin-bottom: 30px;
         }
 
@@ -126,127 +119,427 @@
             gap: 15px;
         }
 
-        .btn-outline {
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
-            padding: 10px 20px;
+        .btn-green {
+            background-color: #00e6a8;
+            color: #0b1320;
+            padding: 12px 24px;
             border-radius: 6px;
             text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
+            font-weight: bold;
         }
 
-        .btn-outline:hover {
-            border-color: #00d2ff;
-            color: #00d2ff;
+        .btn-outline {
+            border: 1px solid #00e6a8;
+            color: #00e6a8;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        /* Image / Card Section */
-        .hero-image {
+        .hero-right {
             position: relative;
         }
 
-        .card-box {
+        .profile-card {
+            background-color: #111e30;
+            border: 1px solid #1e2f47;
+            padding: 15px;
+            border-radius: 12px;
             width: 320px;
-            height: 400px;
-            background: #131927;
-            border-radius: 16px;
-            border: 1px solid rgba(0, 210, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             text-align: center;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
         }
 
-        .card-box::after {
-            content: '';
-            position: absolute;
-            bottom: -50px;
-            width: 150px;
-            height: 150px;
-            background: #00d2ff;
-            filter: blur(80px);
-            z-index: 0;
-        }
-
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: #1a233a;
-            border: 3px solid #00d2ff;
-            margin-bottom: 15px;
-            z-index: 1;
+        .profile-img {
+            width: 100%;
+            height: 380px;
             object-fit: cover;
+            border-radius: 8px;
+            background-color: #1a2c45;
         }
 
-        .card-box h3 {
-            z-index: 1;
-            font-size: 1.3rem;
+        /* Global Section Layout */
+        .section {
+            padding: 50px 6%;
         }
 
-        .card-box p {
-            z-index: 1;
-            color: #a0aec0;
-            font-size: 0.9rem;
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .section-tag {
+            color: #00e6a8;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Info Cards (About, Contact, Focus) */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background-color: #111e30;
+            border: 1px solid #1e2f47;
+            border-radius: 10px;
+            padding: 25px;
+            position: relative;
+        }
+
+        .num-badge {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background-color: #0b1320;
+            border: 1px solid #00e6a8;
+            color: #00e6a8;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .info-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
             margin-top: 5px;
         }
 
-        /* Responsive Mobile Layout */
+        .info-card p, .info-card ul {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #111e30;
+            border: 1px solid #1e2f47;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background-color: #172a45;
+            color: #00e6a8;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .project-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* Two Column Layout (Skills & Project Method) */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .skills-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .pill {
+            background-color: #172a45;
+            color: #00e6a8;
+            border: 1px solid #233b5d;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .method-step {
+            margin-bottom: 15px;
+        }
+
+        .method-step h5 {
+            font-size: 1rem;
+            color: #ffffff;
+        }
+
+        .method-step p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Contributors Section */
+        .contributors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .contributor-card {
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 150px;
+            color: #ffffff;
+        }
+
+        .bg-green {
+            background-color: #0d5c46;
+            border: 1px solid #138a69;
+        }
+
+        .bg-pink {
+            background-color: #8b1e4b;
+            border: 1px solid #b82864;
+        }
+
+        .contributor-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .contributor-card p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #080d17;
+            padding: 40px 6% 20px 6%;
+            border-top: 1px solid #152238;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-left p {
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            max-width: 300px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-col h5 {
+            color: #00e6a8;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero {
+            .hero, .two-col {
                 flex-direction: column;
-                text-align: center;
-                padding-top: 40px;
+                grid-template-columns: 1fr;
             }
-
-            .hero-text h1 {
+            .hero-left h1 {
                 font-size: 2.5rem;
-            }
-
-            .hero-btns {
-                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- 1. NAVIGATION BAR -->
     <header>
-        <div class="logo">Musa.dev</div>
+        <div class="logo-container">
+            <div class="logo-icon">M</div>
+            <!-- আপনার নাম বা ব্র্যান্ড নাম -->
+            <div class="logo-text">Musa OWN VISION</div>
+        </div>
         <nav>
             <a href="#">Home</a>
             <a href="#">Projects</a>
-            <a href="#">Skills</a>
+            <a href="#" class="active">Developer</a>
         </nav>
-        <a href="https://github.com/musa965" target="_blank" class="btn-main">GitHub Profile</a>
+        <a href="#" class="lang-btn">বাংলা</a>
     </header>
 
+    <!-- 2. HERO SECTION -->
     <section class="hero">
-        <div class="hero-text">
-            <span class="tag">DEVELOPER & INNOVATOR</span>
-            <h1>BUILDING THE FUTURE WEB.</h1>
-            <p>Hi, I'm Musa. A passionate developer creating modern, highly optimized, and visual web applications and digital tools.</p>
+        <div class="hero-left">
+            <span class="badge">DEVELOPER</span>
+            <!-- আপনার নাম -->
+            <h1>MAHBUBUR RAHMAN MUSA</h1>
+            <!-- আপনার নিজের বিবরণ -->
+            <p>Student developer from Dhaka COLLEGE, building useful my first personal web, personal project systems, and small experimental web applications.</p>
             <div class="hero-btns">
-                <a href="#" class="btn-main">Send Message</a>
-                <a href="#" class="btn-outline">View Projects</a>
+                <!-- মেসেজ বা ফেসবুক লিংক -->
+                <a href="https://www.facebook.com/share/1Hy5Lds5ZX/" target="_blank" class="btn-green">Send Message</a>
+                <a href="#projects" class="btn-outline">My Projects</a>
             </div>
         </div>
-
-        <div class="hero-image">
-            <div class="card-box">
-                <!-- Chobi thakle src="tamar-photo-url" dite paro -->
-                <img src="https://via.placeholder.com/120" alt="Musa Profile" class="avatar">
-                <h3>Musa</h3>
-                <p>Web Developer & Student</p>
+        <div class="hero-right">
+            <div class="profile-card">
+                <!-- 💥 আপনার নিজের ছবি লিংক এখানে বসাবেন src="..." এর ভেতর -->
+                <img src="https://ibb.co.com/5hcK0tX2" alt="Musa Picture" class="profile-img">
             </div>
         </div>
     </section>
+
+    <!-- 3. INFO CARDS (About, Contact, Focus) -->
+    <section class="section">
+        <div class="info-grid">
+            <div class="info-card">
+                <span class="num-badge">01</span>
+                <h3>About</h3>
+                <p>I am Musa, a passionate web student and developer. I like building clean, helpful, and easy-to-use web projects for everyone.</p>
+            </div>
+            <div class="info-card">
+                <span class="num-badge">02</span>
+                <h3>Contact</h3>
+                <ul>
+                    <!-- আপনার ইমেইল ও তথ্য -->
+                    <li><strong>Email:</strong> mahbuburrahmanmusa99@gmail.com</li>
+                    <li><strong>College/School:</strong> Dhaka College</li>
+                    <li><strong>Group:</strong> Science</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <span class="num-badge">03</span>
+                <h3>Focus</h3>
+                <p>Building responsive UI, web applications, portfolio design, learning modern frontend frameworks, and practical web tools.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FEATURED PROJECTS SECTION -->
+    <section class="section" id="projects">
+        <span class="section-tag">FEATURED PROJECTS</span>
+        <h2 class="section-title">Website Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <span class="project-tag">Blog</span>
+                <h4>myblog.blogspot.com</h4>
+                <p>Personal writing, learning notes, and web presence.</p>
+            </div>
+            <div class="project-card">
+                <span class="project-tag">Literature</span>
+                <h4>creative-hub.com</h4>
+                <p>Creative writing and Bangla content project.</p>
+            </div>
+            <div class="project-card">
+                <span class="project-tag">Tool</span>
+                <h4>OWN thought</h4>
+                <p>upcoming very soon please wait for soma times</p>
+            </div>
+            <div class="project-card">
+                <span class="project-tag">Portfolio</span>
+                <h4>Personal Website</h4>
+                <p>Student, result, gallery, and information hub.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SKILLS & PROJECT METHOD -->
+    <section class="section">
+        <div class="two-col">
+            <div>
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-pills">
+                    <span class="pill">HTML</span>
+                    <span class="pill">CSS</span>
+                    <span class="pill">JavaScript</span>
+                    <span class="pill">C++</span>
+                    <span class="pill">GitHub Pages</span>
+                    <span class="pill">Static Websites</span>
+                </div>
+            </div>
+            <div>
+                <h2 class="section-title">Project Method</h2>
+                <div class="method-step">
+                    <h5>Collect</h5>
+                    <p>.</p>
+                </div>
+                <div class="method-step">
+                    <h5>Build</h5>
+                    <p>Turn the information into clean pages and useful features.</p>
+                </div>
+                <div class="method-step">
+                    <h5>Improve</h5>
+                    <p>Update design, mobile view, and content based on real feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CONTRIBUTORS SECTION -->
+    <section class="section">
+        <span class="section-tag">CONTRIBUTORS</span>
+        <h2 class="section-title">Project Contributors</h2>
+        <div class="contributors-grid">
+            <div class="contributor-card bg-green">
+                <h4>Content Helper</h4>
+                <p>Helps collect student data, event descriptions, and updates.</p>
+            </div>
+            <div class="contributor-card bg-pink">
+                <h4>Dreamer</h4>
+                <p>I have many dream iknow that is very dificult dream but i also know i can di it! </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER -->
+    <footer>
+        <div class="footer-left">
+            <div class="logo-container">
+                <div class="logo-icon">M</div>
+                <div class="logo-text">Musa Portfolio</div>
+            </div>
+            <p>This website is developed by <strong>Musa</strong>. Currently under development as an experimental project.</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <a href="#">Projects</a>
+                <a href="#">About Me</a>
+            </div>
+            <div class="footer-col">
+                <h5>Social</h5>
+                <!-- সামাজিক যোগাযোগের লিংক -->
+                <a href="https://github.com/musa965" target="_blank">GitHub</a>
+                <a href="https://www.facebook.com/share/1Hy5Lds5ZX/" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
