@@ -726,16 +726,22 @@
         <span class="card-link">View Certificates &rarr;</span>
       </a>
 
-      <!-- Box 4: Academic Gallery -->
-      <a href="YOUR_GALLERY_LINK_HERE" target="_blank" rel="noopener noreferrer" class="academic-card">
-        <div class="card-icon">🎓</div>
-        <h3>Campus & Moments</h3>
-        <p>Photo highlights from Dhaka College, events, and academic life.</p>
-        <span class="card-link">View Gallery &rarr;</span>
-      </a>
-    </div>
-  </div>
-</section>
+      
+      <!-- Box 2: Academic Results -->
+<div class="academic-card">
+  <div class="card-icon">📊</div>
+  <h3>Academic Results</h3>
+  <p>SSC, HSC transcripts & Dhaka College live archive dashboard & other achived</p>
+  
+  <div class="card-btn-group">
+    <a href="YOUR_DRIVE_RESULT_FOLDER_LINK" target="_blank" rel="noopener noreferrer" class="sub-btn">
+      Board Transcripts 📄
+    </a>
+    <a href="https://thedcarchive.pages.dev/student/1202526010213" target="_blank" rel="noopener noreferrer" class="sub-btn live-btn">
+      Live Archive of DC Result🌐
+    </a>
+  </div>
+</div>
 
 <!-- CSS Styling inside Style Tags -->
 <style>
@@ -819,8 +825,45 @@
 
 .academic-card:hover .card-link {
   color: #ffffff;
+}/* Multi-button container */
+.card-btn-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
 }
-</style>
+
+/* Sub button style */
+.sub-btn {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #38ef7d;
+  border: 1px solid #38ef7d;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.sub-btn:hover {
+  background: #38ef7d;
+  color: #0d1117;
+}
+
+/* Highlight for Live Archive */
+.sub-btn.live-btn {
+  background: rgba(56, 239, 125, 0.1);
+}
+
+.sub-btn.live-btn:hover {
+  background: #38ef7d;
+  color: #0d1117;
+}
+</style> 
+        
     <!-- 5. SKILLS & PROJECT METHOD -->
     <section class="section">
         <div class="two-col">
