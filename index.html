@@ -593,12 +593,10 @@
     </section>
 
     <!-- 4. FEATURED PROJECTS SECTION -->
-    section class="section" id="projects">
+    <section class="section" id="projects">
         <span class="section-tag">FEATURED PROJECTS</span>
         <h2 class="section-title">Website Projects</h2>
-<!-- ওপরে আপনার আগের হেডিং থাকবে (FEATURED PROJECTS এবং Website Projects) -->
 
-<!-- ১. এই স্টাইল ট্যাগটুকু কার্ডের ওপরে যেকোনো এক জায়গায় বসিয়ে দিন (মাউস নিলে কার্ড ওপরে ওঠার জন্য) -->
 <style>
     .project-card {
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1063,6 +1061,120 @@
             </div>
         </div>
     </footer>
+                </div>
+    </footer>
+
+<!-- ==========================================================
+     আল্ট্রা-প্রিমিয়াম কন্সটেলেশন নেটওয়ার্ক ও ম্যাজিক্যাল মাউস ট্রেল ইফেক্ট 
+     ========================================================== -->
+<canvas id="ultra-premium-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999;"></canvas>
+
+<script>
+    const canvas = document.getElementById('ultra-premium-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let particlesArray = [];
+    const maxParticles = 80;
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    const mouse = {
+        x: undefined,
+        y: undefined
+    }
+
+    window.addEventListener('mousemove', function(event) {
+        mouse.x = event.clientX;
+        mouse.y = event.clientY;
+        if (particlesArray.length < maxParticles) {
+            particlesArray.push(new PremiumParticle(mouse.x, mouse.y));
+        }
+    });
+
+    window.addEventListener('touchmove', function(event) {
+        mouse.x = event.touches[0].clientX;
+        mouse.y = event.touches[0].clientY;
+        if (particlesArray.length < maxParticles) {
+            particlesArray.push(new PremiumParticle(mouse.x, mouse.y));
+        }
+    });
+
+    window.addEventListener('scroll', function() {
+        if (particlesArray.length < maxParticles) {
+            const randomX = Math.random() * canvas.width;
+            const randomY = Math.random() * canvas.height;
+            particlesArray.push(new PremiumParticle(randomX, randomY));
+        }
+    });
+
+    class PremiumParticle {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+            this.size = Math.random() * 2.5 + 1;
+            this.speedX = Math.random() * 1.2 - 0.6;
+            this.speedY = Math.random() * 1.2 - 0.6;
+            this.alpha = 1;
+        }
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            if (this.alpha > 0.01) this.alpha -= 0.007;
+        }
+        draw() {
+            ctx.fillStyle = `rgba(0, 230, 168, ${this.alpha})`; 
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function connectParticles() {
+        for (let a = 0; a < particlesArray.length; a++) {
+            for (let b = a; b < particlesArray.length; b++) {
+                let dx = particlesArray[a].x - particlesArray[b].x;
+                let dy = particlesArray[a].y - particlesArray[b].y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 100) {
+                    let lineAlpha = (1 - (distance / 100)) * Math.min(particlesArray[a].alpha, particlesArray[b].alpha) * 0.2;
+                    ctx.strokeStyle = `rgba(0, 230, 168, ${lineAlpha})`;
+                    ctx.lineWidth = 0.6;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function handleParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+            particlesArray[i].draw();
+
+            if (particlesArray[i].alpha <= 0.01) {
+                particlesArray.splice(i, 1);
+                i--;
+            }
+        }
+        connectParticles();
+        requestAnimationFrame(handleParticles);
+    }
+
+    handleParticles();
+</script>
+
+</body>
+</html>
+
 
 </body>
 </html>
