@@ -548,14 +548,20 @@
     <section class="section">
         <div class="info-grid">
             <div class="info-card">
-                <span class="num-badge">01</span>
-                <h3>About</h3>
-                <p> ✨ Mahbubur Rahman Musa ✨
-🔬 Academic Pursuits: Science Student at Dhaka College
-💻 Tech Passion: Aspiring Mini-Developer | Always excited to learn and build new things But my dream & my vision is very different if you want to this please scroll down
-🌍 True Calling: Traveling isn't just a hobby for me—it's a lifestyle and a true passion
-🚫 Personal Rule: Politics isn't my thing; I prefer to keep my distance from it entirely </p>
-            </div>
+  <span class="num-badge">01</span>
+  <h3>About</h3>
+  
+  <div class="about-name">
+    ✨ Mahbubur Rahman Musa ✨
+  </div>
+
+  <ul class="about-list">
+    <li>🔬 <strong>Academic Pursuits:</strong> Science Student at Dhaka College</li>
+    <li>💻 <strong>Tech Passion:</strong> Aspiring Mini-Developer | Always excited to learn and build new things.</li>
+    <li>🌍 <strong>True Calling:</strong> Traveling isn't just a hobby for me—it's a lifestyle and a true passion.</li>
+    <li>🚫 <strong>Personal Rule:</strong> Politics isn't my thing; I prefer to keep my distance from it entirely.</li>
+  </ul>
+</div>
             <div class="info-card">
                 <span class="num-badge">02</span>
                 <h3>Contact</h3>
@@ -598,14 +604,40 @@
         <h2 class="section-title">Website Projects</h2>
 
 <style>
-    .project-card {
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-    .project-card:hover {
-        transform: translateY(-6px);
-        border-color: #64ffda !important;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
+  .project-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .project-card:hover {
+    transform: translateY(-6px);
+    border-color: #64ffda !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  /* About Card এর জন্য CSS */
+  .about-name {
+    font-weight: bold;
+    color: #38ef7d;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+  }
+
+  .about-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .about-list li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    color: #c9d1d9;
+  }
+
+  .about-list strong {
+    color: #f0f6fc;
+  }
 </style>
 
 <!-- ২. পুরোনো কার্ডগুলো কেটে এই মেইন কন্টেইনার এবং ৪টি নতুন কার্ড এখানে পেস্ট করুন -->
@@ -702,7 +734,7 @@
 
     <div class="academic-grid">
       <!-- Box 1: Curriculum Vitae -->
-      <a href="YOUR_CV_LINK_HERE" target="_blank" rel="noopener noreferrer" class="academic-card">
+      <a href="https://drive.google.com/drive/folders/1Uory871By_a35StiiOM9cuW-0sST402a?usp=sharing" target="_blank" rel="noopener noreferrer" class="academic-card">
         <div class="card-icon">📄</div>
         <h3>Curriculum Vitae (CV)</h3>
         <p>Explore my detailed academic background, skills, and experience.</p>
@@ -716,7 +748,7 @@
         <p>SSC, HSC transcripts & Dhaka College live archive dashboard.</p>
         
         <div class="card-btn-group">
-          <a href="YOUR_DRIVE_RESULT_FOLDER_LINK" target="_blank" rel="noopener noreferrer" class="sub-btn">
+          <a href="https://drive.google.com/drive/folders/1V2mcx_LA8irlsnkA8RG3WLRsfEPV7ZN4?usp=sharing" target="_blank" rel="noopener noreferrer" class="sub-btn">
             Board Transcripts 📄
           </a>
           <a href="https://thedcarchive.pages.dev/student/1202526010213" target="_blank" rel="noopener noreferrer" class="sub-btn live-btn">
@@ -726,7 +758,7 @@
       </div>
 
       <!-- Box 3: Certificates -->
-      <a href="YOUR_CERTIFICATES_LINK_HERE" target="_blank" rel="noopener noreferrer" class="academic-card">
+      <a href="https://drive.google.com/drive/folders/1sJBFofhbd5BLMpqrGbe6EBbbwvChYSjv?usp=sharing" target="_blank" rel="noopener noreferrer" class="academic-card">
         <div class="card-icon">🏆</div>
         <h3>Certificates & Achievements</h3>
         <p>Verified certificates from courses, competitions, and clubs.</p>
@@ -867,83 +899,379 @@
 }
 </style>
         
-    <!-- 5. SKILLS & PROJECT METHOD -->
-    <section class="section">
-        <div class="two-col">
-            <div>
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-pills">
-                    <span class="pill">HTML</span>
-                    <span class="pill">CSS</span>
-                    <span class="pill">JavaScript</span>
-                    <span class="pill">C</span>
-                    <span class="pill">GitHub Pages</span>
-                    <span class="pill">Static Website</span>
-                     <span class="pill">Ai automation</span>
-                </div>
-            </div>
-            <div>
-                <h2 class="section-title">Project Method</h2>
-                <div class="method-step">
-                    <h5>Collect</h5>
-                    <p>.</p>
-                </div>
-                <div class="method-step">
-                    <h5>Build</h5>
-                    <p>Turn the information into clean pages and useful features.</p>
-                </div>
-                <div class="method-step">
-                    <h5>Improve</h5>
-                    <p>Update design, mobile view, and content based on real feedback.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+   <!-- 5. SKILLS & PROJECT METHOD -->
+<!-- ==================== SKILLS & PROJECT METHOD SECTION ==================== -->
+<section class="skills-method-section">
+  <div class="skills-method-container">
+    
+    <!-- Left Card: Tech & Soft Skills -->
+    <div class="sm-card">
+      <h2 class="sm-title">Tech Stack & Skills</h2>
+      <p class="sm-subtitle">Technologies, tools, and social core values I believe in.</p>
 
+      <div class="skills-badge-grid">
+        <div class="skill-badge"><span class="badge-icon">🌐</span> HTML5</div>
+        <div class="skill-badge"><span class="badge-icon">🎨</span> CSS3</div>
+        <div class="skill-badge"><span class="badge-icon">⚡</span> JavaScript</div>
+        <div class="skill-badge"><span class="badge-icon">💻</span> C Programming</div>
+        <div class="skill-badge"><span class="badge-icon">🚀</span> GitHub Pages</div>
+        <div class="skill-badge"><span class="badge-icon">📐</span> Static Web Design</div>
+        <div class="skill-badge"><span class="badge-icon">🤖</span> AI Automation</div>
+        <div class="skill-badge"><span class="badge-icon">🤝</span> Volunteerism</div>
+        <div class="skill-badge"><span class="badge-icon">🌱</span> Social Work</div>
+      </div>
+    </div>
+
+    <!-- Right Card: Project Method -->
+    <div class="sm-card">
+      <h2 class="sm-title">Project Workflow</h2>
+      <p class="sm-subtitle">My structured approach from idea to live deployment.</p>
+
+      <div class="method-steps">
+        <div class="method-step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h4>Collect & Plan</h4>
+            <p>Gather requirements, structure content, and outline website architecture.</p>
+          </div>
+        </div>
+
+        <div class="method-step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h4>Build & Code</h4>
+            <p>Turn design concepts into clean, responsive HTML/CSS pages and features.</p>
+          </div>
+        </div>
+
+        <div class="method-step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h4>Improve & Deploy</h4>
+            <p>Update design, optimize mobile view, and publish on GitHub Pages.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== SECTION STYLES (CSS) ==================== -->
+<style>
+  .skills-method-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .skills-method-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  /* Card Container */
+  .sm-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .sm-card:hover {
+    border-color: #38ef7d;
+    transform: translateY(-4px);
+  }
+
+  .sm-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #38ef7d;
+    margin: 0 0 6px 0;
+  }
+
+  .sm-subtitle {
+    font-size: 0.88rem;
+    color: #8b949e;
+    margin: 0 0 24px 0;
+  }
+
+  /* Skills Badges Grid */
+  .skills-badge-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .skill-badge {
+    background: rgba(56, 239, 125, 0.08);
+    border: 1px solid rgba(56, 239, 125, 0.25);
+    color: #e6f1ff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
+  }
+
+  .skill-badge:hover {
+    background: #38ef7d;
+    color: #0d1117;
+    border-color: #38ef7d;
+    transform: translateY(-2px);
+  }
+
+  .badge-icon {
+    font-size: 0.95rem;
+  }
+
+  /* Method Steps Grid */
+  .method-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .method-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #0d1117;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #21262d;
+  }
+
+  .step-num {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #38ef7d;
+    background: rgba(56, 239, 125, 0.12);
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 239, 125, 0.3);
+  }
+
+  .step-content h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #f0f6fc;
+    margin: 0 0 4px 0;
+  }
+
+  .step-content p {
+    font-size: 0.82rem;
+    color: #8b949e;
+    line-height: 1.4;
+    margin: 0;
+  }
+</style>
     <!-- 6. c2: BLOG SECTION -->
-    <section class="blog-section" id="blogs">
-        <span class="section-tag">MY BLOGS</span>
-        <h2 class="section-title">My Lasted blog</h2>
-        <p style="color: #94a3b8; margin-top: -15px; margin-bottom: 20px;">Unveiling the Latest Trends in Web & Tech</p>
-        
-        <div class="blog-container">
-            <!-- Primary Big Card -->
-            <div class="primary-card">
-                <img src="https://via.placeholder.com/500x300" alt="Mastering the Art">
-                <h3 style="margin-bottom: 8px;">Mastering the Art of Web Design</h3>
-                <p style="color: #94a3b8; font-size: 0.9rem;">Building modern dark-themed responsive websites step by step.</p>
-                <a href="#" class="read-more">Read More ↗</a>
-            </div>
+   <!-- ==================== BLOG SECTION ==================== -->
+<section class="blog-section">
+  <div class="blog-header">
+    <span class="sub-title">MY BLOGS</span>
+    <h2>My Latest Blogs</h2>
+    <p>Unveiling the Latest Trends in Web & Tech</p>
+  </div>
 
-            <!-- Secondary 4 Cards Grid -->
-            <div class="secondary-grid">
-                <div class="small-card">
-                    <img src="https://via.placeholder.com/200x120" alt="Thumbnail">
-                    <div class="rating">★★★★★</div>
-                    <h4 style="font-size: 0.95rem; margin-top: 5px;">HTML & CSS Tips</h4>
-                    <a href="#" class="read-more">Read More ↗</a>
-                </div>
-                <div class="small-card">
-                    <img src="https://via.placeholder.com/200x120" alt="Thumbnail">
-                    <div class="rating">★★★★★</div>
-                    <h4 style="font-size: 0.95rem; margin-top: 5px;">JavaScript Logic</h4>
-                    <a href="#" class="read-more">Read More ↗</a>
-                </div>
-                <div class="small-card">
-                    <img src="https://via.placeholder.com/200x120" alt="Thumbnail">
-                    <div class="rating">★★★★★</div>
-                    <h4 style="font-size: 0.95rem; margin-top: 5px;">C++ Programming</h4>
-                    <a href="#" class="read-more">Read More ↗</a>
-                </div>
-                <div class="small-card">
-                    <img src="https://via.placeholder.com/200x120" alt="Thumbnail">
-                    <div class="rating">★★★★★</div>
-                    <h4 style="font-size: 0.95rem; margin-top: 5px;">GitHub Deploy</h4>
-                    <a href="#" class="read-more">Read More ↗</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="blog-grid">
+    <!-- Featured Big Card (Left) -->
+    <div class="featured-card">
+      <img src="https://picsum.photos/600/350?random=1" alt="Web Design" class="blog-img">
+      <div class="card-content">
+        <h3>Mastering the Art of Web Design</h3>
+        <p>Building modern dark-themed responsive websites step by step.</p>
+        <a href="#" class="read-btn">Read More ↗</a>
+      </div>
+    </div>
+
+    <!-- Small Cards Grid (Right) -->
+    <div class="small-cards-grid">
+      <div class="small-card">
+        <img src="https://picsum.photos/300/200?random=2" alt="HTML CSS" class="blog-img-sm">
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+        <h4>HTML & CSS Tips</h4>
+        <a href="#" class="read-btn">Read More ↗</a>
+      </div>
+
+      <div class="small-card">
+        <img src="https://picsum.photos/300/200?random=3" alt="JS" class="blog-img-sm">
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+        <h4>JavaScript Logic</h4>
+        <a href="#" class="read-btn">Read More ↗</a>
+      </div>
+
+      <div class="small-card">
+        <img src="https://picsum.photos/300/200?random=4" alt="C Language" class="blog-img-sm">
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+        <h4>C Programming</h4>
+        <a href="#" class="read-btn">Read More ↗</a>
+      </div>
+
+      <div class="small-card">
+        <img src="https://picsum.photos/300/200?random=5" alt="GitHub" class="blog-img-sm">
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+        <h4>GitHub Deploy</h4>
+        <a href="#" class="read-btn">Read More ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BLOG STYLES (CSS) ==================== -->
+<style>
+  /* Blog Section Base */
+  .blog-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .blog-header {
+    margin-bottom: 30px;
+  }
+
+  .blog-header .sub-title {
+    color: #38ef7d;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .blog-header h2 {
+    font-size: 2rem;
+    color: #f0f6fc;
+    margin: 8px 0;
+  }
+
+  .blog-header p {
+    color: #8b949e;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  /* Blog Layout Grid */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Featured Big Card */
+  .featured-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .featured-card:hover {
+    transform: translateY(-4px);
+    border-color: #38ef7d;
+  }
+
+  .blog-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+  }
+
+  .card-content h3 {
+    font-size: 1.4rem;
+    color: #f0f6fc;
+    margin: 0;
+  }
+
+  .card-content p {
+    color: #8b949e;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Small Cards Grid (Right Side) */
+  .small-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .small-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .small-card:hover {
+    transform: translateY(-4px);
+    border-color: #38ef7d;
+  }
+
+  .blog-img-sm {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .rating {
+    font-size: 0.75rem;
+  }
+
+  .small-card h4 {
+    color: #f0f6fc;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  /* Read More Link Button */
+  .read-btn {
+    color: #38ef7d;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-top: auto;
+    display: inline-block;
+    transition: color 0.2s ease;
+  }
+
+  .read-btn:hover {
+    color: #64ffda;
+    text-decoration: underline;
+  }
+</style>
 <!-- MY GALLERY SECTION START -->
 <section class="gallery-section" style="padding: 40px 20px; background-color: #0b1320; color: #ffffff; font-family: sans-serif;">
   <div style="max-width: 1100px; margin: 0 auto;">
