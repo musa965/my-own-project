@@ -694,6 +694,131 @@
 </div>
 
     </section>
+    <!-- MY ACADEMIC PURPOSE SECTION -->
+<section id="academic" class="academic-section">
+  <div class="container">
+    <h2 class="section-title">MY ACADEMIC PURPOSE</h2>
+    <p class="section-subtitle">Academic achievements, certifications, results, and memories</p>
+
+    <div class="academic-grid">
+      <!-- Box 1: Curriculum Vitae -->
+      <a href="YOUR_CV_LINK_HERE" target="_blank" rel="noopener noreferrer" class="academic-card">
+        <div class="card-icon">📄</div>
+        <h3>Curriculum Vitae (CV)</h3>
+        <p>Explore my detailed academic background, skills, and experience.</p>
+        <span class="card-link">View CV &rarr;</span>
+      </a>
+
+      <!-- Box 2: Academic Results -->
+      <a href="YOUR_RESULT_LINK_HERE" target="_blank" rel="noopener noreferrer" class="academic-card">
+        <div class="card-icon">📊</div>
+        <h3>Academic Results</h3>
+        <p>SSC, HSC, and college academic transcripts and performance.</p>
+        <span class="card-link">Check Results &rarr;</span>
+      </a>
+
+      <!-- Box 3: Certificates -->
+      <a href="YOUR_CERTIFICATES_LINK_HERE" target="_blank" rel="noopener noreferrer" class="academic-card">
+        <div class="card-icon">🏆</div>
+        <h3>Certificates & Achievements</h3>
+        <p>Verified certificates from courses, competitions, and clubs.</p>
+        <span class="card-link">View Certificates &rarr;</span>
+      </a>
+
+      <!-- Box 4: Academic Gallery -->
+      <a href="YOUR_GALLERY_LINK_HERE" target="_blank" rel="noopener noreferrer" class="academic-card">
+        <div class="card-icon">🎓</div>
+        <h3>Campus & Moments</h3>
+        <p>Photo highlights from Dhaka College, events, and academic life.</p>
+        <span class="card-link">View Gallery &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+    /* Academic Section Styling */
+.academic-section {
+  padding: 60px 20px;
+  background-color: #0d1117; /* Dark theme background */
+  color: #ffffff;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.academic-section .section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #38ef7d; /* Accent green color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.academic-section .section-subtitle {
+  font-size: 1rem;
+  color: #8b949e;
+  margin-bottom: 40px;
+}
+
+/* Grid Layout */
+.academic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Individual Box / Card Styling */
+.academic-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.academic-card:hover {
+  transform: translateY(-8px);
+  border-color: #38ef7d;
+  box-shadow: 0 8px 25px rgba(56, 239, 125, 0.15);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.academic-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #f0f6fc;
+}
+
+.academic-card p {
+  font-size: 0.9rem;
+  color: #8b949e;
+  line-height: 1.5; /* Corrected CSS property */
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #38ef7d;
+  transition: color 0.2s ease;
+}
+
+.academic-card:hover .card-link {
+  color: #ffffff;
+}
 
     <!-- 5. SKILLS & PROJECT METHOD -->
     <section class="section">
@@ -836,32 +961,32 @@
 
       <!-- Card 5 -->
 <!-- Card 5 -->
+<!-- Card 5: My Super Hero -->
 <div style="background: #112240; padding: 20px; border-radius: 8px; border: 1px solid #233554; display: flex; flex-direction: column; gap: 15px;">
     <div>
-        <!-- কন্টেইনার বক্স -->
-        <div style="width: 100%; background-color: #233554; border-radius: 6px; overflow: hidden;">
-            <!-- কোড সম্পূর্ণ ক্লিন করা হয়েছে এবং সম্পূর্ণ ছবি দেখানোর জন্য height: auto ব্যবহার করা হয়েছে -->
-            <img src="https://i.ibb.co.com/xtW3x1H1/Screenshot-2026-09-19-225435.png" style="width: 100%; height: auto; display: block;" alt="My Super Hero">
+        <!-- Fixed aspect-ratio ebong contain use kora hoyeche jate chhobi na kate -->
+        <div style="width: 100%; aspect-ratio: 4 / 3; background-color: #0a192f; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+            <img src="https://i.ibb.co.com/xtW3x1H1/Screenshot-2026-09-19-225435.png" style="width: 100%; height: 100%; object-fit: contain; display: block;" alt="My Super Hero">
         </div>
     </div>
-    <div>
+    <div style="flex-grow: 1;">
         <h3 style="font-size: 20px; color: #e6f1ff; margin-bottom: 8px;">My Super Hero</h3>
-        <p style="color: #8892b0; font-size: 14px; margin-bottom: 15px;">Hometown memories, nature shots, and personal archives.</p>
+        <p style="color: #8892b0; font-size: 14px; margin-bottom: 15px;">He is not only my father, but also the greatest superhero of my life. Words fall short when I try to describe what he means to me. He is my emotion, my biggest inspiration, my strength, and the foundation of all my dreams. Everything I achieve and aspire to be is guided by his unconditional love and sacrifices.</p>
     </div>
     <a href="#" style="color: #64ffda; text-decoration: none; font-weight: bold; font-size: 14px;">Place ↗</a>
 </div>
 
-<!-- Card 6 -->
+<!-- Card 6: My Go-To Team -->
 <div style="background: #112240; padding: 20px; border-radius: 8px; border: 1px solid #233554; display: flex; flex-direction: column; gap: 15px;">
     <div>
-        <div style="width: 100%; background-color: #233554; border-radius: 6px; overflow: hidden;">
-            <!-- ImgBB এর জগাখিচুড়ি ট্যাগ সরিয়ে শুধু ডিরেক্ট ইমেজ ইউআরএল ব্যবহার করা হয়েছে -->
-            <img src="https://i.ibb.co.com/hR66Zz39/lv-0-20260919234459.png" style="width: 100%; height: auto; display: block;" alt="My Go-To Team">
+        <!-- Same aspect-ratio and contain styling -->
+        <div style="width: 100%; aspect-ratio: 4 / 3; background-color: #0a192f; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+            <img src="https://i.ibb.co.com/hR66Zz39/lv-0-20260919234459.png" style="width: 100%; height: 100%; object-fit: contain; display: block;" alt="My Go-To Team">
         </div>
     </div>
-    <div>
-        <h3 style="font-size: 20px; color: #e6f1ff; margin-bottom: 8px;">My Go-To Team</h3>
-        <p style="color: #8892b0; font-size: 14px; margin-bottom: 15px;">Future ideas, vision boards, and tech inspiration shots.</p>
+    <div style="flex-grow: 1;">
+        <h3 style="font-size: 20px; color: #e6f1ff; margin-bottom: 8px;">My Go-To Team: Seleção Fan</h3>
+        <p style="color: #8892b0; font-size: 14px; margin-bottom: 15px;">Unconditional passion for the kings of samba football. Brazil will always be my absolute favorite! 🇧🇷🔥</p>
     </div>
     <a href="#" style="color: #64ffda; text-decoration: none; font-weight: bold; font-size: 14px;">Place ↗</a>
 </div>
@@ -893,8 +1018,8 @@
     <div style="width: 100%; border-radius: 6px; overflow: hidden; margin-bottom: 15px; background-color: #233554;">
         <img src="https://i.ibb.co.com/5h5gc94z/lv-0-20260919231054.png" alt="Hall Memory 2" style="width: 100%; height: auto; display: block;">
     </div>
-    <h4 style="color: #e6f1ff; font-size: 18px; margin-bottom: 8px; font-weight: bold;">Hall Title Here 2</h4>
-    <p style="color: #8892b0; font-size: 14px; margin: 0; line-height: 1.5;">Write your details about this hall photo or memory here.</p>
+    <h4 style="color: #e6f1ff; font-size: 18px; margin-bottom: 8px; font-weight: bold;">Golden Era at Dhaka College</h4>
+    <p style="color: #8892b0; font-size: 14px; margin: 0; line-height: 1.5;">Celebrating the cherished bond with my Dhaka College hall companions. They gifted me an unforgettable, golden chapter of my life</p>
 </div>
 
         <!-- Hall Card 3 -->
@@ -902,8 +1027,8 @@
             <div style="width: 100%; height: 180px; border-radius: 6px; overflow: hidden; margin-bottom: 15px;">
                 <img src="https://i.ibb.co.com/SDCLpQyn/lv-0-20260926015921.png" alt="Hall Memory 3" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
-            <h4 style="color: #e6f1ff; font-size: 18px; margin-bottom: 8px; font-weight: bold;">Hall Title Here 3</h4>
-            <p style="color: #8892b0; font-size: 14px; margin: 0; line-height: 1.5;">Write your details about this hall photo or memory here.</p>
+            <h4 style="color: #e6f1ff; font-size: 18px; margin-bottom: 8px; font-weight: bold;">Brotherhood at N.S. Kamil</h4>
+            <p style="color: #8892b0; font-size: 14px; margin: 0; line-height: 1.5;">Unforgettable memories with my Madrasah Friends. Every moment spent in the hall with them remains priceless</p>
         </div>
 
         <!-- Hall Card 4 -->
@@ -911,8 +1036,8 @@
     <div style="width: 100%; border-radius: 6px; overflow: hidden; margin-bottom: 15px; background-color: #233554;">
         <img src="https://i.ibb.co.com/QFW4DwW2/lv-0-20260919232933.png" alt="Hall Memory 4" style="width: 100%; height: auto; display: block;">
     </div>
-    <h4 style="color: #e6f1ff; font-size: 18px; margin-bottom: 8px; font-weight: bold;">Hall Title Here 4</h4>
-    <p style="color: #8892b0; font-size: 14px; margin: 0; line-height: 1.5;">Write your details about this hall photo or memory here.</p>
+    <h4 style="color: #e6f1ff; font-size: 18px; margin-bottom: 8px; font-weight: bold;">My Personal White House</h4>
+    <p style="color: #8892b0; font-size: 14px; margin: 0; line-height: 1.5;">Though small, this room is my emotional anchor, my laboratory,  this is my haven of ideas —the place shaping my future opportunities.</p>
 </div>
 
         <!-- Hall Card 5 -->
