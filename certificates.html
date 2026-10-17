@@ -23,12 +23,12 @@
       margin: 0 auto;
     }
 
-    /* Header Navigation */
+    /* Top Navigation Header */
     .top-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     .back-btn {
@@ -51,11 +51,11 @@
 
     .header-title {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
     }
 
     .header-title h1 {
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       color: #f0f6fc;
       margin-bottom: 8px;
     }
@@ -72,7 +72,7 @@
     /* Certificate Grid Layout */
     .cert-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
       gap: 24px;
     }
 
@@ -95,7 +95,7 @@
     .cert-img-wrapper {
       position: relative;
       width: 100%;
-      height: 200px;
+      height: 210px;
       background: #010409;
       overflow: hidden;
     }
@@ -136,12 +136,14 @@
       font-size: 1.1rem;
       color: #f0f6fc;
       margin-bottom: 6px;
+      line-height: 1.35;
     }
 
     .cert-info p {
       font-size: 0.85rem;
       color: #8b949e;
       margin-bottom: 18px;
+      line-height: 1.4;
     }
 
     .cert-actions {
@@ -153,7 +155,7 @@
     .btn-view, .btn-download {
       flex: 1;
       text-align: center;
-      padding: 8px 12px;
+      padding: 9px 12px;
       border-radius: 6px;
       font-size: 0.82rem;
       font-weight: 600;
@@ -224,71 +226,358 @@
 
     <div class="header-title">
       <h1>Certificates & <span>Achievements</span></h1>
-      <p>Verified certificates, competitive recognitions, and club credentials.</p>
+      <p>Verified transcripts, technical skills, Olympiad awards, and academic credentials.</p>
     </div>
 
     <div class="cert-grid">
 
-      <!-- Certificate Item 1 -->
+      <!-- Item 1: Dakhil Examination 2025 Transcript -->
       <div class="cert-card">
         <div class="cert-img-wrapper">
-          <span class="badge-tag">Verified</span>
-          <img src="https://picsum.photos/600/400?random=101" alt="Certificate">
+          <span class="badge-tag">GPA 5.00</span>
+          <img src="cert-1.jpg" alt="Dakhil Academic Transcript 2025">
         </div>
         <div class="cert-info">
-          <h3>Web Development & Design</h3>
-          <p>Certificate of Excellence in Modern Web Architecture.</p>
+          <h3>Dakhil Examination - 2025 Transcript</h3>
+          <p>Official Academic Transcript in Science Group with perfect GPA 5.00 (Madrasah Education Board Dhaka).</p>
           <div class="cert-actions">
-            <button onclick="openModal('https://picsum.photos/600/400?random=101')" class="btn-view">View Image</button>
-            <a href="https://drive.google.com/drive/folders/1sJBFofhbd5BLMpqrGbe6EBbbwvChYSjv" target="_blank" class="btn-download">Drive Link</a>
+            <button onclick="openModal('cert-1.jpg')" class="btn-view">View Document</button>
+            <a href="cert-1.jpg" download class="btn-download">Download</a>
           </div>
         </div>
       </div>
 
-      <!-- Certificate Item 2 -->
+      <!-- Item 2: Technical Board BTEB Certificate -->
       <div class="cert-card">
         <div class="cert-img-wrapper">
-          <span class="badge-tag">Academic</span>
-          <img src="https://picsum.photos/600/400?random=102" alt="Certificate">
+          <span class="badge-tag">Technical</span>
+          <img src="cert-2.jpg" alt="Technical Education Board BTEB">
         </div>
         <div class="cert-info">
-          <h3>Dhaka College Recognition</h3>
-          <p>Official Academic & Science Competition Credentials.</p>
+          <h3>BTEB Computer Office Application</h3>
+          <p>National Skill Standard Basic Course (360 Hrs, 6-Month) with Grade A+ from Bangladesh Technical Education Board.</p>
           <div class="cert-actions">
-            <button onclick="openModal('https://picsum.photos/600/400?random=102')" class="btn-view">View Image</button>
-            <a href="https://drive.google.com/drive/folders/1sJBFofhbd5BLMpqrGbe6EBbbwvChYSjv" target="_blank" class="btn-download">Drive Link</a>
+            <button onclick="openModal('cert-2.jpg')" class="btn-view">View Document</button>
+            <a href="cert-2.jpg" download class="btn-download">Download</a>
           </div>
         </div>
       </div>
 
-      <!-- Certificate Item 3 -->
+      <!-- Item 3: Bangladesh Islami Chhatrashibir Certificate -->
       <div class="cert-card">
         <div class="cert-img-wrapper">
-          <span class="badge-tag">ICT Award</span>
-          <img src="https://picsum.photos/600/400?random=103" alt="Certificate">
+          <span class="badge-tag">Award</span>
+          <img src="cert-3.jpg" alt="Bangladesh Islami Chhatrashibir Certificate">
         </div>
         <div class="cert-info">
-          <h3>Programming & Logic</h3>
-          <p>C Programming & ICT Olympiad Accomplishments.</p>
+          <h3>Chhatrashibir Glorious Result Award</h3>
+          <p>Certificate of Achievement in appreciation for securing A+ in SSC/Dakhil Examination 2025.</p>
           <div class="cert-actions">
-            <button onclick="openModal('https://picsum.photos/600/400?random=103')" class="btn-view">View Image</button>
-            <a href="https://drive.google.com/drive/folders/1sJBFofhbd5BLMpqrGbe6EBbbwvChYSjv" target="_blank" class="btn-download">Drive Link</a>
+            <button onclick="openModal('cert-3.jpg')" class="btn-view">View Document</button>
+            <a href="cert-3.jpg" download class="btn-download">Download</a>
           </div>
         </div>
       </div>
 
-      <!-- Certificate Item 4 -->
+      <!-- Item 4: Ebtedayi Samaponi Certificate -->
       <div class="cert-card">
         <div class="cert-img-wrapper">
-          <span class="badge-tag">Volunteerism</span>
-          <img src="https://picsum.photos/600/400?random=104" alt="Certificate">
+          <span class="badge-tag">Board Certificate</span>
+          <img src="cert-4.jpg" alt="Ebtedayi Samaponi Certificate 2019">
         </div>
         <div class="cert-info">
-          <h3>Social & Club Leadership</h3>
-          <p>Active participation in community leadership and social work.</p>
+          <h3>Ebtedayi Samaponi Examination 2019</h3>
+          <p>Official Primary Board Examination Certificate issued by Bangladesh Madrasah Education Board, Dhaka.</p>
           <div class="cert-actions">
-            <button onclick="openModal('https://picsum.photos/600/400?random=104')" class="btn-view">View Image</button>
-            <a href="https://drive.google.com/drive/folders/1sJBFofhbd5BLMpqrGbe6EBbbwvChYSjv" target="_blank" class="btn-download">Drive Link</a>
+            <button onclick="openModal('cert-4.jpg')" class="btn-view">View Document</button>
+            <a href="cert-4.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5: BDBO Biology Olympiad -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Olympiad</span>
+          <img src="cert-5.jpg" alt="Biology Olympiad BDBO 2026">
+        </div>
+        <div class="cert-info">
+          <h3>BDBO Biology Olympiad 2026</h3>
+          <p>Certificate of Participation in Bangladesh Biology Olympiad held at BUET for Dhaka South Region.</p>
+          <div class="cert-actions">
+            <button onclick="openModal('cert-5.jpg')" class="btn-view">View Document</button>
+            <a href="cert-5.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6: DRMC National Islamic Cultural Festival -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">National</span>
+          <img src="cert-6.jpg" alt="3rd DRMC National Cultural Festival">
+        </div>
+        <div class="cert-info">
+          <h3>3rd DRMC National Cultural Festival 2026</h3>
+          <p>Certificate of Participation organized by Dhaka Residential Model College Islamic Cultural Club.</p>
+          <div class="cert-actions">
+            <button onclick="openModal('cert-6.jpg')" class="btn-view">View Document</button>
+            <a href="cert-6.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 7: DCCC National Cultural Fiesta Participation -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Cultural</span>
+          <img src="cert-7.jpg" alt="3rd DCCC National Cultural Fiesta">
+        </div>
+        <div class="cert-info">
+          <h3>3rd DCCC National Cultural Fiesta 2025</h3>
+          <p>Recognized for active participation and creative involvement at Dhaka College Cultural Club.</p>
+          <div class="cert-actions">
+            <button onclick="openModal('cert-7.jpg')" class="btn-view">View Document</button>
+            <a href="cert-7.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 8: DCCC Volunteer Service Certificate -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Volunteer</span>
+          <img src="cert-8.jpg" alt="DCCC Volunteer Award">
+        </div>
+        <div class="cert-info">
+          <h3>DCCC National Fiesta Volunteer Service</h3>
+          <p>Certificate of Appreciation awarded for enthusiastic volunteer leadership during the 3rd DCCC Fiesta.</p>
+          <div class="cert-actions">
+            <button onclick="openModal('cert-8.jpg')" class="btn-view">View Document</button>
+            <a href="cert-8.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 9: RETINA Academic Care -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Recognition</span>
+          <img src="cert-9.jpg" alt="RETINA Certificate of Appreciation">
+        </div>
+        <div class="cert-info">
+          <h3>RETINA Academic Care GPA 5.00 Award</h3>
+          <p>Certificate of Appreciation honoring stellar academic performance in SSC/Dakhil Examination 2025.</p>
+          <div class="cert-actions">
+            <button onclick="openModal('cert-9.jpg')" class="btn-view">View Document</button>
+            <a href="cert-9.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 10: Mizan's Care Smart English -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Language</span>
+          <img src="cert-10.jpg" alt="Mizans Care Certificate">
+        </div>
+        <div class="cert-info">
+          <h3>Mizan's Care SSC Smart English Course</h3>
+          <p>Certificate of Appreciation for successfully completing the English training course.</p>
+          <div class="cert-actions">
+            <button onclick="openModal('cert-10.jpg')" class="btn-view">View Document</button>
+            <a href="cert-10.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+      <!-- 1. Dakhil Academic Transcript -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">GPA 5.00</span>
+          <img src="images/dakhil-transcript.jpg" alt="Dakhil Academic Transcript 2025">
+        </div>
+        <div class="cert-info">
+          <h3>Dakhil Examination - 2025 Transcript</h3>
+          <p>Official Academic Transcript in Science Group with GPA 5.00 from Madrasah Education Board Dhaka[cite: 26].</p>
+          <div class="cert-actions">
+            <button onclick="openModal('images/dakhil-transcript.jpg')" class="btn-view">View Document</button>
+            <a href="images/dakhil-transcript.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. National Knowledge Carnival -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Competition</span>
+          <img src="images/nkc-season5.jpg" alt="National Knowledge Carnival Season 5">
+        </div>
+        <div class="cert-info">
+          <h3>National Knowledge Carnival - Season 5</h3>
+          <p>Certificate of Participation in Biology Quiz organized by Let's Know The World[cite: 27].</p>
+          <div class="cert-actions">
+            <button onclick="openModal('images/nkc-season5.jpg')" class="btn-view">View Certificate</button>
+            <a href="images/NKC5 Participation Certificate (6).pdf" target="_blank" class="btn-download">PDF Link</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Science Spark Workshop -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Workshop</span>
+          <img src="images/science-spark-human-rights.jpg" alt="Science Spark Workshop Certificate">
+        </div>
+        <div class="cert-info">
+          <h3>Human Rights & Freedoms Workshop</h3>
+          <p>Certificate of Participation organized by Science Spark in collaboration with TREK[cite: 28].</p>
+          <div class="cert-actions">
+            <button onclick="openModal('images/science-spark-human-rights.jpg')" class="btn-view">View Certificate</button>
+            <a href="images/Certificate - MAHBUBUR RAHMAN MUSA.pdf" target="_blank" class="btn-download">PDF Link</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Jhalokathi N S Kamil Madrasa Crest -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Honor Crest</span>
+          <img src="images/jhalokathi-madrasa-crest.jpg" alt="Jhalokathi NS Kamil Madrasa Crest">
+        </div>
+        <div class="cert-info">
+          <h3>Jhalokathi N S Kamil Madrasa Crest</h3>
+          <p>Honorary crest awarded for outstanding A+ performance in Dakhil Examination 2025[cite: 29].</p>
+          <div class="cert-actions">
+            <button onclick="openModal('images/jhalokathi-madrasa-crest.jpg')" class="btn-view">View Crest</button>
+            <a href="images/jhalokathi-madrasa-crest.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Shikho & Prothom Alo Crest -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Merit Crest</span>
+          <img src="images/shikho-prothomalo-crest.jpg" alt="Shikho Prothom Alo Crest">
+        </div>
+        <div class="cert-info">
+          <h3>Shikho & Prothom Alo GPA-5 Crest</h3>
+          <p>Official crest presented at the nationwide GPA-5 student reception 2025[cite: 30].</p>
+          <div class="cert-actions">
+            <button onclick="openModal('images/shikho-prothomalo-crest.jpg')" class="btn-view">View Crest</button>
+            <a href="images/shikho-prothomalo-crest.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Chhatrashibir Songbordhona Crest & Cert -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Award & Crest</span>
+          <img src="images/shibir-songbordhona-crest.jpg" alt="Chhatrashibir Reception Crest">
+        </div>
+        <div class="cert-info">
+          <h3>Chhatrashibir A+ Reception Crest</h3>
+          <p>Commemorative flame crest and Certificate of Achievement for SSC/Dakhil 2025[cite: 31].</p>
+          <div class="cert-actions">
+            <button onclick="openModal('images/shibir-songbordhona-crest.jpg')" class="btn-view">View Photo</button>
+            <a href="images/shibir-songbordhona-crest.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. RETINA Academic Care Crest & Cert -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Care Crest</span>
+          <img src="images/retina-crest-certificate.jpg" alt="RETINA Crest and Certificate">
+        </div>
+        <div class="cert-info">
+          <h3>RETINA GPA 5.00 Award & Crest</h3>
+          <p>Special star crest and Certificate of Appreciation for achieving GPA 5.00[cite: 32].</p>
+          <div class="cert-actions">
+            <button onclick="openModal('images/retina-crest-certificate.jpg')" class="btn-view">View Photo</button>
+            <a href="images/retina-crest-certificate.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Barishal Auditorium Reception Moment -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Moment</span>
+          <img src="images/barishal-auditorium-reception.jpg" alt="Barishal Auditorium Reception">
+        </div>
+        <div class="cert-info">
+          <h3>GPA-5 Reception Hall Moment</h3>
+          <p>Photo highlight with crest and flowers at Barishal Mahanagar Auditorium reception[cite: 33].</p>
+          <div class="cert-actions">
+            <button onclick="openModal('images/barishal-auditorium-reception.jpg')" class="btn-view">View Moment</button>
+            <a href="images/barishal-auditorium-reception.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Gift Books & Reception Credentials -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Gifts</span>
+          <img src="images/reception-gifts-books.jpg" alt="Reception Gift Books and Memorabilia">
+        </div>
+        <div class="cert-info">
+          <h3>Reception Gift Books & Badges</h3>
+          <p>Memorabilia, books, keychain, and certificates received at student honors event[cite: 34].</p>
+          <div class="cert-actions">
+            <button onclick="openModal('images/reception-gifts-books.jpg')" class="btn-view">View Moment</button>
+            <a href="images/reception-gifts-books.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. RETINA Stage Moment -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Stage Moment</span>
+          <img src="images/retina-stage-moment.jpg" alt="RETINA Stage Moment and Gift Pack">
+        </div>
+        <div class="cert-info">
+          <h3>RETINA Honors Event Gift Pack</h3>
+          <p>On-stage event view with crest, gift vouchers, pen, and certificate folder[cite: 35].</p>
+          <div class="cert-actions">
+            <button onclick="openModal('images/retina-stage-moment.jpg')" class="btn-view">View Moment</button>
+            <a href="images/retina-stage-moment.jpg" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Placeholder Item 11 (For future uploads) -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Upcoming</span>
+          <img src="https://picsum.photos/600/400?random=111" alt="Future Certificate">
+        </div>
+        <div class="cert-info">
+          <h3>Achievement Certificate Placeholder</h3>
+          <p>Reserved card slot ready for adding new achievements or club credentials.</p>
+          <div class="cert-actions">
+            <button onclick="openModal('https://picsum.photos/600/400?random=111')" class="btn-view">View Document</button>
+            <a href="#" download class="btn-download">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Placeholder Item 12 (For future uploads) -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Upcoming</span>
+          <img src="https://picsum.photos/600/400?random=112" alt="Future Certificate">
+        </div>
+        <div class="cert-info">
+          <h3>Achievement Certificate Placeholder</h3>
+          <p>Reserved card slot ready for adding new achievements or club credentials.</p>
+          <div class="cert-actions">
+            <button onclick="openModal('https://picsum.photos/600/400?random=112')" class="btn-view">View Document</button>
+            <a href="#" download class="btn-download">Download</a>
           </div>
         </div>
       </div>
