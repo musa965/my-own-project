@@ -905,26 +905,56 @@
    <!-- 5. SKILLS & PROJECT METHOD -->
 <!-- ==================== SKILLS & PROJECT METHOD SECTION ==================== -->
 <section class="skills-method-section">
-  <div class="skills-method-container">
-    
-    <!-- Left Card: Tech & Soft Skills -->
-    <div class="sm-card">
-      <h2 class="sm-title">Tech Stack & Skills</h2>
-      <p class="sm-subtitle">Technologies, tools, and social core values I believe in.</p>
+  <!-- Categorized Skills Grid -->
+<div class="skills-categorized-container">
 
-      <div class="skills-badge-grid">
-        <div class="skill-badge"><span class="badge-icon">🌐</span> HTML5</div>
-        <div class="skill-badge"><span class="badge-icon">🎨</span> CSS3</div>
-        <div class="skill-badge"><span class="badge-icon">⚡</span> JavaScript</div>
-        <div class="skill-badge"><span class="badge-icon">💻</span> C Programming</div>
-        <div class="skill-badge"><span class="badge-icon">🚀</span> GitHub Pages</div>
-        <div class="skill-badge"><span class="badge-icon">📐</span> Static Web Design</div>
-        <div class="skill-badge"><span class="badge-icon">🤖</span> AI Automation</div>
-        <div class="skill-badge"><span class="badge-icon">🤝</span> Volunteerism</div>
-        <div class="skill-badge"><span class="badge-icon">🌱</span> Social Work</div>
-      </div>
+  <!-- 1. Technical Skills -->
+  <div class="skill-category">
+    <h4 class="category-title">💻 Technical & Tools</h4>
+    <div class="skills-badge-grid">
+      <div class="skill-badge"><span class="badge-icon">🌐</span> HTML5</div>
+      <div class="skill-badge"><span class="badge-icon">🎨</span> CSS3</div>
+      <div class="skill-badge"><span class="badge-icon">🐍</span> Python</div>
+      <div class="skill-badge"><span class="badge-icon">🤖</span> AI Prompt Engineering</div>
+      <div class="skill-badge"><span class="badge-icon">✨</span> AI Content Creation</div>
+      <div class="skill-badge"><span class="badge-icon">📄</span> MS Word</div>
+      <div class="skill-badge"><span class="badge-icon">📊</span> MS Excel</div>
     </div>
+  </div>
 
+  <!-- 2. Research & Science -->
+  <div class="skill-category" style="margin-top: 18px;">
+    <h4 class="category-title">🚀 Research & Science</h4>
+    <div class="skills-badge-grid">
+      <div class="skill-badge"><span class="badge-icon">🛰️</span> Aerospace Concepts</div>
+      <div class="skill-badge"><span class="badge-icon">🔥</span> Propulsion Systems</div>
+      <div class="skill-badge"><span class="badge-icon">⚛️</span> Physics Analysis</div>
+      <div class="skill-badge"><span class="badge-icon">📐</span> Mathematical Analysis</div>
+    </div>
+  </div>
+
+  <!-- 3. Soft Skills & Leadership -->
+  <div class="skill-category" style="margin-top: 18px;">
+    <h4 class="category-title">🗣️ Soft Skills & Leadership</h4>
+    <div class="skills-badge-grid">
+      <div class="skill-badge"><span class="badge-icon">🎙️</span> Public Speaking</div>
+      <div class="skill-badge"><span class="badge-icon">💬</span> Communication</div>
+      <div class="skill-badge"><span class="badge-icon">🤝</span> Negotiation</div>
+      <div class="skill-badge"><span class="badge-icon">👥</span> Teamwork</div>
+      <div class="skill-badge"><span class="badge-icon">👑</span> Leadership</div>
+    </div>
+  </div>
+
+  <!-- 4. Community & Social Work -->
+  <div class="skill-category" style="margin-top: 18px;">
+    <h4 class="category-title">🌱 Social Core Values</h4>
+    <div class="skills-badge-grid">
+      <div class="skill-badge"><span class="badge-icon">🤝</span> Volunteerism</div>
+      <div class="skill-badge"><span class="badge-icon">🌿</span> Social Work</div>
+    </div>
+  </div>
+
+</div>
     <!-- Right Card: Project Method -->
     <div class="sm-card">
       <h2 class="sm-title">Project Workflow</h2>
@@ -1075,6 +1105,20 @@
     line-height: 1.4;
     margin: 0;
   }
+    .category-title {
+  color: #38ef7d;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skills-badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 </style>
     <!-- 6. c2: BLOG SECTION -->
    <!-- ==================== BLOG SECTION ==================== -->
