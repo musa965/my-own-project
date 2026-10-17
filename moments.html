@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Campus & Moments | Musa Archive</title>
+  <title>Special Moments & Gallery | Musa Archive</title>
   <style>
     * {
       box-sizing: border-box;
@@ -51,11 +51,11 @@
 
     .header-title {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
     }
 
     .header-title h1 {
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       color: #f0f6fc;
       margin-bottom: 8px;
     }
@@ -73,7 +73,7 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 22px;
     }
 
     .gallery-card {
@@ -83,6 +83,8 @@
       border-radius: 14px;
       overflow: hidden;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
       transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -92,10 +94,19 @@
       box-shadow: 0 12px 30px rgba(56, 239, 125, 0.15);
     }
 
+    .gallery-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      background: #010409;
+      overflow: hidden;
+    }
+
     .gallery-img {
       width: 100%;
-      height: 260px;
+      height: 100%;
       object-fit: cover;
+      object-position: center;
       display: block;
       transition: transform 0.5s ease;
     }
@@ -104,7 +115,7 @@
       transform: scale(1.08);
     }
 
-    /* Hover Overlay Tag & Caption */
+    /* Hover Overlay & Caption */
     .card-overlay {
       position: absolute;
       bottom: 0;
@@ -133,6 +144,7 @@
       color: #f0f6fc;
       font-size: 0.95rem;
       font-weight: 600;
+      margin-top: 2px;
     }
 
     .card-date {
@@ -158,6 +170,7 @@
       border-radius: 10px;
       border: 2px solid #38ef7d;
       box-shadow: 0 0 35px rgba(56, 239, 125, 0.3);
+      object-fit: contain;
     }
 
     .close-modal {
@@ -181,54 +194,180 @@
 
     <!-- Header Title -->
     <div class="header-title">
-      <h1>Campus & <span>Moments</span></h1>
-      <p>Photo highlights from Dhaka College, events, and academic memories.</p>
+      <h1>Special <span>Moments & Gallery</span></h1>
+      <p>A visual archive of campus programs, leadership events, awards, and memorable moments.</p>
     </div>
 
-    <!-- Gallery Grid (Add as many cards as you like) -->
+    <!-- Gallery Grid -->
     <div class="gallery-grid">
 
-      <!-- Photo Card 1 -->
-      <div class="gallery-card" onclick="openModal('https://picsum.photos/800/600?random=201')">
-        <img src="https://picsum.photos/800/600?random=201" alt="Dhaka College Campus" class="gallery-img">
-        <div class="card-overlay">
-          <span class="tag">Dhaka College</span>
-          <div class="card-caption">Main Academic Building</div>
-          <div class="card-date">Academic Life</div>
+      <!-- Moment 1: Leading Class Design -->
+      <div class="gallery-card" onclick="openModal('https://i.ibb.co.com/HpRgbB78/Screenshot-2026-10-18-022049.png')">
+        <div class="gallery-img-wrapper">
+          <img src="https://i.ibb.co.com/HpRgbB78/Screenshot-2026-10-18-022049.png" alt="Leading Class Design" class="gallery-img">
+          <div class="card-overlay">
+            <span class="tag">Leadership</span>
+            <div class="card-caption">Leading Class Design & Interactive Session</div>
+            <div class="card-date">Academic Life</div>
+          </div>
         </div>
       </div>
 
-      <!-- Photo Card 2 -->
-      <div class="gallery-card" onclick="openModal('https://picsum.photos/800/600?random=202')">
-        <img src="https://picsum.photos/800/600?random=202" alt="Science Club Event" class="gallery-img">
-        <div class="card-overlay">
-          <span class="tag">Event</span>
-          <div class="card-caption">Science Club Fest & Exhibition</div>
-          <div class="card-date">Club Highlights</div>
+      <!-- Moment 2: Special Achievement Moment -->
+      <div class="gallery-card" onclick="openModal('https://i.ibb.co.com/GfRnCYDg/Screenshot-2026-10-18-022149.png')">
+        <div class="gallery-img-wrapper">
+          <img src="https://i.ibb.co.com/GfRnCYDg/Screenshot-2026-10-18-022149.png" alt="Special Achievement" class="gallery-img">
+          <div class="card-overlay">
+            <span class="tag">Achievement</span>
+            <div class="card-caption">Proud Achievement & Honors Moment</div>
+            <div class="card-date">Recognition</div>
+          </div>
         </div>
       </div>
 
-      <!-- Photo Card 3 -->
-      <div class="gallery-card" onclick="openModal('https://picsum.photos/800/600?random=203')">
-        <img src="https://picsum.photos/800/600?random=203" alt="Friends & Classmates" class="gallery-img">
-        <div class="card-overlay">
-          <span class="tag">Memories</span>
-          <div class="card-caption">Classmates & Campus Hangout</div>
-          <div class="card-date">Friends & Fun</div>
+      <!-- Moment 3: Special Achievement with Mam -->
+      <div class="gallery-card" onclick="openModal('https://i.ibb.co.com/C32XjVJy/Screenshot-2026-10-18-021233.png')">
+        <div class="gallery-img-wrapper">
+          <img src="https://i.ibb.co.com/C32XjVJy/Screenshot-2026-10-18-021233.png" alt="Best Achievement with Mam" class="gallery-img">
+          <div class="card-overlay">
+            <span class="tag">Honors</span>
+            <div class="card-caption">Special Achievement Honor with Teacher</div>
+            <div class="card-date">Academic Memory</div>
+          </div>
         </div>
       </div>
 
-      <!-- Photo Card 4 -->
-      <div class="gallery-card" onclick="openModal('https://picsum.photos/800/600?random=204')">
-        <img src="https://picsum.photos/800/600?random=204" alt="Social Work" class="gallery-img">
-        <div class="card-overlay">
-          <span class="tag">Social Work</span>
-          <div class="card-caption">Volunteerism & Community Work</div>
-          <div class="card-date">Social Service</div>
+      <!-- Moment 4: CA Program -->
+      <div class="gallery-card" onclick="openModal('https://i.ibb.co.com/whGq58By/Screenshot-2026-10-18-015020.png')">
+        <div class="gallery-img-wrapper">
+          <img src="https://i.ibb.co.com/whGq58By/Screenshot-2026-10-18-015020.png" alt="CA Program" class="gallery-img">
+          <div class="card-overlay">
+            <span class="tag">Event</span>
+            <div class="card-caption">CA Program & Session Highlights</div>
+            <div class="card-date">Campus Event</div>
+          </div>
         </div>
       </div>
 
-      <!-- আরও ১৫-২০টি ছবি যোগ করতে ওপরের .gallery-card অংশটুকু কপি করে নিচে পেস্ট করুন -->
+      <!-- Moment 5: Eco Warriors Fest (Dhaka College) -->
+      <div class="gallery-card" onclick="openModal('https://i.ibb.co.com/CsKn6bqg/Screenshot-2026-10-18-015036.png')">
+        <div class="gallery-img-wrapper">
+          <img src="https://i.ibb.co.com/CsKn6bqg/Screenshot-2026-10-18-015036.png" alt="Eco Warriors Fest DC" class="gallery-img">
+          <div class="card-overlay">
+            <span class="tag">Dhaka College</span>
+            <div class="card-caption">Eco Warriors Fest at Dhaka College</div>
+            <div class="card-date">Campus Life</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Moment 6: Campus Cleaning Program -->
+      <div class="gallery-card" onclick="openModal('https://i.ibb.co.com/J8W0Zs1/Screenshot-2026-10-18-015050.png')">
+        <div class="gallery-img-wrapper">
+          <img src="https://i.ibb.co.com/J8W0Zs1/Screenshot-2026-10-18-015050.png" alt="Campus Cleaning Program" class="gallery-img">
+          <div class="card-overlay">
+            <span class="tag">Social Work</span>
+            <div class="card-caption">Campus Cleaning Drive & Social Service</div>
+            <div class="card-date">Volunteer Activity</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Moment 7: Eco Warriors Program -->
+      <div class="gallery-card" onclick="openModal('https://i.ibb.co.com/93rmBHp3/Screenshot-2026-10-18-015526.png')">
+        <div class="gallery-img-wrapper">
+          <img src="https://i.ibb.co.com/93rmBHp3/Screenshot-2026-10-18-015526.png" alt="Eco Warriors Main Program" class="gallery-img">
+          <div class="card-overlay">
+            <span class="tag">Environment</span>
+            <div class="card-caption">Eco Warriors Main Event Program</div>
+            <div class="card-date">Club Highlights</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Moment 8: DCCC Cultural Fest Volunteer -->
+      <div class="gallery-card" onclick="openModal('https://i.ibb.co.com/DjRTx5r/Screenshot-2026-10-18-021257.png')">
+        <div class="gallery-img-wrapper">
+          <img src="https://i.ibb.co.com/DjRTx5r/Screenshot-2026-10-18-021257.png" alt="DCCC Volunteer Moment" class="gallery-img">
+          <div class="card-overlay">
+            <span class="tag">Volunteer</span>
+            <div class="card-caption">DCCC National Cultural Fiesta Leadership</div>
+            <div class="card-date">Active Volunteer</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Moment 9: Olympiad Participation Moment -->
+      <div class="gallery-card" onclick="openModal('https://i.ibb.co.com/SX3LjCjZ/Screenshot-2026-10-18-021340.png')">
+        <div class="gallery-img-wrapper">
+          <img src="https://i.ibb.co.com/SX3LjCjZ/Screenshot-2026-10-18-021340.png" alt="Olympiad Moment" class="gallery-img">
+          <div class="card-overlay">
+            <span class="tag">Olympiad</span>
+            <div class="card-caption">National Olympiad Event Moment</div>
+            <div class="card-date">Competition</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Moment 10: Quiz Fest Event -->
+      <div class="gallery-card" onclick="openModal('https://i.ibb.co.com/dsfHhJnn/Screenshot-2026-10-18-015638.png')">
+        <div class="gallery-img-wrapper">
+          <img src="https://i.ibb.co.com/dsfHhJnn/Screenshot-2026-10-18-015638.png" alt="Quiz Fest Event" class="gallery-img">
+          <div class="card-overlay">
+            <span class="tag">Quiz Fest</span>
+            <div class="card-caption">National Quiz Carnival & Competition</div>
+            <div class="card-date">Academic Fest</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Moment 11: Guidance Fest Program -->
+      <div class="gallery-card" onclick="openModal('https://i.ibb.co.com/4ZtTx8Mg/Screenshot-2026-10-18-015400.png')">
+        <div class="gallery-img-wrapper">
+          <img src="https://i.ibb.co.com/4ZtTx8Mg/Screenshot-2026-10-18-015400.png" alt="Guidance Fest Program" class="gallery-img">
+          <div class="card-overlay">
+            <span class="tag">Guidance</span>
+            <div class="card-caption">Career Guidance & Seminar Event</div>
+            <div class="card-date">Academic Session</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Moment 12: Dhaka College Gallery View -->
+      <div class="gallery-card" onclick="openModal('https://i.ibb.co.com/mVyrF8MC/Screenshot-2026-10-18-015254.png')">
+        <div class="gallery-img-wrapper">
+          <img src="https://i.ibb.co.com/mVyrF8MC/Screenshot-2026-10-18-015254.png" alt="Dhaka College Gallery View" class="gallery-img">
+          <div class="card-overlay">
+            <span class="tag">Dhaka College</span>
+            <div class="card-caption">Dhaka College Gallery & Moments</div>
+            <div class="card-date">Campus Memories</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Moment 13: RETINA Reception Moment -->
+      <div class="gallery-card" onclick="openModal('https://i.ibb.co.com/FqLYxKyw/Screenshot-2026-10-18-015314.png')">
+        <div class="gallery-img-wrapper">
+          <img src="https://i.ibb.co.com/FqLYxKyw/Screenshot-2026-10-18-015314.png" alt="RETINA Reception Moment" class="gallery-img">
+          <div class="card-overlay">
+            <span class="tag">Reception</span>
+            <div class="card-caption">RETINA Student Reception & Honor</div>
+            <div class="card-date">Stage Moment</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Moment 14: Chhatrashibir Program Moment -->
+      <div class="gallery-card" onclick="openModal('https://i.ibb.co.com/BVtw4Y3j/Screenshot-2026-10-18-015343.png')">
+        <div class="gallery-img-wrapper">
+          <img src="https://i.ibb.co.com/BVtw4Y3j/Screenshot-2026-10-18-015343.png" alt="Chhatrashibir Program" class="gallery-img">
+          <div class="card-overlay">
+            <span class="tag">Event</span>
+            <div class="card-caption">Student Reception Program Highlight</div>
+            <div class="card-date">Honors Event</div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -236,7 +375,7 @@
   <!-- Lightbox Modal -->
   <div id="imageModal" class="modal" onclick="closeModal()">
     <span class="close-modal">&times;</span>
-    <img id="modalImg" src="" alt="Campus Moment View">
+    <img id="modalImg" src="" alt="Special Moment View">
   </div>
 
   <script>
@@ -249,6 +388,5 @@
       document.getElementById('imageModal').style.display = 'none';
     }
   </script>
-
 </body>
 </html>
