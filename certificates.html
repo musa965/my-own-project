@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificates & Achievements | Musa Archive</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0d1117;
+      color: #f0f6fc;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header Navigation */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .back-btn {
+      color: #38ef7d;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid rgba(56, 239, 125, 0.3);
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: rgba(56, 239, 125, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #38ef7d;
+      color: #0d1117;
+      transform: translateX(-4px);
+    }
+
+    .header-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header-title h1 {
+      font-size: 2.5rem;
+      color: #f0f6fc;
+      margin-bottom: 8px;
+    }
+
+    .header-title h1 span {
+      color: #38ef7d;
+    }
+
+    .header-title p {
+      color: #8b949e;
+      font-size: 1rem;
+    }
+
+    /* Certificate Grid Layout */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .cert-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s ease;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-6px);
+      border-color: #38ef7d;
+      box-shadow: 0 12px 30px rgba(56, 239, 125, 0.15);
+    }
+
+    .cert-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background: #010409;
+      overflow: hidden;
+    }
+
+    .cert-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .cert-card:hover .cert-img-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .badge-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(13, 17, 23, 0.85);
+      border: 1px solid #38ef7d;
+      color: #38ef7d;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+    }
+
+    .cert-info {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .cert-info h3 {
+      font-size: 1.1rem;
+      color: #f0f6fc;
+      margin-bottom: 6px;
+    }
+
+    .cert-info p {
+      font-size: 0.85rem;
+      color: #8b949e;
+      margin-bottom: 18px;
+    }
+
+    .cert-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-view, .btn-download {
+      flex: 1;
+      text-align: center;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-view {
+      background: rgba(56, 239, 125, 0.1);
+      color: #38ef7d;
+      border: 1px solid rgba(56, 239, 125, 0.3);
+      cursor: pointer;
+    }
+
+    .btn-view:hover {
+      background: #38ef7d;
+      color: #0d1117;
+    }
+
+    .btn-download {
+      background: #21262d;
+      color: #c9d1d9;
+      border: 1px solid #30363d;
+    }
+
+    .btn-download:hover {
+      background: #30363d;
+      color: #fff;
+    }
+
+    /* Lightbox Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.92);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 10px;
+      border: 2px solid #38ef7d;
+      box-shadow: 0 0 35px rgba(56, 239, 125, 0.3);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #38ef7d;
+      font-size: 2.5rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="top-bar">
+      <a href="index.html" class="back-btn">← Back to Portfolio</a>
+    </div>
+
+    <div class="header-title">
+      <h1>Certificates & <span>Achievements</span></h1>
+      <p>Verified certificates, competitive recognitions, and club credentials.</p>
+    </div>
+
+    <div class="cert-grid">
+
+      <!-- Certificate Item 1 -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Verified</span>
+          <img src="https://picsum.photos/600/400?random=101" alt="Certificate">
+        </div>
+        <div class="cert-info">
+          <h3>Web Development & Design</h3>
+          <p>Certificate of Excellence in Modern Web Architecture.</p>
+          <div class="cert-actions">
+            <button onclick="openModal('https://picsum.photos/600/400?random=101')" class="btn-view">View Image</button>
+            <a href="https://drive.google.com/drive/folders/1sJBFofhbd5BLMpqrGbe6EBbbwvChYSjv" target="_blank" class="btn-download">Drive Link</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate Item 2 -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Academic</span>
+          <img src="https://picsum.photos/600/400?random=102" alt="Certificate">
+        </div>
+        <div class="cert-info">
+          <h3>Dhaka College Recognition</h3>
+          <p>Official Academic & Science Competition Credentials.</p>
+          <div class="cert-actions">
+            <button onclick="openModal('https://picsum.photos/600/400?random=102')" class="btn-view">View Image</button>
+            <a href="https://drive.google.com/drive/folders/1sJBFofhbd5BLMpqrGbe6EBbbwvChYSjv" target="_blank" class="btn-download">Drive Link</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate Item 3 -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">ICT Award</span>
+          <img src="https://picsum.photos/600/400?random=103" alt="Certificate">
+        </div>
+        <div class="cert-info">
+          <h3>Programming & Logic</h3>
+          <p>C Programming & ICT Olympiad Accomplishments.</p>
+          <div class="cert-actions">
+            <button onclick="openModal('https://picsum.photos/600/400?random=103')" class="btn-view">View Image</button>
+            <a href="https://drive.google.com/drive/folders/1sJBFofhbd5BLMpqrGbe6EBbbwvChYSjv" target="_blank" class="btn-download">Drive Link</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate Item 4 -->
+      <div class="cert-card">
+        <div class="cert-img-wrapper">
+          <span class="badge-tag">Volunteerism</span>
+          <img src="https://picsum.photos/600/400?random=104" alt="Certificate">
+        </div>
+        <div class="cert-info">
+          <h3>Social & Club Leadership</h3>
+          <p>Active participation in community leadership and social work.</p>
+          <div class="cert-actions">
+            <button onclick="openModal('https://picsum.photos/600/400?random=104')" class="btn-view">View Image</button>
+            <a href="https://drive.google.com/drive/folders/1sJBFofhbd5BLMpqrGbe6EBbbwvChYSjv" target="_blank" class="btn-download">Drive Link</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Fullscreen Modal -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close-modal">&times;</span>
+    <img id="modalImg" src="" alt="Certificate Large View">
+  </div>
+
+  <script>
+    function openModal(imgSrc) {
+      document.getElementById('modalImg').src = imgSrc;
+      document.getElementById('imageModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
