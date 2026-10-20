@@ -79,7 +79,10 @@
             font-size: 0.9rem;
         }
 
-        /* 2. Hero Section Style (Bento & Modern UI) */
+
+        
+
+        /* 2. m2: Hero Section Style */
         .hero {
             display: flex;
             justify-content: space-between;
@@ -89,58 +92,29 @@
         }
 
         .hero-left {
-            max-width: 650px;
+            max-width: 600px;
         }
 
-        .status-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
+        .badge {
+            color: #00e6a8;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .hero-left h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
             margin-bottom: 20px;
         }
 
-        .status-badge {
-            background: rgba(0, 230, 168, 0.1);
-            border: 1px solid rgba(0, 230, 168, 0.3);
-            color: #00e6a8;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 600;
-        }
-
-        .location-time {
+        .hero-left p {
             color: #94a3b8;
-            font-size: 0.82rem;
-            font-weight: 500;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 6px 12px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .hero-name {
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -0.5px;
-            margin-bottom: 18px;
-            color: #ffffff;
-        }
-
-        .highlight-text {
-            color: #00e6a8;
-            background: linear-gradient(90deg, #00e6a8, #38ef7d);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-bio {
-            color: #94a3b8;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 28px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
         }
 
         .hero-btns {
@@ -166,32 +140,8 @@
             font-weight: bold;
         }
 
-        .hero-stats {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-top: 35px;
-            padding-top: 25px;
-            border-top: 1px solid #1e2f47;
-        }
-
-        .stat-item h4 {
-            font-size: 1.5rem;
-            color: #00e6a8;
-            font-weight: 800;
-            margin: 0;
-        }
-
-        .stat-item p {
-            font-size: 0.8rem;
-            color: #64748b;
-            margin: 0;
-        }
-
-        .stat-divider {
-            width: 1px;
-            height: 35px;
-            background: #1e2f47;
+        .hero-right {
+            position: relative;
         }
 
         .profile-card {
@@ -201,12 +151,6 @@
             border-radius: 12px;
             width: 320px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 230, 168, 0.12);
-            transition: transform 0.4s ease;
-        }
-
-        .profile-card:hover {
-            transform: translateY(-8px);
         }
 
         .profile-img {
@@ -215,13 +159,6 @@
             object-fit: cover;
             border-radius: 8px;
             background-color: #1a2c45;
-        }
-
-        .profile-tag {
-            margin-top: 12px;
-            font-size: 0.85rem;
-            color: #a2b4c7;
-            font-weight: 600;
         }
 
         /* Global Section Layout */
@@ -243,7 +180,7 @@
             text-transform: uppercase;
         }
 
-        /* Info Cards */
+        /* 3. Info Cards (About, Contact, Focus) */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -280,17 +217,185 @@
         .info-card p, .info-card ul {
             color: #94a3b8;
             font-size: 0.95rem;
+        }
+
+        .info-card ul {
             list-style: none;
         }
 
-        /* Project Cards Hover */
-        .project-card:hover {
-            transform: translateY(-6px);
-            border-color: #64ffda !important;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        /* 4. Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
         }
 
-        /* Contact Form */
+        .project-card {
+            background-color: #111e30;
+            border: 1px solid #1e2f47;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background-color: #172a45;
+            color: #00e6a8;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .project-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* 5. Skills & Method */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .skills-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .pill {
+            background-color: #172a45;
+            color: #00e6a8;
+            border: 1px solid #233b5d;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .method-step {
+            margin-bottom: 15px;
+        }
+
+        .method-step h5 {
+            font-size: 1rem;
+            color: #ffffff;
+        }
+
+        .method-step p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* 6. c2: Blog Section */
+        .blog-section {
+            padding: 50px 6%;
+            background-color: #0d1829;
+            border-top: 1px solid #1e2d42;
+            border-bottom: 1px solid #1e2d42;
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .primary-card {
+            background: #111e30;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #1e2f47;
+        }
+
+        .primary-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .secondary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .small-card {
+            background: #111e30;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #1e2f47;
+        }
+
+        .small-card img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            color: #ffc107;
+            font-size: 0.8rem;
+        }
+
+        .read-more {
+            color: #00e6a8;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* 7. Contributors Section */
+        .contributors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .contributor-card {
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 150px;
+            color: #ffffff;
+        }
+
+        .bg-green {
+            background-color: #0d5c46;
+            border: 1px solid #138a69;
+        }
+
+        .bg-pink {
+            background-color: #8b1e4b;
+            border: 1px solid #b82864;
+        }
+
+        .contributor-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .contributor-card p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* 8. c1: Contact Form Section */
         .contact-section {
             padding: 50px 6%;
             background-color: #0b1320;
@@ -356,7 +461,7 @@
             margin-top: 10px;
         }
 
-        /* Footer */
+        /* 9. Footer */
         footer {
             background-color: #080d17;
             padding: 40px 6% 20px 6%;
@@ -393,11 +498,13 @@
             margin-bottom: 6px;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero, .form-row {
+            .hero, .two-col, .blog-container, .form-row {
                 flex-direction: column;
+                grid-template-columns: 1fr;
             }
-            .hero-name {
+            .hero-left h1 {
                 font-size: 2.5rem;
             }
         }
@@ -405,104 +512,133 @@
 </head>
 <body>
 
-    <!-- 1. NAVIGATION BAR -->
-    <header>
-        <div class="logo-container">
-            <div class="logo-icon">M</div>
-            <div class="logo-text">Musa OWN VISION</div>
+
+   <!-- 1. NAVIGATION BAR WITH SECTIONS, EN/BN & THEME TOGGLE -->
+<header id="main-header">
+    <div class="logo-container">
+        <div class="logo-icon">M</div>
+        <div class="logo-text">Musa OWN VISION</div>
+    </div>
+    <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#academic">Academic</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right-controls" style="display: flex; align-items: center; gap: 10px;">
+        <!-- Language Switcher -->
+        <div class="lang-switch" style="background: #112240; border: 1px solid #233554; border-radius: 20px; padding: 4px 8px; display: flex; gap: 5px; cursor: pointer;">
+            <span onclick="setLanguage('en')" id="en-btn" style="color: #64ffda; font-size: 12px; font-weight: bold; padding: 2px 6px; border-radius: 10px; background: rgba(100,255,218,0.1);">EN</span>
+            <span onclick="setLanguage('bn')" id="bn-btn" style="color: #8892b0; font-size: 12px; font-weight: bold; padding: 2px 6px; border-radius: 10px;">BN</span>
         </div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#blogs">Blogs</a>
-            <a href="#contact">Contact</a>
-            <a href="#" class="active">Developer</a>
-        </nav>
+        <!-- Theme Toggle (Moon Icon) -->
+        <button onclick="toggleTheme()" id="theme-toggle-btn" style="background: #112240; border: 1px solid #233554; color: #64ffda; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 16px;" title="Toggle Theme">
+            🌙
+        </button>
         <a href="#" class="lang-btn">বাংলা</a>
-    </header>
+    </div>
+</header>
 
-    <!-- 2. HERO SECTION (World-Class Bento Style) -->
-    <section class="hero">
-        <div class="hero-left">
-            <div class="status-container">
-                <span class="status-badge">🟢 Open for Global Academic & Tech Opportunities</span>
-                <span class="location-time" id="live-clock">📍 Dhaka, BD — --:--:--</span>
-            </div>
 
-            <h1 class="hero-name">MAHBUBUR RAHMAN <span class="highlight-text">MUSA</span></h1>
-            <p class="hero-bio">
-                Science Student at <strong>Dhaka College</strong>. Building a scalable web ecosystem, experimental AI tools, and research-focused academic projects for future abroad pursuits.
-            </p>
-
-            <div class="hero-btns">
-                <a href="#projects" class="btn-green">Explore Ecosystem 🚀</a>
-                <a href="https://drive.google.com/drive/folders/1Uory871By_a35StiiOM9cuW-0sST402a?usp=sharing" target="_blank" class="btn-outline">Download CV 📄</a>
-            </div>
-
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <h4>GPA 5.00</h4>
-                    <p>Academic Excellence</p>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <h4>10+</h4>
-                    <p>Certificates & Awards</p>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <h4>7+</h4>
-                    <p>Ecosystem Projects</p>
-                </div>
-            </div>
+  <!-- 2. HERO SECTION (Updated with Live Status, Clock & Original Buttons) -->
+<section class="hero">
+    <div class="hero-left">
+        <!-- Live Status & Dhaka Clock -->
+        <div class="status-container" style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 15px;">
+            <span class="status-badge" style="background: rgba(0, 230, 168, 0.1); border: 1px solid rgba(0, 230, 168, 0.3); color: #00e6a8; padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 600;">🟢 Open for Global Academic & Tech Opportunities</span>
+            <span class="location-time" id="live-clock" style="color: #94a3b8; font-size: 0.82rem; font-weight: 500; background: rgba(255, 255, 255, 0.03); padding: 6px 12px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.08);">📍 Dhaka, BD — --:--:--</span>
         </div>
 
-        <div class="hero-right">
-            <div class="profile-card">
-                <img src="https://i.ibb.co.com/fd0DgBVQ/Whats-App-Image-2026-07-21-at-10-39-09-PM.jpg" alt="Musa Picture" class="profile-img">
-                <div class="profile-tag">
-                    <span>Aspiring Innovator & Researcher</span>
-                </div>
+        <span class="badge">DEVELOPER</span>
+        <h1 style="font-size: 3.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 18px;">MAHBUBUR RAHMAN <span style="color: #00e6a8;">MUSA</span></h1>
+        <p style="color: #94a3b8; font-size: 1.05rem; margin-bottom: 28px;">
+            Student developer from <strong>DHAKA COLLEGE</strong>, building useful my first personal web, personal project systems, and small experimental web applications.
+        </p>
+
+        <!-- Original Action Buttons -->
+        <div class="hero-btns" style="display: flex; gap: 15px;">
+            <a href="https://www.facebook.com/share/1Hy5Lds5ZX/" target="_blank" class="btn-green">Send Message</a>
+            <a href="#projects" class="btn-outline">My Projects</a>
+        </div>
+
+        <!-- Metric Stats Bar (GPA, Certificates, Projects) -->
+        <div class="hero-stats" style="display: flex; align-items: center; gap: 20px; margin-top: 35px; padding-top: 25px; border-top: 1px solid #1e2f47;">
+            <div class="stat-item">
+                <h4 style="font-size: 1.5rem; color: #00e6a8; font-weight: 800; margin: 0;">GPA 5.00</h4>
+                <p style="font-size: 0.8rem; color: #64748b; margin: 0;">Academic Excellence</p>
+            </div>
+            <div style="width: 1px; height: 35px; background: #1e2f47;"></div>
+            <div class="stat-item">
+                <h4 style="font-size: 1.5rem; color: #00e6a8; font-weight: 800; margin: 0;">10+</h4>
+                <p style="font-size: 0.8rem; color: #64748b; margin: 0;">Certificates & Awards</p>
+            </div>
+            <div style="width: 1px; height: 35px; background: #1e2f47;"></div>
+            <div class="stat-item">
+                <h4 style="font-size: 1.5rem; color: #00e6a8; font-weight: 800; margin: 0;">7+</h4>
+                <p style="font-size: 0.8rem; color: #64748b; margin: 0;">Ecosystem Projects</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- 3. INFO CARDS -->
+    <div class="hero-right">
+        <div class="profile-card" style="background-color: #111e30; border: 1px solid #1e2f47; padding: 15px; border-radius: 12px; width: 320px; text-align: center;">
+            <img src="https://i.ibb.co.com/fd0DgBVQ/Whats-App-Image-2026-07-21-at-10-39-09-PM.jpg" alt="Musa Picture" class="profile-img" style="width: 100%; height: 380px; object-fit: cover; border-radius: 8px;">
+        </div>
+    </div>
+</section>
+
+    <!-- 3. INFO CARDS (About, Contact, Focus) -->
+    <!-- 3. INFO CARDS (About, Contact, Focus, Address) -->
     <section class="section">
         <div class="info-grid">
             <div class="info-card">
-                <span class="num-badge">01</span>
-                <h3>About</h3>
-                <div style="font-weight: bold; color: #38ef7d; margin-bottom: 12px;">✨ Mahbubur Rahman Musa ✨</div>
-                <ul>
-                    <li>🔬 <strong>Academic Pursuits:</strong> Science Student at Dhaka College</li>
-                    <li>💻 <strong>Tech Passion:</strong> Aspiring Mini-Developer | Always excited to learn and build new things.</li>
-                    <li>🌍 <strong>True Calling:</strong> Traveling isn't just a hobby for me—it's a lifestyle.</li>
-                    <li>🚫 <strong>Personal Rule:</strong> Politics isn't my thing; I prefer to keep my distance.</li>
-                </ul>
-            </div>
+  <span class="num-badge">01</span>
+  <h3>About</h3>
+  
+  <div class="about-name">
+    ✨ Mahbubur Rahman Musa ✨
+  </div>
+
+  <ul class="about-list">
+    <li>🔬 <strong>Academic Pursuits:</strong> Science Student at Dhaka College</li>
+    <li>💻 <strong>Tech Passion:</strong> Aspiring Mini-Developer | Always excited to learn and build new things.</li>
+    <li>🌍 <strong>True Calling:</strong> Traveling isn't just a hobby for me—it's a lifestyle and a true passion.</li>
+    <li>🚫 <strong>Personal Rule:</strong> Politics isn't my thing; I prefer to keep my distance from it entirely.</li>
+  </ul>
+</div>
             <div class="info-card">
                 <span class="num-badge">02</span>
                 <h3>Contact</h3>
                 <ul>
-                    <li><strong>Email:</strong> mahbuburrahmanmusa99@gmail.com</li>
-                    <li><strong>Phone:</strong> 01737844314</li>
-                    <li><strong>WhatsApp:</strong> 01603359325</li>
-                    <li><strong>College:</strong> Dhaka College (Science)</li>
+                    <li><strong>Email:</strong> <a href="mailto:mahbuburrahmanmusa99@gmail.com" style="color: #00e6a8; text-decoration: none;">mahbuburrahmanmusa99@gmail.com</a></li>
+                    <li><strong>Phone:</strong> <a href="tel:01737844314" style="color: #00e6a8; text-decoration: none;">01737844314</a></li>
+                    <li><strong>WhatsApp:</strong> <a href="https://wa.me/8801603359325" target="_blank" style="color: #00e6a8; text-decoration: none;">01603359325 ↗</a></li>
+                    <li><strong>Teligram:</strong> <a href="https://tel.me/880 1892737488" target="_blank" style="color: #00e6a8; text-decoration: none;">01892737488 ↗</a></li>
+                    <li><strong>Facebook:</strong> <a href="https://www.facebook.com/share/1Hy5Lds5ZX/" target="_blank" style="color: #00e6a8; text-decoration: none;">Facebook Profile ↗</a></li>
+                     <li><strong>Madrasah/School :</strong> Jhalokhati N.S. Kamil Madrasah</li>
+                    <li><strong>College:</strong> Dhaka College</li>
+                    <li><strong>Group:</strong> Science</li>
                 </ul>
             </div>
             <div class="info-card">
                 <span class="num-badge">03</span>
                 <h3>Involvements</h3>
                 <p>Member of Dhaka College Science Club<br>
-                Member of Dhaka College Cultural Club<br>
-                Member of Dhaka College IT Club<br>
-                Member of Dhaka College Math Club</p>
+        Member of Dhaka College Cultural Club<br>
+        Member of Dhaka College IT Club<br>
+        Member of Dhaka College Math Club<br>
+        Member of Eco Warriors<br>
+        Member of Dream On The Way<br>
+        Member of An-Nasru Social Foundation</p>
             </div>
             <div class="info-card">
                 <span class="num-badge">04</span>
                 <h3>Address</h3>
-                <p><strong>Present:</strong> 303 room, International hall, Dhaka College, Dhaka.</p>
+                <ul>
+                    <li style="margin-bottom: 8px;"><strong>Address:</strong> Mohila college road, Rajapur, Jhalokhati, Barishal, Dhaka, Bangladesh.</li>
+                    <li><strong>Present Address:</strong> 303 number room, International hall, Dhaka College, Dhaka, Bangladesh</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -511,73 +647,943 @@
     <section class="section" id="projects">
         <span class="section-tag">FEATURED PROJECTS</span>
         <h2 class="section-title">Website Projects</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 25px 0;">
-            
-            <div class="project-card" style="background: #112240; border: 1px solid #233554; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
-                <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1; gap: 12px;">
-                    <span style="color: #64ffda; font-size: 11px; font-weight: bold;">BLOG</span>
-                    <h3 style="color: #e6f1ff; font-size: 18px; margin: 0;">Personal Blog</h3>
-                    <p style="color: #8892b0; font-size: 14px;">Personal writing, learning notes, and web presence.</p>
-                    <a href="#" style="color: #64ffda; text-decoration: none; font-size: 14px; font-weight: bold;">Live Demo ↗</a>
-                </div>
-            </div>
 
-            <div class="project-card" style="background: #112240; border: 1px solid #233554; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
-                <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1; gap: 12px;">
-                    <span style="color: #64ffda; font-size: 11px; font-weight: bold;">LITERATURE</span>
-                    <h3 style="color: #e6f1ff; font-size: 18px; margin: 0;">Literature Website</h3>
-                    <p style="color: #8892b0; font-size: 14px;">Creative writing and Bangla content project.</p>
-                    <a href="#" style="color: #64ffda; text-decoration: none; font-size: 14px; font-weight: bold;">Live Demo ↗</a>
-                </div>
-            </div>
+<style>
+  .project-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .project-card:hover {
+    transform: translateY(-6px);
+    border-color: #64ffda !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
 
-            <div class="project-card" style="background: #112240; border: 1px solid #233554; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
-                <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1; gap: 12px;">
-                    <span style="color: #64ffda; font-size: 11px; font-weight: bold;">TOOL</span>
-                    <h3 style="color: #e6f1ff; font-size: 18px; margin: 0;">OWN thought</h3>
-                    <p style="color: #8892b0; font-size: 14px;">Upcoming experimental thoughts & ideas hub.</p>
-                    <a href="#" style="color: #64ffda; text-decoration: none; font-size: 14px; font-weight: bold;">Coming Soon ↗</a>
-                </div>
-            </div>
+  /* About Card এর জন্য CSS */
+  .about-name {
+    font-weight: bold;
+    color: #38ef7d;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+  }
 
+  .about-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .about-list li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    color: #c9d1d9;
+  }
+
+  .about-list strong {
+    color: #f0f6fc;
+  }
+</style>
+
+<!-- ২. পুরোনো কার্ডগুলো কেটে এই মেইন কন্টেইনার এবং ৪টি নতুন কার্ড এখানে পেস্ট করুন -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 25px 0;">
+
+    <!-- কার্ড ১: ://blogspot.com -->
+    <div class="project-card" style="background: #112240; border: 1px solid #233554; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="width: 100%; height: 160px; background: #1d2d44; display: flex; align-items: center; justify-content: center; color: #8892b0; border-bottom: 1px solid #233554;">
+            <span style="font-size: 14px; font-weight: 500; color: #64ffda;">💻 Blog Preview</span>
+        </div>
+        <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1; gap: 12px;">
+            <span style="color: #64ffda; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Blog</span>
+            <h3 style="color: #e6f1ff; font-size: 18px; margin: 0; font-weight: bold;">://blogspot.com</h3>
+            <p style="color: #8892b0; font-size: 14px; margin: 0; line-height: 1.5; flex-grow: 1;">Personal writing, learning notes, and web presence.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <span style="font-size: 11px; color: #64ffda; background: rgba(100, 255, 218, 0.08); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(100, 255, 218, 0.2);">HTML</span>
+                <span style="font-size: 11px; color: #64ffda; background: rgba(100, 255, 218, 0.08); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(100, 255, 218, 0.2);">CSS</span>
+            </div>
+            <div style="display: flex; gap: 20px; margin-top: 10px; border-top: 1px solid #233554; padding-top: 15px;">
+                <a href="#" style="color: #64ffda; text-decoration: none; font-size: 14px; font-weight: bold;">Live Demo ↗</a>
+                <a href="#" style="color: #8892b0; text-decoration: none; font-size: 14px;">GitHub 🔗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- কার্ড ২: creative-hub.com -->
+    <div class="project-card" style="background: #112240; border: 1px solid #233554; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="width: 100%; height: 160px; background: #1d2d44; display: flex; align-items: center; justify-content: center; color: #8892b0; border-bottom: 1px solid #233554;">
+            <span style="font-size: 14px; font-weight: 500; color: #64ffda;">✍️ Creative Hub Preview</span>
+        </div>
+        <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1; gap: 12px;">
+            <span style="color: #64ffda; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Literature</span>
+            <h3 style="color: #e6f1ff; font-size: 18px; margin: 0; font-weight: bold;">creative-hub.com</h3>
+            <p style="color: #8892b0; font-size: 14px; margin: 0; line-height: 1.5; flex-grow: 1;">Creative writing and Bangla content project.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <span style="font-size: 11px; color: #64ffda; background: rgba(100, 255, 218, 0.08); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(100, 255, 218, 0.2);">Bootstrap</span>
+                <span style="font-size: 11px; color: #64ffda; background: rgba(100, 255, 218, 0.08); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(100, 255, 218, 0.2);">JS</span>
+            </div>
+            <div style="display: flex; gap: 20px; margin-top: 10px; border-top: 1px solid #233554; padding-top: 15px;">
+                <a href="#" style="color: #64ffda; text-decoration: none; font-size: 14px; font-weight: bold;">Live Demo ↗</a>
+                <a href="#" style="color: #8892b0; text-decoration: none; font-size: 14px;">GitHub 🔗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- কার্ড ৩: OWN thought -->
+    <div class="project-card" style="background: #112240; border: 1px solid #233554; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="width: 100%; height: 160px; background: #1d2d44; display: flex; align-items: center; justify-content: center; color: #8892b0; border-bottom: 1px solid #233554;">
+            <span style="font-size: 14px; font-weight: 500; color: #64ffda;">💡 Coming Soon</span>
+        </div>
+        <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1; gap: 12px;">
+            <span style="color: #64ffda; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Tool</span>
+            <h3 style="color: #e6f1ff; font-size: 18px; margin: 0; font-weight: bold;">OWN thought</h3>
+            <p style="color: #8892b0; font-size: 14px; margin: 0; line-height: 1.5; flex-grow: 1;">Upcoming very soon please wait for some times.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <span style="font-size: 11px; color: #64ffda; background: rgba(100, 255, 218, 0.08); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(100, 255, 218, 0.2);">Next.js</span>
+            </div>
+            <div style="display: flex; gap: 20px; margin-top: 10px; border-top: 1px solid #233554; padding-top: 15px;">
+                <a href="#" style="color: #64ffda; text-decoration: none; font-size: 14px; font-weight: bold;">Live Demo ↗</a>
+                <a href="#" style="color: #8892b0; text-decoration: none; font-size: 14px;">GitHub 🔗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- কার্ড ৪: Personal Website -->
+    <div class="project-card" style="background: #112240; border: 1px solid #233554; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="width: 100%; height: 160px; background: #1d2d44; display: flex; align-items: center; justify-content: center; color: #8892b0; border-bottom: 1px solid #233554;">
+            <span style="font-size: 14px; font-weight: 500; color: #64ffda;">👤 Portfolio Preview</span>
+        </div>
+        <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1; gap: 12px;">
+            <span style="color: #64ffda; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Portfolio</span>
+            <h3 style="color: #e6f1ff; font-size: 18px; margin: 0; font-weight: bold;">Personal Website</h3>
+            <p style="color: #8892b0; font-size: 14px; margin: 0; line-height: 1.5; flex-grow: 1;">Student, result, gallery, and information hub.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <span style="font-size: 11px; color: #64ffda; background: rgba(100, 255, 218, 0.08); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(100, 255, 218, 0.2);">HTML</span>
+                <span style="font-size: 11px; color: #64ffda; background: rgba(100, 255, 218, 0.08); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(100, 255, 218, 0.2);">CSS</span>
+                <span style="font-size: 11px; color: #64ffda; background: rgba(100, 255, 218, 0.08); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(100, 255, 218, 0.2);">JS</span>
+            </div>
+            <div style="display: flex; gap: 20px; margin-top: 10px; border-top: 1px solid #233554; padding-top: 15px;">
+                <a href="#" style="color: #64ffda; text-decoration: none; font-size: 14px; font-weight: bold;">Live Demo ↗</a>
+                <a href="#" style="color: #8892b0; text-decoration: none; font-size: 14px;">GitHub 🔗</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    </section>
+    <!-- MY ACADEMIC PURPOSE SECTION -->
+<section id="academic" class="academic-section">
+  <div class="container">
+    <h2 class="section-title">MY ACADEMIC PURPOSE</h2>
+    <p class="section-subtitle">Academic achievements, certifications, results, and memories</p>
+
+    <div class="academic-grid">
+      <!-- Box 1: Curriculum Vitae -->
+      <a href="https://drive.google.com/drive/folders/1Uory871By_a35StiiOM9cuW-0sST402a?usp=sharing" target="_blank" rel="noopener noreferrer" class="academic-card">
+        <div class="card-icon">📄</div>
+        <h3>Curriculum Vitae (CV)</h3>
+        <p>Explore my detailed academic background, skills, and experience.</p>
+        <span class="card-link">View CV &rarr;</span>
+      </a>
+
+      <!-- Box 2: Academic Results -->
+      <div class="academic-card">
+        <div class="card-icon">📊</div>
+        <h3>Academic Results</h3>
+        <p>SSC, HSC transcripts & Dhaka College live archive dashboard.</p>
+        
+        <div class="card-btn-group">
+          <a href="https://drive.google.com/drive/folders/1V2mcx_LA8irlsnkA8RG3WLRsfEPV7ZN4?usp=sharing" target="_blank" rel="noopener noreferrer" class="sub-btn">
+            Board Transcripts 📄
+          </a>
+          <a href="https://thedcarchive.pages.dev/student/1202526010213" target="_blank" rel="noopener noreferrer" class="sub-btn live-btn">
+            Live Archive 🌐
+          </a>
+        </div>
+      </div>
+
+      
+      <!-- Box 3: Certificates & Achievements -->
+<a href="certificates.html" class="academic-card cert-premium-card">
+  <div class="card-glow-bg"></div>
+  <div class="card-icon">🏆</div>
+  <h3>Certificates & Achievements</h3>
+  <p>Verified certificates, trophies, and recognitions from courses, competitions, and clubs.</p>
+  <span class="card-link">Explore Archive <span class="arrow-icon">&rarr;</span></span>
+</a>
+
+      
+      <!-- Box 4: Campus & Moments -->
+<a href="moments.html" class="academic-card">
+  <div class="card-icon">🎓</div>
+  <h3>Campus & Moments</h3>
+  <p>Photo highlights from Dhaka College, events, and academic life.</p>
+  <span class="card-link">View Gallery &rarr;</span>
+</a>
+    </div>
+  </div>
+</section>
+
+<!-- CSS Styling -->
+<style>
+.academic-section {
+  padding: 60px 20px;
+  background-color: #0d1117;
+  color: #ffffff;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.academic-section .section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #38ef7d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.academic-section .section-subtitle {
+  font-size: 1rem;
+  color: #8b949e;
+  margin-bottom: 40px;
+}
+
+.academic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.academic-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.academic-card:hover {
+  transform: translateY(-8px);
+  border-color: #38ef7d;
+  box-shadow: 0 8px 25px rgba(56, 239, 125, 0.15);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.academic-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #f0f6fc;
+}
+
+.academic-card p {
+  font-size: 0.9rem;
+  color: #8b949e;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #38ef7d;
+  transition: color 0.2s ease;
+}
+
+.academic-card:hover .card-link {
+  color: #ffffff;
+}
+
+/* Multi-button container */
+.card-btn-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Sub button style */
+.sub-btn {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #38ef7d;
+  border: 1px solid #38ef7d;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.sub-btn:hover {
+  background: #38ef7d;
+  color: #0d1117;
+}
+
+/* Highlight for Live Archive */
+.sub-btn.live-btn {
+  background: rgba(56, 239, 125, 0.1);
+}
+
+.sub-btn.live-btn:hover {
+  background: #38ef7d;
+  color: #0d1117;
+}
+</style>
+        
+   <!-- 5. SKILLS & PROJECT METHOD -->
+<!-- ==================== SKILLS & PROJECT METHOD SECTION ==================== -->
+<section class="skills-method-section">
+  <!-- Categorized Skills Grid -->
+<div class="skills-categorized-container">
+
+  <!-- 1. Technical Skills -->
+  <div class="skill-category">
+    <h4 class="category-title">💻 Technical & Tools</h4>
+    <div class="skills-badge-grid">
+      <div class="skill-badge"><span class="badge-icon">🌐</span> HTML5</div>
+      <div class="skill-badge"><span class="badge-icon">🎨</span> CSS3</div>
+      <div class="skill-badge"><span class="badge-icon">🐍</span> Python</div>
+      <div class="skill-badge"><span class="badge-icon">🤖</span> AI Prompt Engineering</div>
+      <div class="skill-badge"><span class="badge-icon">✨</span> AI Content Creation</div>
+      <div class="skill-badge"><span class="badge-icon">📄</span> MS Word</div>
+      <div class="skill-badge"><span class="badge-icon">📊</span> MS Excel</div>
+    </div>
+  </div>
+
+  <!-- 2. Research & Science -->
+  <div class="skill-category" style="margin-top: 18px;">
+    <h4 class="category-title">🚀 Research & Science</h4>
+    <div class="skills-badge-grid">
+      <div class="skill-badge"><span class="badge-icon">🛰️</span> Aerospace Concepts</div>
+      <div class="skill-badge"><span class="badge-icon">🔥</span> Propulsion Systems</div>
+      <div class="skill-badge"><span class="badge-icon">⚛️</span> Physics Analysis</div>
+      <div class="skill-badge"><span class="badge-icon">📐</span> Mathematical Analysis</div>
+    </div>
+  </div>
+
+  <!-- 3. Soft Skills & Leadership -->
+  <div class="skill-category" style="margin-top: 18px;">
+    <h4 class="category-title">🗣️ Soft Skills & Leadership</h4>
+    <div class="skills-badge-grid">
+      <div class="skill-badge"><span class="badge-icon">🎙️</span> Public Speaking</div>
+      <div class="skill-badge"><span class="badge-icon">💬</span> Communication</div>
+      <div class="skill-badge"><span class="badge-icon">🤝</span> Negotiation</div>
+      <div class="skill-badge"><span class="badge-icon">👥</span> Teamwork</div>
+      <div class="skill-badge"><span class="badge-icon">👑</span> Leadership</div>
+    </div>
+  </div>
+
+  <!-- 4. Community & Social Work -->
+  <div class="skill-category" style="margin-top: 18px;">
+    <h4 class="category-title">🌱 Social Core Values</h4>
+    <div class="skills-badge-grid">
+      <div class="skill-badge"><span class="badge-icon">🤝</span> Volunteerism</div>
+      <div class="skill-badge"><span class="badge-icon">🌿</span> Social Work</div>
+    </div>
+  </div>
+
+</div>
+    <!-- Right Card: Project Method -->
+    <div class="sm-card">
+      <h2 class="sm-title">Project Workflow</h2>
+      <p class="sm-subtitle">My structured approach from idea to live deployment.</p>
+
+      <div class="method-steps">
+        <div class="method-step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h4>Collect & Plan</h4>
+            <p>Gather requirements, structure content, and outline website architecture.</p>
+          </div>
+        </div>
+
+        <div class="method-step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h4>Build & Code</h4>
+            <p>Turn design concepts into clean, responsive HTML/CSS pages and features.</p>
+          </div>
+        </div>
+
+        <div class="method-step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h4>Improve & Deploy</h4>
+            <p>Update design, optimize mobile view, and publish on GitHub Pages.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== SECTION STYLES (CSS) ==================== -->
+<style>
+  .skills-method-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .skills-method-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  /* Card Container */
+  .sm-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .sm-card:hover {
+    border-color: #38ef7d;
+    transform: translateY(-4px);
+  }
+
+  .sm-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #38ef7d;
+    margin: 0 0 6px 0;
+  }
+
+  .sm-subtitle {
+    font-size: 0.88rem;
+    color: #8b949e;
+    margin: 0 0 24px 0;
+  }
+
+  /* Skills Badges Grid */
+  .skills-badge-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .skill-badge {
+    background: rgba(56, 239, 125, 0.08);
+    border: 1px solid rgba(56, 239, 125, 0.25);
+    color: #e6f1ff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
+  }
+
+  .skill-badge:hover {
+    background: #38ef7d;
+    color: #0d1117;
+    border-color: #38ef7d;
+    transform: translateY(-2px);
+  }
+
+  .badge-icon {
+    font-size: 0.95rem;
+  }
+
+  /* Method Steps Grid */
+  .method-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .method-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #0d1117;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #21262d;
+  }
+
+  .step-num {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #38ef7d;
+    background: rgba(56, 239, 125, 0.12);
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 239, 125, 0.3);
+  }
+
+  .step-content h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #f0f6fc;
+    margin: 0 0 4px 0;
+  }
+
+  .step-content p {
+    font-size: 0.82rem;
+    color: #8b949e;
+    line-height: 1.4;
+    margin: 0;
+  }
+    .category-title {
+  color: #38ef7d;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skills-badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+</style>
+    <!-- 6. c2: BLOG SECTION -->
+   <!-- ==================== BLOG SECTION ==================== -->
+<section class="blog-section">
+  <div class="blog-header">
+    <span class="sub-title">MY BLOGS</span>
+    <h2>My Latest Blogs</h2>
+    <p>Unveiling the Latest Trends in Web & Tech</p>
+  </div>
+
+  <div class="blog-grid">
+    <!-- Featured Big Card (Left) -->
+    <div class="featured-card">
+      <img src="https://picsum.photos/600/350?random=1" alt="Web Design" class="blog-img">
+      <div class="card-content">
+        <h3>Mastering the Art of Web Design</h3>
+        <p>Building modern dark-themed responsive websites step by step.</p>
+        <a href="#" class="read-btn">Read More ↗</a>
+      </div>
+    </div>
+
+    <!-- Small Cards Grid (Right) -->
+    <div class="small-cards-grid">
+      <div class="small-card">
+        <img src="https://picsum.photos/300/200?random=2" alt="HTML CSS" class="blog-img-sm">
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+        <h4>HTML & CSS Tips</h4>
+        <a href="#" class="read-btn">Read More ↗</a>
+      </div>
+
+      <div class="small-card">
+        <img src="https://picsum.photos/300/200?random=3" alt="JS" class="blog-img-sm">
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+        <h4>JavaScript Logic</h4>
+        <a href="#" class="read-btn">Read More ↗</a>
+      </div>
+
+      <div class="small-card">
+        <img src="https://picsum.photos/300/200?random=4" alt="C Language" class="blog-img-sm">
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+        <h4>C Programming</h4>
+        <a href="#" class="read-btn">Read More ↗</a>
+      </div>
+
+      <div class="small-card">
+        <img src="https://picsum.photos/300/200?random=5" alt="GitHub" class="blog-img-sm">
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+        <h4>GitHub Deploy</h4>
+        <a href="#" class="read-btn">Read More ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BLOG STYLES (CSS) ==================== -->
+<style>
+  /* Blog Section Base */
+  .blog-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .blog-header {
+    margin-bottom: 30px;
+  }
+
+  .blog-header .sub-title {
+    color: #38ef7d;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .blog-header h2 {
+    font-size: 2rem;
+    color: #f0f6fc;
+    margin: 8px 0;
+  }
+
+  .blog-header p {
+    color: #8b949e;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  /* Blog Layout Grid */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Featured Big Card */
+  .featured-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .featured-card:hover {
+    transform: translateY(-4px);
+    border-color: #38ef7d;
+  }
+
+  .blog-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+  }
+
+  .card-content h3 {
+    font-size: 1.4rem;
+    color: #f0f6fc;
+    margin: 0;
+  }
+
+  .card-content p {
+    color: #8b949e;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Small Cards Grid (Right Side) */
+  .small-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .small-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .small-card:hover {
+    transform: translateY(-4px);
+    border-color: #38ef7d;
+  }
+
+  .blog-img-sm {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .rating {
+    font-size: 0.75rem;
+  }
+
+  .small-card h4 {
+    color: #f0f6fc;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  /* Read More Link Button */
+  .read-btn {
+    color: #38ef7d;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-top: auto;
+    display: inline-block;
+    transition: color 0.2s ease;
+  }
+
+  .read-btn:hover {
+    color: #64ffda;
+    text-decoration: underline;
+  }
+</style>
+<!-- MY GALLERY SECTION START -->
+<section class="gallery-section" style="padding: 40px 20px; background-color: #0b1320; color: #ffffff; font-family: sans-serif;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    
+    <!-- Section Header & Note -->
+    <span style="color: #64ffda; text-transform: uppercase; font-size: 14px; letter-spacing: 1.5px; font-weight: 600;">My Gallery</span>
+    <h2 style="font-size: 32px; margin: 10px 0 5px 0;">Captured Moments & Visuals</h2>
+    <p style="color: #8892b0; margin-bottom: 30px; font-size: 15px;">
+      Unveiling my personal journey, travel memories, and project screenshots step by step.
+    </p>
+
+    <!-- Gallery Grid (5-6 Images Container) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+      
+      <!-- Card 1 -->
+      <div style="background: #112240; padding: 20px; border-radius: 8px; border: 1px solid #233554; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="width: 100%; height: 180px; background-color: #233554; border-radius: 6px; overflow: hidden; margin-bottom: 15px;">
+            <img src="YOUR_IMAGE_URL_1.jpg" alt="Gallery Image 1" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h3 style="font-size: 20px; color: #e6f1ff; margin-bottom: 8px;">Dhaka College Campus</h3>
+          <p style="color: #8892b0; font-size: 14px; margin-bottom: 15px;">Campus life, friends, and special moments recorded in frames.</p>
+        </div>
+        <a href="#" style="color: #64ffda; text-decoration: none; font-weight: bold; font-size: 14px;">Place &nearr;</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background: #112240; padding: 20px; border-radius: 8px; border: 1px solid #233554; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="width: 100%; height: 180px; background-color: #233554; border-radius: 6px; overflow: hidden; margin-bottom: 15px;">
+            <img src="https://i.ibb.co.com/jvFXhH0Y/Screenshot-2026-09-19-083516.png" alt="Screenshot preview" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h3 style="font-size: 20px; color: #e6f1ff; margin-bottom: 8px;">Travel & Tours</h3>
+          <p style="color: #8892b0; font-size: 14px; margin-bottom: 15px;">Exploring new places across Bangladesh and capturing nature.</p>
+        </div>
+        <a href="#" style="color: #64ffda; text-decoration: none; font-weight: bold; font-size: 14px;">Place &nearr;</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background: #112240; padding: 20px; border-radius: 8px; border: 1px solid #233554; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="width: 100%; height: 180px; background-color: #233554; border-radius: 6px; overflow: hidden; margin-bottom: 15px;">
+            <img src="YOUR_IMAGE_URL_3.jpg" alt="Gallery Image 3" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h3 style="font-size: 20px; color: #e6f1ff; margin-bottom: 8px;">Developer Setup</h3>
+          <p style="color: #8892b0; font-size: 14px; margin-bottom: 15px;">My workspace, coding environment, and daily project builds.</p>
+        </div>
+        <a href="#" style="color: #64ffda; text-decoration: none; font-weight: bold; font-size: 14px;">Place &nearr;</a>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background: #112240; padding: 20px; border-radius: 8px; border: 1px solid #233554; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="width: 100%; height: 180px; background-color: #233554; border-radius: 6px; overflow: hidden; margin-bottom: 15px;">
+            <img src="https://i.ibb.co.com/x8dWLP03/Whats-App-Image-2026-07-21-at-10-39-13-PM.jpg" alt="Brilliant guy from DC" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h3 style="font-size: 20px; color: #e6f1ff; margin-bottom: 8px;">Brilliant guy from DC</h3>
+          <p style="color: #8892b0; font-size: 14px; margin-bottom: 15px;">"A brilliant mind hailing from Dhaka College, driven by curiosity, tech innovation, and a passion for exploration.".</p>
+        </div>
+        <a href="#" style="color: #64ffda; text-decoration: none; font-weight: bold; font-size: 14px;">Place &nearr;</a>
+      </div>
+
+      <!-- Card 5 -->
+<!-- Card 5 -->
+<!-- Card 5: My Super Hero -->
+<div style="background: #112240; padding: 20px; border-radius: 8px; border: 1px solid #233554; display: flex; flex-direction: column; gap: 15px;">
+    <div>
+        <!-- Fixed aspect-ratio ebong contain use kora hoyeche jate chhobi na kate -->
+        <div style="width: 100%; aspect-ratio: 4 / 3; background-color: #0a192f; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+            <img src="https://i.ibb.co.com/xtW3x1H1/Screenshot-2026-09-19-225435.png" style="width: 100%; height: 100%; object-fit: contain; display: block;" alt="My Super Hero">
+        </div>
+    </div>
+    <div style="flex-grow: 1;">
+        <h3 style="font-size: 20px; color: #e6f1ff; margin-bottom: 8px;">My Super Hero</h3>
+        <p style="color: #8892b0; font-size: 14px; margin-bottom: 15px;">He is the pillar of my strength and the foundation of my dreams. Words can never fully express my gratitude for his unconditional love and life's sacrifices. LOVE YOU ABBU ❤️</p>
+    </div>
+    <a href="#" style="color: #64ffda; text-decoration: none; font-weight: bold; font-size: 14px;">Place ↗</a>
+</div>
+
+<!-- Card 6: My Go-To Team -->
+<div style="background: #112240; padding: 20px; border-radius: 8px; border: 1px solid #233554; display: flex; flex-direction: column; gap: 15px;">
+    <div>
+        <!-- Same aspect-ratio and contain styling -->
+        <div style="width: 100%; aspect-ratio: 4 / 3; background-color: #0a192f; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+            <img src="https://i.ibb.co.com/hR66Zz39/lv-0-20260919234459.png" style="width: 100%; height: 100%; object-fit: contain; display: block;" alt="My Go-To Team">
+        </div>
+    </div>
+    <div style="flex-grow: 1;">
+        <h3 style="font-size: 20px; color: #e6f1ff; margin-bottom: 8px;">My Go-To Team: Seleção Fan</h3>
+        <p style="color: #8892b0; font-size: 14px; margin-bottom: 15px;">Unconditional passion for the kings of samba football. Brazil will always be my absolute favorite! 🇧🇷🔥</p>
+    </div>
+    <a href="#" style="color: #64ffda; text-decoration: none; font-weight: bold; font-size: 14px;">Place ↗</a>
+</div>
+
+
+</section>
+<!-- MY GALLERY SECTION END -->
+    <!-- MY HALL LIFE SECTION START --><section class="section" id="hall-life-section">
+    <span class="section-tag">EXPLORE MY HALL LIFE</span>
+    <h2 class="section-title">My Hall Life Memories</h2>
+    <p style="color: #8892b0; font-size: 15px; margin-bottom: 30px;">
+        A glimpse into my residential hall life, daily activities, rooms, and memorable moments.
+    </p>
+
+    <!-- 6 Image Boxes Grid -->
+    <div class="hall-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 40px;">
+        
+        <!-- Hall Card 1 -->
+        <div class="hall-card" style="background: #112240; padding: 20px; border-radius: 12px; border: 1px solid #233554;">
+            <div style="width: 100%; height: 180px; border-radius: 6px; overflow: hidden; margin-bottom: 15px;">
+                <img src="YOUR_IMAGE_LINK_1_HERE" alt="Hall Memory 1" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h4 style="color: #e6f1ff; font-size: 18px; margin-bottom: 8px; font-weight: bold;">Hall Title Here 1</h4>
+            <p style="color: #8892b0; font-size: 14px; margin: 0; line-height: 1.5;">Write your details about this hall photo or memory here.</p>
+        </div>
+
+        <!-- Hall Card 2 -->
+        <div class="hall-card" style="background: #112240; padding: 20px; border-radius: 12px; border: 1px solid #233554;">
+    <div style="width: 100%; border-radius: 6px; overflow: hidden; margin-bottom: 15px; background-color: #233554;">
+        <img src="https://i.ibb.co.com/5h5gc94z/lv-0-20260919231054.png" alt="Hall Memory 2" style="width: 100%; height: auto; display: block;">
+    </div>
+    <h4 style="color: #e6f1ff; font-size: 18px; margin-bottom: 8px; font-weight: bold;">Golden Era at Dhaka College</h4>
+    <p style="color: #8892b0; font-size: 14px; margin: 0; line-height: 1.5;">Celebrating the cherished bond with my Dhaka College hall companions. They gifted me an unforgettable, golden chapter of my life</p>
+</div>
+
+        <!-- Hall Card 3 -->
+        <div class="hall-card" style="background: #112240; padding: 20px; border-radius: 12px; border: 1px solid #233554;">
+            <div style="width: 100%; height: 180px; border-radius: 6px; overflow: hidden; margin-bottom: 15px;">
+                <img src="https://i.ibb.co.com/SDCLpQyn/lv-0-20260926015921.png" alt="Hall Memory 3" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h4 style="color: #e6f1ff; font-size: 18px; margin-bottom: 8px; font-weight: bold;">Brotherhood at N.S. Kamil</h4>
+            <p style="color: #8892b0; font-size: 14px; margin: 0; line-height: 1.5;">Unforgettable memories with my Madrasah Friends. Every moment spent in the hall with them remains priceless</p>
+        </div>
+
+        <!-- Hall Card 4 -->
+       <div class="hall-card" style="background: #112240; padding: 20px; border-radius: 12px; border: 1px solid #233554;">
+    <div style="width: 100%; border-radius: 6px; overflow: hidden; margin-bottom: 15px; background-color: #233554;">
+        <img src="https://i.ibb.co.com/QFW4DwW2/lv-0-20260919232933.png" alt="Hall Memory 4" style="width: 100%; height: auto; display: block;">
+    </div>
+    <h4 style="color: #e6f1ff; font-size: 18px; margin-bottom: 8px; font-weight: bold;">My Personal White House</h4>
+    <p style="color: #8892b0; font-size: 14px; margin: 0; line-height: 1.5;">Though small, this room is my emotional anchor, my laboratory,  this is my haven of ideas —the place shaping my future opportunities.</p>
+</div>
+
+      
+    </div>
+
+    <!-- About Hall Life Box at the Bottom -->
+    <div style="background: #112240; padding: 30px; border-radius: 12px; border: 1px solid #233554;">
+        <h3 style="color: #64ffda; font-size: 22px; margin-bottom: 12px;">About Hall Life</h3>
+        <p style="color: #8892b0; font-size: 15px; line-height: 1.6; margin: 0;">
+            [Ami hall somporke details pore ekhane likhe dibo. Write your hall life overview, experiences, and story here.]
+        </p>
+    </div>
+
+</section>
+<!-- MY HALL LIFE SECTION END -->
+    <!-- SEARCH YOU SECTION START -->
+<!-- SEARCH YOU SECTION START -->
+<section class="section" id="search-you-section">
+    <span class="section-tag">Explore More</span>
+    <h2 class="section-title">Search You & Insights</h2>
+    
+    <div class="search-you-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px;">
+        
+        <!-- Box 1: How much love your crush -->
+        <div class="search-card" style="background: #112240; padding: 25px; border-radius: 12px; border: 1px solid #233554; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s ease;">
+            <div class="card-box-content" style="background: #1d2d50; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 15px; border: 1px dashed #64ffda;">
+                <a href="https://www.getlinks.info/love/c/jzbckbn" target="_blank" style="color: #64ffda; text-decoration: none; font-size: 18px; font-weight: bold; display: block;">
+    💖 How Much Does Your Crush Love You?
+</a>
+            </div>
+            <p style="color: #8892b0; font-size: 14px; text-align: center; margin: 0; font-style: italic;">
+                Discover the true feelings and compatibility with your crush.
+            </p>
+        </div>
+
+        <!-- Box 2: Check fake friend list & Musa insights -->
+        <div class="search-card" style="background: #112240; padding: 25px; border-radius: 12px; border: 1px solid #233554; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s ease;">
+            <div class="card-box-content" style="background: #1d2d50; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 15px; border: 1px dashed #64ffda;">
+                <a href="https://mffl.youtest.me/find?id=Nd33MR&q=1" target="_blank" style="color: #64ffda; text-decoration: none; font-size: 18px; font-weight: bold; display: block;">
+                    👥 Check Fake Friend List
+                </a>
+            </div>
+            <p style="color: #8892b0; font-size: 14px; text-align: center; margin: 0; font-style: italic;">
+                Find out how much you know about Musa and share your perspective.
+            </p>
+        </div>
+
+    </div>
+</section>
+<!-- SEARCH YOU SECTION END -->
+    <!-- 7. CONTRIBUTORS SECTION -->
+    <section class="section">
+        <span class="section-tag">The Minds Behind</span>
+        <h2 class="section-title">Visionaries & Contributors</h2>
+        <div class="contributors-grid">
+            <div class="contributor-card bg-green">
+                <h4>Own vision</h4>
+                <p>Helps collect student data, event descriptions, and updates.</p>
+            </div>
+            <div class="contributor-card bg-pink">
+                <h4>Dreamer</h4>
+                <p>I have many dream iknow that is very dificult dream but i also know i can di it!</p>
+            </div>
         </div>
     </section>
 
-    <!-- 5. ACADEMIC PURPOSE SECTION -->
-    <section class="section" id="academic">
-        <span class="section-tag">GLOBAL ARCHIVE</span>
-        <h2 class="section-title">My Academic Purpose</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
-            
-            <a href="https://drive.google.com/drive/folders/1Uory871By_a35StiiOM9cuW-0sST402a?usp=sharing" target="_blank" class="info-card" style="text-decoration: none; color: inherit;">
-                <h3>📄 Curriculum Vitae</h3>
-                <p style="color: #8b949e; font-size: 0.9rem;">Explore my detailed academic background & CV.</p>
-            </a>
-
-            <div class="info-card">
-                <h3>📊 Academic Results</h3>
-                <p style="color: #8b949e; font-size: 0.9rem; margin-bottom: 10px;">SSC, HSC transcripts & live archive.</p>
-                <a href="https://thedcarchive.pages.dev/student/1202526010213" target="_blank" style="color: #38ef7d; font-size: 0.85rem; text-decoration: none; font-weight: bold;">Live Archive 🌐</a>
-            </div>
-
-            <a href="certificates.html" class="info-card" style="text-decoration: none; color: inherit;">
-                <h3>🏆 Certificates</h3>
-                <p style="color: #8b949e; font-size: 0.9rem;">Verified certificates and awards gallery.</p>
-            </a>
-
-            <a href="moments.html" class="info-card" style="text-decoration: none; color: inherit;">
-                <h3>🎓 Campus & Moments</h3>
-                <p style="color: #8b949e; font-size: 0.9rem;">Photo highlights from Dhaka College.</p>
-            </a>
-
-        </div>
-    </section>
-
-    <!-- 6. CONTACT FORM SECTION -->
+    <!-- 8. c1: CONTACT FORM SECTION -->
+    <!-- 8. c1: CONTACT FORM SECTION -->
     <section class="contact-section" id="contact">
         <div class="contact-box">
-            <p style="text-align: center; color: #00e6a8; font-size: 0.9rem; margin-bottom: 8px;">(if you have any question please message me)</p>
+            <!-- শিরোনামের উপরের ছোট নোট -->
+            <p style="text-align: center; color: #00e6a8; font-size: 0.9rem; margin-bottom: 8px;">
+                (if you have any question please message me)
+            </p>
+            
+            <!-- পরিবর্তিত শিরোনাম -->
             <h2>MESSAGE ME</h2>
+
+            <!-- FormSubmit সার্ভিস দিয়ে সরাসরি তোর ইমেইলে মেসেজ আসবে -->
             <form action="https://formsubmit.co/mahbuburrahmanmusa99@gmail.com" method="POST">
                 <div class="form-row">
                     <div class="form-group">
@@ -593,21 +1599,36 @@
                     <label>About Project*</label>
                     <textarea name="message" placeholder="Write your project message here..." required></textarea>
                 </div>
+
+                <!-- সাবমিট বাটন -->
                 <button type="submit" class="submit-btn">Submit</button>
             </form>
+
+            <!-- সরাসরি ফেসবুক মেসেঞ্জারে চ্যাট করার বিকল্প বাটন -->
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="https://www.facebook.com/share/1Hy5Lds5ZX/" target="_blank" style="color: #a2b4c7; font-size: 0.85rem; text-decoration: underline;">
+                    Or Chat Directly on Facebook Messenger ↗
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- 7. FOOTER -->
+    <!-- 9. FOOTER -->
     <footer>
         <div class="footer-left">
             <div class="logo-container">
                 <div class="logo-icon">M</div>
                 <div class="logo-text">Musa Portfolio</div>
             </div>
-            <p>Developed by Musa. Built as a scalable, high-performance personal web ecosystem.</p>
+            <p>This website is developed by <strong>Musa</strong>. Currently under development as an experimental project.</p>
         </div>
         <div class="footer-links">
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <a href="#projects">Projects</a>
+                <a href="#blogs">Blogs</a>
+                <a href="#contact">Contact</a>
+            </div>
             <div class="footer-col">
                 <h5>Social</h5>
                 <a href="https://github.com/musa965" target="_blank">GitHub</a>
@@ -615,84 +1636,175 @@
             </div>
         </div>
     </footer>
+                </div>
+    </footer>
 
-    <!-- CANVAS & REAL TIME CLOCK SCRIPT -->
-    <canvas id="ultra-premium-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999;"></canvas>
+<!-- ==========================================================
+     আল্ট্রা-প্রিমিয়াম কন্সটেলেশন নেটওয়ার্ক ও ম্যাজিক্যাল মাউস ট্রেল ইফেক্ট 
+     ========================================================== -->
+<canvas id="ultra-premium-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999;"></canvas>
 
-    <script>
-        // Real-time Dhaka Clock
-        function updateDhakaClock() {
-            const options = {
-                timeZone: 'Asia/Dhaka',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: true
-            };
-            const formatter = new Intl.DateTimeFormat([], options);
-            const dhakaTime = formatter.format(new Date());
-            const clockElem = document.getElementById('live-clock');
-            if(clockElem) {
-                clockElem.innerHTML = `📍 Dhaka, BD — ${dhakaTime}`;
-            }
+<script>
+    const canvas = document.getElementById('ultra-premium-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let particlesArray = [];
+    const maxParticles = 80;
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    const mouse = {
+        x: undefined,
+        y: undefined
+    }
+
+    window.addEventListener('mousemove', function(event) {
+        mouse.x = event.clientX;
+        mouse.y = event.clientY;
+        if (particlesArray.length < maxParticles) {
+            particlesArray.push(new PremiumParticle(mouse.x, mouse.y));
         }
-        setInterval(updateDhakaClock, 1000);
-        updateDhakaClock();
+    });
 
-        // Canvas Particle Effect
-        const canvas = document.getElementById('ultra-premium-canvas');
-        const ctx = canvas.getContext('2d');
-        let particlesArray = [];
-        const maxParticles = 60;
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+    window.addEventListener('touchmove', function(event) {
+        mouse.x = event.touches[0].clientX;
+        mouse.y = event.touches[0].clientY;
+        if (particlesArray.length < maxParticles) {
+            particlesArray.push(new PremiumParticle(mouse.x, mouse.y));
         }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
+    });
 
-        window.addEventListener('mousemove', function(event) {
-            if (particlesArray.length < maxParticles) {
-                particlesArray.push(new PremiumParticle(event.clientX, event.clientY));
-            }
-        });
-
-        class PremiumParticle {
-            constructor(x, y) {
-                this.x = x;
-                this.y = y;
-                this.size = Math.random() * 2 + 1;
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 - 0.5;
-                this.alpha = 1;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.alpha > 0.01) this.alpha -= 0.008;
-            }
-            draw() {
-                ctx.fillStyle = `rgba(0, 230, 168, ${this.alpha})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
+    window.addEventListener('scroll', function() {
+        if (particlesArray.length < maxParticles) {
+            const randomX = Math.random() * canvas.width;
+            const randomY = Math.random() * canvas.height;
+            particlesArray.push(new PremiumParticle(randomX, randomY));
         }
+    });
 
-        function handleParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-                if (particlesArray[i].alpha <= 0.01) {
-                    particlesArray.splice(i, 1);
-                    i--;
+    class PremiumParticle {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+            this.size = Math.random() * 2.5 + 1;
+            this.speedX = Math.random() * 1.2 - 0.6;
+            this.speedY = Math.random() * 1.2 - 0.6;
+            this.alpha = 1;
+        }
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            if (this.alpha > 0.01) this.alpha -= 0.007;
+        }
+        draw() {
+            ctx.fillStyle = rgba(0, 230, 168, ${this.alpha}); 
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function connectParticles() {
+        for (let a = 0; a < particlesArray.length; a++) {
+            for (let b = a; b < particlesArray.length; b++) {
+                let dx = particlesArray[a].x - particlesArray[b].x;
+                let dy = particlesArray[a].y - particlesArray[b].y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 100) {
+                    let lineAlpha = (1 - (distance / 100)) * Math.min(particlesArray[a].alpha, particlesArray[b].alpha) * 0.2;
+                    ctx.strokeStyle = rgba(0, 230, 168, ${lineAlpha});
+                    ctx.lineWidth = 0.6;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
                 }
             }
-            requestAnimationFrame(handleParticles);
         }
-        handleParticles();
-    </script>
+    }
+
+    function handleParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+            particlesArray[i].draw();
+
+            if (particlesArray[i].alpha <= 0.01) {
+                particlesArray.splice(i, 1);
+                i--;
+            }
+        }
+        connectParticles();
+        requestAnimationFrame(handleParticles);
+    }
+
+    handleParticles();
+</script>
+      <script>
+    // 1. Real-time Dhaka Clock
+    function updateDhakaClock() {
+        const options = {
+            timeZone: 'Asia/Dhaka',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
+        };
+        const formatter = new Intl.DateTimeFormat([], options);
+        const dhakaTime = formatter.format(new Date());
+        const clockElem = document.getElementById('live-clock');
+        if(clockElem) {
+            clockElem.innerHTML = `📍 Dhaka, BD — ${dhakaTime}`;
+        }
+    }
+    setInterval(updateDhakaClock, 1000);
+    updateDhakaClock();
+
+    // 2. Theme Toggle (Moon Icon functionality)
+    let isDarkMode = true;
+    function toggleTheme() {
+        isDarkMode = !isDarkMode;
+        const body = document.body;
+        const btn = document.getElementById('theme-toggle-btn');
+        if (isDarkMode) {
+            body.style.backgroundColor = '#0b1320';
+            body.style.color = '#ffffff';
+            btn.innerHTML = '🌙';
+        } else {
+            body.style.backgroundColor = '#111827';
+            body.style.color = '#f9fafb';
+            btn.innerHTML = '☀️';
+        }
+    }
+
+    // 3. Simple Language Switcher Indicator
+    function setLanguage(lang) {
+        const enBtn = document.getElementById('en-btn');
+        const bnBtn = document.getElementById('bn-btn');
+        if (lang === 'bn') {
+            bnBtn.style.color = '#64ffda';
+            bnBtn.style.background = 'rgba(100,255,218,0.1)';
+            enBtn.style.color = '#8892b0';
+            enBtn.style.background = 'transparent';
+            alert('বাংলা মোড সিলেক্ট করা হয়েছে। আপনি চাইলে টেক্সটগুলো বাংলায় ট্রান্সলেট করে নিতে পারেন।');
+        } else {
+            enBtn.style.color = '#64ffda';
+            enBtn.style.background = 'rgba(100,255,218,0.1)';
+            bnBtn.style.color = '#8892b0';
+            bnBtn.style.background = 'transparent';
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
 </body>
 </html>
