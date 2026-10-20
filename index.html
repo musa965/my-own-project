@@ -1761,12 +1761,76 @@
                 </div>
     </footer>
 
-<!-- ==========================================================
-     আল্ট্রা-প্রিমিয়াম কন্সটেলেশন নেটওয়ার্ক ও ম্যাজিক্যাল মাউস ট্রেল ইফেক্ট 
+
+      <!-- ==========================================================
+     আল্ট্রা-প্রিমিয়াম কন্সটেলেশন নেটওয়ার্ক ও ম্যাজিক্যাল মাউস ট্রেল ইফেক্ট 
      ========================================================== -->
 <canvas id="ultra-premium-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999;"></canvas>
 
 <script>
+    // 1. Real-time Dhaka Clock
+    function updateDhakaClock() {
+        const options = {
+            timeZone: 'Asia/Dhaka',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
+        };
+        const formatter = new Intl.DateTimeFormat([], options);
+        const dhakaTime = formatter.format(new Date());
+        const clockElem = document.getElementById('live-clock');
+        if(clockElem) {
+            clockElem.innerHTML = `📍 Dhaka, BD — ${dhakaTime}`;
+        }
+    }
+    setInterval(updateDhakaClock, 1000);
+    updateDhakaClock();
+
+    // 2. Theme Toggle (Moon/Sun Icon functionality)
+    let isDarkMode = true;
+    function toggleTheme() {
+        isDarkMode = !isDarkMode;
+        const body = document.body;
+        const btn = document.getElementById('theme-toggle-btn');
+        if (isDarkMode) {
+            body.style.backgroundColor = '#0b1320';
+            body.style.color = '#ffffff';
+            if(btn) btn.innerHTML = '🌙';
+        } else {
+            body.style.backgroundColor = '#111827';
+            body.style.color = '#f9fafb';
+            if(btn) btn.innerHTML = '☀️';
+        }
+    }
+
+    // 3. Language Switcher Indicator
+    function setLanguage(lang) {
+        const enBtn = document.getElementById('en-btn');
+        const bnBtn = document.getElementById('bn-btn');
+        if (lang === 'bn') {
+            if(bnBtn) {
+                bnBtn.style.color = '#64ffda';
+                bnBtn.style.background = 'rgba(100,255,218,0.1)';
+            }
+            if(enBtn) {
+                enBtn.style.color = '#8892b0';
+                enBtn.style.background = 'transparent';
+            }
+            alert('বাংলা মোড সিলেক্ট করা হয়েছে। আপনি চাইলে টেক্সটগুলো বাংলায় ট্রান্সলেট করে নিতে পারেন।');
+        } else {
+            if(enBtn) {
+                enBtn.style.color = '#64ffda';
+                enBtn.style.background = 'rgba(100,255,218,0.1)';
+            }
+            if(bnBtn) {
+                bnBtn.style.color = '#8892b0';
+                bnBtn.style.background = 'transparent';
+            }
+        }
+    }
+
+    // 4. Ultra-Premium Constellation Network & Mouse Trail Effect
     const canvas = document.getElementById('ultra-premium-canvas');
     const ctx = canvas.getContext('2d');
 
@@ -1783,7 +1847,7 @@
     const mouse = {
         x: undefined,
         y: undefined
-    }
+    };
 
     window.addEventListener('mousemove', function(event) {
         mouse.x = event.clientX;
@@ -1794,10 +1858,12 @@
     });
 
     window.addEventListener('touchmove', function(event) {
-        mouse.x = event.touches[0].clientX;
-        mouse.y = event.touches[0].clientY;
-        if (particlesArray.length < maxParticles) {
-            particlesArray.push(new PremiumParticle(mouse.x, mouse.y));
+        if (event.touches.length > 0) {
+            mouse.x = event.touches[0].clientX;
+            mouse.y = event.touches[0].clientY;
+            if (particlesArray.length < maxParticles) {
+                particlesArray.push(new PremiumParticle(mouse.x, mouse.y));
+            }
         }
     });
 
@@ -1824,7 +1890,7 @@
             if (this.alpha > 0.01) this.alpha -= 0.007;
         }
         draw() {
-            ctx.fillStyle = rgba(0, 230, 168, ${this.alpha}); 
+            ctx.fillStyle = `rgba(0, 230, 168, ${this.alpha})`; 
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
@@ -1840,7 +1906,7 @@
 
                 if (distance < 100) {
                     let lineAlpha = (1 - (distance / 100)) * Math.min(particlesArray[a].alpha, particlesArray[b].alpha) * 0.2;
-                    ctx.strokeStyle = rgba(0, 230, 168, ${lineAlpha});
+                    ctx.strokeStyle = `rgba(0, 230, 168, ${lineAlpha})`;
                     ctx.lineWidth = 0.6;
                     ctx.beginPath();
                     ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
@@ -1868,176 +1934,5 @@
 
     handleParticles();
 </script>
-      <script>
-    // 1. Real-time Dhaka Clock
-    function updateDhakaClock() {
-        const options = {
-            timeZone: 'Asia/Dhaka',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: true
-        };
-        const formatter = new Intl.DateTimeFormat([], options);
-        const dhakaTime = formatter.format(new Date());
-        const clockElem = document.getElementById('live-clock');
-        if(clockElem) {
-            clockElem.innerHTML = `📍 Dhaka, BD — ${dhakaTime}`;
-        }
-    }
-    setInterval(updateDhakaClock, 1000);
-    updateDhakaClock();
-
-    // 2. Theme Toggle (Moon Icon functionality)
-    let isDarkMode = true;
-    function toggleTheme() {
-        isDarkMode = !isDarkMode;
-        const body = document.body;
-        const btn = document.getElementById('theme-toggle-btn');
-        if (isDarkMode) {
-            body.style.backgroundColor = '#0b1320';
-            body.style.color = '#ffffff';
-            btn.innerHTML = '🌙';
-        } else {
-            body.style.backgroundColor = '#111827';
-            body.style.color = '#f9fafb';
-            btn.innerHTML = '☀️';
-        }
-    }
-
-    // 3. Simple Language Switcher Indicator
-    function setLanguage(lang) {
-        const enBtn = document.getElementById('en-btn');
-        const bnBtn = document.getElementById('bn-btn');
-        if (lang === 'bn') {
-            bnBtn.style.color = '#64ffda';
-            bnBtn.style.background = 'rgba(100,255,218,0.1)';
-            enBtn.style.color = '#8892b0';
-            enBtn.style.background = 'transparent';
-            alert('বাংলা মোড সিলেক্ট করা হয়েছে। আপনি চাইলে টেক্সটগুলো বাংলায় ট্রান্সলেট করে নিতে পারেন।');
-        } else {
-            enBtn.style.color = '#64ffda';
-            enBtn.style.background = 'rgba(100,255,218,0.1)';
-            bnBtn.style.color = '#8892b0';
-            bnBtn.style.background = 'transparent';
-        }
-    }
-</script>
-<!-- CANVAS & INTERACTIVE SCRIPTS -->
-<canvas id="ultra-premium-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999;"></canvas>
-
-<script>
-    // 1. Real-time Dhaka Clock
-    function updateDhakaClock() {
-        const options = {
-            timeZone: 'Asia/Dhaka',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: true
-        };
-        const formatter = new Intl.DateTimeFormat([], options);
-        const dhakaTime = formatter.format(new Date());
-        const clockElem = document.getElementById('live-clock');
-        if(clockElem) {
-            clockElem.innerHTML = `📍 Dhaka, BD — ${dhakaTime}`;
-        }
-    }
-    setInterval(updateDhakaClock, 1000);
-    updateDhakaClock();
-
-    // 2. Theme Toggle (Moon Icon functionality)
-    let isDarkMode = true;
-    function toggleTheme() {
-        isDarkMode = !isDarkMode;
-        const body = document.body;
-        const btn = document.getElementById('theme-toggle-btn');
-        if (isDarkMode) {
-            body.style.backgroundColor = '#0b1320';
-            body.style.color = '#ffffff';
-            btn.innerHTML = '🌙';
-        } else {
-            body.style.backgroundColor = '#111827';
-            body.style.color = '#f9fafb';
-            btn.innerHTML = '☀️';
-        }
-    }
-
-    // 3. Language Switcher Placeholder
-    function setLanguage(lang) {
-        const enBtn = document.getElementById('en-btn');
-        const bnBtn = document.getElementById('bn-btn');
-        if (lang === 'bn') {
-            bnBtn.style.color = '#64ffda';
-            bnBtn.style.background = 'rgba(100,255,218,0.1)';
-            enBtn.style.color = '#8892b0';
-            enBtn.style.background = 'transparent';
-        } else {
-            enBtn.style.color = '#64ffda';
-            enBtn.style.background = 'rgba(100,255,218,0.1)';
-            bnBtn.style.color = '#8892b0';
-            bnBtn.style.background = 'transparent';
-        }
-    }
-
-    // 4. Ultra-Premium Constellation Mouse Trail Effect
-    const canvas = document.getElementById('ultra-premium-canvas');
-    const ctx = canvas.getContext('2d');
-    let particlesArray = [];
-    const maxParticles = 70;
-
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    window.addEventListener('mousemove', function(event) {
-        if (particlesArray.length < maxParticles) {
-            particlesArray.push(new PremiumParticle(event.clientX, event.clientY));
-        }
-    });
-
-    class PremiumParticle {
-        constructor(x, y) {
-            this.x = x;
-            this.y = y;
-            this.size = Math.random() * 2.2 + 1;
-            this.speedX = Math.random() * 1 - 0.5;
-            this.speedY = Math.random() * 1 - 0.5;
-            this.alpha = 1;
-        }
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-            if (this.alpha > 0.01) this.alpha -= 0.008;
-        }
-        draw() {
-            ctx.fillStyle = `rgba(0, 230, 168, ${this.alpha})`;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    }
-
-    function handleParticles() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < particlesArray.length; i++) {
-            particlesArray[i].update();
-            particlesArray[i].draw();
-            if (particlesArray[i].alpha <= 0.01) {
-                particlesArray.splice(i, 1);
-                i--;
-            }
-        }
-        requestAnimationFrame(handleParticles);
-    }
-    handleParticles();
-</script>
-</body>
-</html>
-
-
 </body>
 </html>
