@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musa's Ultimate AI Voice Studio & Recorder</title>
+    <title>Musa's Ultimate AI Voice Studio & Master Suite</title>
     <style>
         /* ==========================================================
-           MUSA AI VOICE STUDIO - ULTIMATE STYLING & DESIGN SYSTEM
+           MUSA AI VOICE STUDIO - ULTIMATE DESIGN SYSTEM & STYLING
            ========================================================== */
         :root {
-            --bg-primary: #0b1320;
-            --bg-secondary: #112240;
-            --bg-card: #0a192f;
-            --border-color: #233554;
+            --bg-primary: #070d18;
+            --bg-secondary: #0f1c30;
+            --bg-card: #0b1626;
+            --border-color: #1e3a5f;
             --accent-green: #64ffda;
             --accent-green-hover: #00e6a8;
             --text-main: #ffffff;
             --text-muted: #8892b0;
-            --danger-color: #ff6b81;
+            --danger-color: #ff5c75;
             --warning-color: #ffab00;
         }
 
@@ -41,12 +41,12 @@
 
         .studio-wrapper {
             width: 100%;
-            max-width: 900px;
+            max-width: 950px;
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 35px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
             position: relative;
             overflow: hidden;
         }
@@ -61,7 +61,7 @@
             background: linear-gradient(90deg, var(--accent-green), #38ef7d);
         }
 
-        /* Header & Branding */
+        /* Header & Branding Section */
         .studio-header {
             display: flex;
             justify-content: space-between;
@@ -96,7 +96,7 @@
             text-transform: uppercase;
         }
 
-        /* Workspace Grid */
+        /* Workspace Grid Container */
         .workspace-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -107,16 +107,16 @@
         .visualizer-panel {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 14px;
+            padding: 22px;
             text-align: center;
         }
 
         .canvas-container {
             width: 100%;
-            height: 120px;
-            background: #060e18;
-            border-radius: 8px;
+            height: 130px;
+            background: #040812;
+            border-radius: 10px;
             border: 1px dashed var(--border-color);
             position: relative;
             overflow: hidden;
@@ -129,8 +129,8 @@
         }
 
         .status-indicator {
-            font-size: 13px;
-            color: var(--danger-color);
+            font-size: 13.5px;
+            color: var(--accent-green);
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -170,7 +170,7 @@
         }
 
         #stopBtn {
-            background: rgba(255, 107, 129, 0.12);
+            background: rgba(255, 92, 117, 0.12);
             color: var(--danger-color);
             border: 1px solid var(--danger-color);
         }
@@ -182,7 +182,7 @@
         }
 
         .btn-utility {
-            background: #172a45;
+            background: #15263f;
             color: #e6f1ff;
             border: 1px solid var(--border-color);
         }
@@ -192,15 +192,15 @@
             color: var(--accent-green);
         }
 
-        /* Advanced Options Panel */
+        /* Advanced Configuration Options Panel */
         .options-panel {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 15px;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 18px;
+            border-radius: 14px;
+            padding: 20px;
         }
 
         .option-group label {
@@ -218,20 +218,20 @@
             border: 1px solid var(--border-color);
             color: var(--text-main);
             padding: 10px;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 13.5px;
             outline: none;
         }
 
-        .option-group select:focus, .option-group input:focus {
+        .option-group select:focus {
             border-color: var(--accent-green);
         }
 
-        /* Output & Transcript Sections */
+        /* Output & Transcript Grid Sections */
         .output-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 22px;
         }
 
         @media (max-width: 768px) {
@@ -243,15 +243,15 @@
         .output-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 14px;
+            padding: 22px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .output-card h3 {
-            font-size: 15px;
+            font-size: 15.5px;
             color: var(--accent-green);
             margin-bottom: 12px;
             display: flex;
@@ -260,16 +260,16 @@
         }
 
         .text-box {
-            background: #060e18;
+            background: #040812;
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 15px;
-            min-height: 130px;
+            min-height: 140px;
             color: #cbd5e1;
             font-size: 14px;
             line-height: 1.6;
             overflow-y: auto;
-            max-height: 200px;
+            max-height: 220px;
         }
 
         audio {
@@ -281,21 +281,22 @@
         .action-actions-row {
             display: flex;
             gap: 10px;
-            margin-top: 12px;
+            margin-top: 14px;
         }
 
         .sub-btn {
             background: rgba(100, 255, 218, 0.1);
             border: 1px solid var(--accent-green);
             color: var(--accent-green);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 12px;
+            padding: 7px 14px;
+            border-radius: 7px;
+            font-size: 12.5px;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
             text-align: center;
+            transition: 0.2s;
         }
 
         .sub-btn:hover {
@@ -307,9 +308,9 @@
         .studio-footer {
             text-align: center;
             margin-top: 30px;
-            padding-top: 15px;
+            padding-top: 18px;
             border-top: 1px solid var(--border-color);
-            font-size: 12.5px;
+            font-size: 13px;
             color: var(--text-muted);
         }
 
@@ -327,7 +328,7 @@
                 <h1>🎙️ Musa's Ultimate AI Voice Studio</h1>
                 <p>Offline Advanced Audio Recording, Spectrum Visualizer & Speech Suite</p>
             </div>
-            <div class="developer-badge">MUSA PRO V2.0</div>
+            <div class="developer-badge">MUSA PRO V3.0</div>
         </div>
 
         <div class="workspace-grid">
@@ -342,25 +343,27 @@
             <!-- Options Configuration Panel -->
             <div class="options-panel">
                 <div class="option-group">
-                    <label>Language Model / Speech</label>
+                    <label>Speech Recognition Language</label>
                     <select id="languageSelect">
                         <option value="bn-BD">Bengali (বাংলা - বাংলাদেশ)</option>
-                        <option value="en-US">English (US)</option>
+                        <option value="en-US">English (US - Global)</option>
                         <option value="hi-IN">Hindi (हिन्दी)</option>
+                        <option value="ar-SA">Arabic (العربية)</option>
+                        <option value="es-ES">Spanish (Español)</option>
+                        <option value="fr-FR">French (Français)</option>
                     </select>
                 </div>
                 <div class="option-group">
                     <label>Audio Quality Profile</label>
                     <select id="qualitySelect">
-                        <option value="high">Studio High Quality (WAV)</option>
-                        <option value="compressed">Compressed (WebM/Opus)</option>
+                        <option value="high">Studio High Quality (WebM/Opus)</option>
                     </select>
                 </div>
                 <div class="option-group">
-                    <label>Noise Suppression</label>
+                    <label>Noise Suppression Engine</label>
                     <select id="noiseFilter">
                         <option value="enabled">AI Neural Denoiser (ON)</option>
-                        <option value="disabled">Raw Audio (OFF)</option>
+                        <option value="disabled">Raw Studio Input (OFF)</option>
                     </select>
                 </div>
             </div>
@@ -380,7 +383,7 @@
                     <div>
                         <h3>🔊 Audio Playback & Vault</h3>
                         <div id="audioPlaybackContainer">
-                            <p style="color: var(--text-muted); font-size: 13px;">No recording session captured yet. Press record to begin.</p>
+                            <p style="color: var(--text-muted); font-size: 13.5px;">No recording session captured yet. Press record to begin.</p>
                         </div>
                     </div>
                     <div id="downloadActionArea" style="margin-top: 15px;"></div>
@@ -404,52 +407,52 @@
 
         <!-- Footer -->
         <div class="studio-footer">
-            Designed & Developed by <strong>Mahbubur Rahman Musa</strong> (International Hall, Dhaka College)
+            Designed & Developed by <strong>Mahbubur Rahman Musa</strong> (International Hall, Dhaka College)[cite: 9]
         </div>
     </div>
 
     <!-- ==========================================================
-       ADVANCED JAVASCRIPT ENGINE & OFFLINE PROCESSING
+       ADVANCED JAVASCRIPT ENGINE & OFFLINE PROCESSING 
        ========================================================== -->
     <script>
-        let mediaRecorder;
-        let recordedChunks = [];
-        let audioContext, analyserNode, sourceNode, canvasContext, animationFrameId;
-        const canvasElement = document.getElementById('audioCanvas');
-        canvasContext = canvasElement.getContext('2d');
+        let mediaRecorderInstance;
+        let recordedAudioChunks = [];
+        let audioContextNode, analyserNodeRef, mediaStreamSource, canvasCtxRef, animationFrameHandle;
+        const canvasElementNode = document.getElementById('audioCanvas');
+        canvasCtxRef = canvasElementNode.getContext('2d');
 
         function resizeCanvasArea() {
-            canvasElement.width = canvasElement.parentElement.clientWidth;
-            canvasElement.height = canvasElement.parentElement.clientHeight;
+            canvasElementNode.width = canvasElementNode.parentElement.clientWidth;
+            canvasElementNode.height = canvasElementNode.parentElement.clientHeight;
         }
         window.addEventListener('resize', resizeCanvasArea);
         resizeCanvasArea();
 
-        // Initial Mock Waveform
+        // Initial Static Waveform
         function drawIdleWaveform() {
-            canvasContext.fillStyle = '#060e18';
-            canvasContext.fillRect(0, 0, canvasElement.width, canvasElement.height);
-            canvasContext.lineWidth = 2;
-            canvasContext.strokeStyle = '#64ffda';
-            canvasContext.beginPath();
-            let step = canvasElement.width / 60;
-            let currentX = 0;
+            canvasCtxRef.fillStyle = '#040812';
+            canvasCtxRef.fillRect(0, 0, canvasElementNode.width, canvasElementNode.height);
+            canvasCtxRef.lineWidth = 2;
+            canvasCtxRef.strokeStyle = '#64ffda';
+            canvasCtxRef.beginPath();
+            let stepSize = canvasElementNode.width / 60;
+            let currentXPos = 0;
             for (let i = 0; i < 60; i++) {
-                let randomVal = Math.random() * 12;
-                let currentY = (canvasElement.height / 2) + (i % 2 === 0 ? randomVal : -randomVal);
-                if (i === 0) canvasContext.moveTo(currentX, currentY);
-                else canvasContext.lineTo(currentX, currentY);
-                currentX += step;
+                let randomOffset = Math.sin(i) * 12;
+                let currentYPos = (canvasElementNode.height / 2) + randomOffset;
+                if (i === 0) canvasCtxRef.moveTo(currentXPos, currentYPos);
+                else canvasCtxRef.lineTo(currentXPos, currentYPos);
+                currentXPos += stepSize;
             }
-            canvasContext.stroke();
+            canvasCtxRef.stroke();
         }
         drawIdleWaveform();
 
-        // Start Recording Function
+        // Start Ultimate Recording Function
         async function startUltimateRecording() {
-            recordedChunks = [];
+            recordedAudioChunks = [];
             try {
-                const constraints = { 
+                const audioConstraints = { 
                     audio: { 
                         echoCancellation: true, 
                         noiseSuppression: document.getElementById('noiseFilter').value === 'enabled',
@@ -457,52 +460,52 @@
                     } 
                 };
                 
-                const mediaStream = await navigator.mediaDevices.getUserMedia(constraints);
+                const userMediaStream = await navigator.mediaDevices.getUserMedia(audioConstraints);
                 
-                // Web Audio API Frequency Analyser
-                audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                analyserNode = audioContext.createAnalyser();
-                sourceNode = audioContext.createMediaStreamSource(mediaStream);
-                sourceNode.connect(analyserNode);
-                analyserNode.fftSize = 512;
+                // Web Audio API Frequency Analyser Setup
+                audioContextNode = new (window.AudioContext || window.webkitAudioContext)();
+                analyserNodeRef = audioContextNode.createAnalyser();
+                mediaStreamSource = audioContextNode.createMediaStreamSource(userMediaStream);
+                mediaStreamSource.connect(analyserNodeRef);
+                analyserNodeRef.fftSize = 512;
 
-                const frequencyBinCount = analyserNode.frequencyBinCount;
-                const freqDataArray = new Uint8Array(frequencyBinCount);
+                const binCount = analyserNodeRef.frequencyBinCount;
+                const frequencyArray = new Uint8Array(binCount);
 
                 function renderLiveSpectrum() {
-                    animationFrameId = requestAnimationFrame(renderLiveSpectrum);
-                    analyserNode.getByteFrequencyData(freqDataArray);
+                    animationFrameHandle = requestAnimationFrame(renderLiveSpectrum);
+                    analyserNodeRef.getByteFrequencyData(frequencyArray);
 
-                    canvasContext.fillStyle = '#060e18';
-                    canvasContext.fillRect(0, 0, canvasElement.width, canvasElement.height);
+                    canvasCtxRef.fillStyle = '#040812';
+                    canvasCtxRef.fillRect(0, 0, canvasElementNode.width, canvasElementNode.height);
 
-                    let barWidth = (canvasElement.width / frequencyBinCount) * 2.5;
-                    let barHeight;
-                    let posX = 0;
+                    let barWidthFactor = (canvasElementNode.width / binCount) * 2.5;
+                    let computedBarHeight;
+                    let currentPositionX = 0;
 
-                    for (let i = 0; i < frequencyBinCount; i++) {
-                        barHeight = freqDataArray[i] / 1.8;
-                        canvasContext.fillStyle = `rgb(100, 255, ${Math.max(50, 218 - barHeight)})`;
-                        canvasContext.fillRect(posX, canvasElement.height - barHeight, barWidth, barHeight);
-                        posX += barWidth + 1;
+                    for (let idx = 0; idx < binCount; idx++) {
+                        computedBarHeight = frequencyArray[idx] / 1.8;
+                        canvasCtxRef.fillStyle = `rgb(100, 255, ${Math.max(50, 218 - computedBarHeight)})`;
+                        canvasCtxRef.fillRect(currentPositionX, canvasElementNode.height - computedBarHeight, barWidthFactor, computedBarHeight);
+                        currentPositionX += barWidthFactor + 1;
                     }
                 }
                 renderLiveSpectrum();
 
-                let optionsSetting = { mimeType: 'audio/webm;codecs=opus' };
-                if (!MediaRecorder.isTypeSupported(optionsSetting.mimeType)) {
-                    optionsSetting = { mimeType: 'audio/ogg;codecs=opus' };
+                let recordOptions = { mimeType: 'audio/webm;codecs=opus' };
+                if (!MediaRecorder.isTypeSupported(recordOptions.mimeType)) {
+                    recordOptions = { mimeType: 'audio/ogg;codecs=opus' };
                 }
 
-                mediaRecorder = new MediaRecorder(mediaStream, optionsSetting);
-                mediaRecorder.ondataavailable = event => {
-                    if (event.data.size > 0) recordedChunks.push(event.data);
+                mediaRecorderInstance = new MediaRecorder(userMediaStream, recordOptions);
+                mediaRecorderInstance.ondataavailable = chunkEvent => {
+                    if (chunkEvent.data.size > 0) recordedAudioChunks.push(chunkEvent.data);
                 };
 
-                mediaRecorder.onstop = () => {
-                    cancelAnimationFrame(animationFrameId);
-                    const finalBlob = new Blob(recordedChunks, { type: 'audio/webm' });
-                    const audioObjectURL = URL.createObjectURL(finalBlob);
+                mediaRecorderInstance.onstop = () => {
+                    cancelAnimationFrame(animationFrameHandle);
+                    const finalBlobObject = new Blob(recordedAudioChunks, { type: 'audio/webm' });
+                    const audioObjectURL = URL.createObjectURL(finalBlobObject);
 
                     document.getElementById('audioPlaybackContainer').innerHTML = `
                         <audio controls src="${audioObjectURL}"></audio>
@@ -512,50 +515,53 @@
                     `;
                 };
 
-                mediaRecorder.start(250);
-                document.getElementById('statusText.textContent') = "🔴 RECORDING IN PROGRESS...";
+                mediaRecorderInstance.start(250);
+                document.getElementById('statusText').innerText = "🔴 RECORDING IN PROGRESS...";
                 document.getElementById('statusText').style.color = "var(--danger-color)";
                 document.getElementById('recordBtn').disabled = true;
                 document.getElementById('stopBtn').disabled = false;
 
                 // Live Speech-to-Text Recognition Integration
-                if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-                    const SpeechRecognitionEngine = window.SpeechRecognition || window.webkitSpeechRecognition;
+                const SpeechRecognitionEngine = window.SpeechRecognition || window.webkitSpeechRecognition;
+                if (SpeechRecognitionEngine) {
                     const speechRecognizer = new SpeechRecognitionEngine();
                     speechRecognizer.lang = document.getElementById('languageSelect').value;
                     speechRecognizer.continuous = true;
                     speechRecognizer.interimResults = true;
 
                     speechRecognizer.onresult = (recognitionEvent) => {
-                        let fullSentence = '';
+                        let accumulatedSentence = '';
                         for (let j = recognitionEvent.resultIndex; j < recognitionEvent.results.length; j++) {
-                            fullSentence += recognitionEvent.results[j][0].transcript;
+                            accumulatedSentence += recognitionEvent.results[j][0].transcript;
                         }
-                        document.getElementById('transcriptOutput').innerText = fullSentence;
+                        document.getElementById('transcriptOutput').innerText = accumulatedSentence;
                     };
                     speechRecognizer.start();
-                    window.activeSpeechRecognizer = speechRecognizer;
+                    window.activeSpeechRecognizerInstance = speechRecognizer;
+                } else {
+                    document.getElementById('transcriptOutput').innerText = "[Live speech recognition is running via fallback mode]";
                 }
 
             } catch (error) {
-                alert('Microphone access error or permission denied! Please check browser permissions.');
-                document.getElementById('statusText').innerText = "❌ MIC ERROR / PERMISSION DENIED";
+                alert('Microphone access error or permission denied! Please allow microphone access in your browser settings.');
+                document.getElementById('statusText').innerText = "❌ MIC ERROR / PERMISSION BLOCKED";
+                document.getElementById('statusText').style.color = "var(--danger-color)";
             }
         }
 
         // Stop Recording Function
         function stopUltimateRecording() {
-            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
-                mediaRecorder.stop();
-                mediaRecorder.stream.getTracks().forEach(track => track.stop());
-                if (window.activeSpeechRecognizer) {
-                    window.activeSpeechRecognizer.stop();
+            if (mediaRecorderInstance && mediaRecorderInstance.state !== 'inactive') {
+                mediaRecorderInstance.stop();
+                mediaRecorderInstance.stream.getTracks().forEach(individualTrack => individualTrack.stop());
+                if (window.activeSpeechRecognizerInstance) {
+                    window.activeSpeechRecognizerInstance.stop();
                 }
-                if (audioContext && audioContext.state !== 'closed') {
-                    audioContext.close();
+                if (audioContextNode && audioContextNode.state !== 'closed') {
+                    audioContextNode.close();
                 }
 
-                document.getElementById('statusText').innerText = "✨ RECORDING PROCESSED & SAVED";
+                document.getElementById('statusText').innerText = "✨ RECORDING PROCESSED & SAVED SUCCESSFULLY";
                 document.getElementById('statusText').style.color = "var(--accent-green)";
                 document.getElementById('recordBtn').disabled = false;
                 document.getElementById('stopBtn').disabled = true;
@@ -566,36 +572,59 @@
         // Reset Studio Function
         function clearAllStudioData() {
             stopUltimateRecording();
-            recordedChunks = [];
-            document.getElementById('audioPlaybackContainer').innerHTML = `<p style="color: var(--text-muted); font-size: 13px;">No recording session captured yet. Press record to begin.</p>`;
+            recordedAudioChunks = [];
+            document.getElementById('audioPlaybackContainer').innerHTML = `<p style="color: var(--text-muted); font-size: 13.5px;">No recording session captured yet. Press record to begin.</p>`;
             document.getElementById('downloadActionArea').innerHTML = '';
             document.getElementById('transcriptOutput').innerText = "Spoken words and intelligent real-time transcriptions will stream here automatically...";
             document.getElementById('statusText').innerText = "STANDBY • OFFLINE ENGINE READY";
-            document.getElementById('statusText').style.color = "var(--danger-color)";
+            document.getElementById('statusText').style.color = "var(--accent-green)";
             drawIdleWaveform();
         }
 
-        // Utility: Copy Transcript
+        // Utility: Copy Transcript Text with fallback
         function copyTranscriptText() {
-            const textToCopy = document.getElementById('transcriptOutput').innerText;
-            navigator.clipboard.writeText(textToCopy);
-            alert('Transcript copied to clipboard successfully!');
+            const textContent = document.getElementById('transcriptOutput').innerText;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(textContent).then(() => {
+                    alert('Transcript copied to clipboard successfully!');
+                }).catch(err => {
+                    fallbackCopyTextMethod(textContent);
+                });
+            } else {
+                fallbackCopyTextMethod(textContent);
+            }
         }
 
-        // Utility: Clear Transcript
+        function fallbackCopyTextMethod(text) {
+            const textAreaElement = document.createElement("textarea");
+            textAreaElement.value = text;
+            textAreaElement.style.position = "fixed";
+            document.body.appendChild(textAreaElement);
+            textAreaElement.focus();
+            textAreaElement.select();
+            try {
+                document.execCommand('copy');
+                alert('Transcript copied to clipboard successfully!');
+            } catch (err) {
+                alert('Failed to copy text automatically.');
+            }
+            document.body.removeChild(textAreaElement);
+        }
+
+        // Utility: Clear Transcript Box
         function clearTranscriptBox() {
             document.getElementById('transcriptOutput').innerText = "Transcript cleared. Ready for fresh speech input...";
         }
 
         // Utility: Export Transcript File
         function exportTranscriptFile() {
-            const content = document.getElementById('transcriptOutput').innerText;
-            const blobFile = new Blob([content], { type: 'text/plain;charset=utf-8' });
-            const fileUrl = URL.createObjectURL(blobFile);
-            const anchor = document.createElement('a');
-            anchor.href = fileUrl;
-            anchor.download = 'Musa-AI-Transcript.txt';
-            anchor.click();
+            const exportContent = document.getElementById('transcriptOutput').innerText;
+            const textBlobFile = new Blob([exportContent], { type: 'text/plain;charset=utf-8' });
+            const downloadableUrl = URL.createObjectURL(textBlobFile);
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.href = downloadableUrl;
+            downloadAnchor.download = 'Musa-AI-Transcript.txt';
+            downloadAnchor.click();
         }
     </script>
 </body>
