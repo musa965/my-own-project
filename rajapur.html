@@ -301,19 +301,30 @@
             <div id="busDetailsContainer" class="detail-container"></div>
         </div>
 
-        <!-- EDUCATION VIEW -->
+       <!-- EDUCATION VIEW -->
         <div id="educationView" class="section-view">
             <button class="back-btn" onclick="switchTab('home')">← Back to Home</button>
             <h2 style="color: var(--accent-green); margin-bottom: 20px; font-size: 22px;">Educational Institutions</h2>
             <div class="grid-cards">
-                <div class="info-card">
-                    <h3>🏫 Rajapur Model Pilot High School</h3>
-                    <p style="color:var(--accent-green); margin-top:8px;">Time: 10:00 AM - 04:00 PM</p>
-                    <a href="tel:+8801715154816" class="contact-pill">📞 +8801715154816</a>
+                <div class="info-card" onclick="loadEdu('primary')">
+                    <h3>🏫 Primary Schools</h3>
+                    <p>View all primary schools and contact details in Rajapur.</p>
+                </div>
+                <div class="info-card" onclick="loadEdu('secondary')">
+                    <h3>🏫 Secondary Schools</h3>
+                    <p>View all high schools and academic schedules.</p>
+                </div>
+                <div class="info-card" onclick="loadEdu('colleges')">
+                    <h3>🏛️ Colleges</h3>
+                    <p>Explore higher secondary and degree colleges.</p>
+                </div>
+                <div class="info-card" onclick="loadEdu('madrasas')">
+                    <h3>🕌 Madrasas</h3>
+                    <p>Explore Kamil, Alim, and Dakhil madrasas.</p>
                 </div>
             </div>
+            <div id="eduDetailsContainer" class="detail-container"></div>
         </div>
-
         <!-- BLOOD BANK VIEW -->
         <div id="bloodView" class="section-view">
             <button class="back-btn" onclick="switchTab('home')">← Back to Home</button>
@@ -825,6 +836,117 @@
                     <div class="doctor-spec">সময়: সকাল ৬:০০</div>
                     <a href="tel:+8801741627334" class="contact-pill">📞 +8801741627334</a>
                 </div>
+            `
+        };
+
+
+        const eduData = {
+            'primary': `
+                <h3 style="color:#64ffda; margin-bottom:20px; font-size:20px;">Primary Schools in Rajapur</h3>
+                <div class="item-card"><h4>৩০ নং রাজাপুর মডেল গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801711470423" class="contact-pill">📞 +8801711470423</a></div>
+                <div class="item-card"><h4>২২ নং সাঙ্গর গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801740507304" class="contact-pill">📞 +8801740507304</a></div>
+                <div class="item-card"><h4>৩৪ নং দক্ষিণ আঙ্গারিয়া গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801922463984" class="contact-pill">📞 +8801922463984</a></div>
+                <div class="item-card"><h4>৩১ নং দক্ষিণ রাজাপুর গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801747199024" class="contact-pill">📞 +8801747199024</a></div>
+                <div class="item-card"><h4>১ নং সাতুরিয়া হামিডিয়া গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801777870100" class="contact-pill">📞 +8801777870100</a></div>
+                <div class="item-card"><h4>৬৬ নং সাউথপুর গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801743636078" class="contact-pill">📞 +8801743636078</a></div>
+                <div class="item-card"><h4>৭২ নং পূর্ব ইন্দ্রপাশা গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801711873216" class="contact-pill">📞 +8801711873216</a></div>
+                <div class="item-card"><h4>১০৩ নং এস ইসলাম গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801716822612" class="contact-pill">📞 +8801716822612</a></div>
+                <div class="item-card"><h4>১৪ নং নারিকেল বাড়িয়া গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801741527174" class="contact-pill">📞 +8801741527174</a></div>
+                <div class="item-card"><h4>৫১ নং উত্তর পুটিয়াখালী গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801714968607" class="contact-pill">📞 +8801714968607</a></div>
+                <div class="item-card"><h4>৬১ নং উত্তর পালট গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801718890513" class="contact-pill">📞 +8801718890513</a></div>
+                <div class="item-card"><h4>৫৪ নং ভাতকাঠী গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801922463984" class="contact-pill">📞 +8801922463984</a></div>
+                <div class="item-card"><h4>৩২ নং আলগী গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801922463984" class="contact-pill">📞 +8801922463984</a></div>
+                <div class="item-card"><h4>২৪ নং পালগোপালপুর গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801922463984" class="contact-pill">📞 +8801922463984</a></div>
+                <div class="item-card"><h4>২৫ নং দক্ষিণ মনোহরপুর গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801763047665" class="contact-pill">📞 +8801763047665</a></div>
+                <div class="item-card"><h4>১৮ নং কানুনিয়া গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801784476692" class="contact-pill">📞 +8801784476692</a></div>
+                <div class="item-card"><h4>৪ নং তারাবুনিয়া বোর্ড গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801731293808" class="contact-pill">📞 +8801731293808</a></div>
+                <div class="item-card"><h4>১০০ নং মধ্য রাজাপুর গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801781663840" class="contact-pill">📞 +8801781663840</a></div>
+                <div class="item-card"><h4>১১০ নং উত্তমপুর গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801735392764" class="contact-pill">📞 +8801735392764</a></div>
+                <div class="item-card"><h4>১১২ নং চর পালট গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801732797636" class="contact-pill">📞 +8801732797636</a></div>
+                <div class="item-card"><h4>১০১ নং পশ্চিম কানুদাসকাঠী কাচারিবাজার গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801743065639" class="contact-pill">📞 +8801743065639</a></div>
+                <div class="item-card"><h4>৭৮ নং চোরখালি তারাবুনিয়া গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801789208411" class="contact-pill">📞 +8801789208411</a></div>
+                <div class="item-card"><h4>৯০ নং পূর্ব বামনখান গভঃ প্রাইমারি স্কুল</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801753314161" class="contact-pill">📞 +8801753314161</a></div>
+            `,
+            'secondary': `
+                <h3 style="color:#64ffda; margin-bottom:20px; font-size:20px;">Secondary Schools in Rajapur</h3>
+                <div class="item-card"><h4>রাজাপুর মডেল পাইলট উচ্চ বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801715144816" class="contact-pill">📞 +8801715144816</a></div>
+                <div class="item-card"><h4>পঞ্চগ্রাম আদর্শ মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801718777505" class="contact-pill">📞 +8801718777505</a></div>
+                <div class="item-card"><h4>পশ্চিম ফুলহার মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801716557521" class="contact-pill">📞 +8801716557521</a></div>
+                <div class="item-card"><h4>গালুয়া কৈবর্তখালী মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801718193480" class="contact-pill">📞 +8801718193480</a></div>
+                <div class="item-card"><h4>রাজাপুর সরকারি পাইলট বালিকা উচ্চ বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801917527891" class="contact-pill">📞 +8801917527891</a></div>
+                <div class="item-card"><h4>গালুয়া সালেহা খাতুন বালিকা মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801710082468" class="contact-pill">📞 +8801710082468</a></div>
+                <div class="item-card"><h4>নিজামিয়া বহুমুখী মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801715848348" class="contact-pill">📞 +8801715848348</a></div>
+                <div class="item-card"><h4>সাতুরিয়া মেহেরুন্নেছা মেমোরিয়াল মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801776961018" class="contact-pill">📞 +8801776961018</a></div>
+                <div class="item-card"><h4>গালুয়া ইউনিয়ন মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801729679177" class="contact-pill">📞 +8801729679177</a></div>
+                <div class="item-card"><h4>দক্ষিণ পশ্চিম কাঠীপাড়া মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801715468297" class="contact-pill">📞 +8801715468297</a></div>
+                <div class="item-card"><h4>পুটিয়াখালী বহুমুখী মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801714551573" class="contact-pill">📞 +8801714551573</a></div>
+                <div class="item-card"><h4>শ্রীমন্তকাঠী মহালক্ষী বালিকা মা: বি:</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801710863713" class="contact-pill">📞 +8801710863713</a></div>
+                <div class="item-card"><h4>বড়ইয়া মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801754015508" class="contact-pill">📞 +8801754015508</a></div>
+                <div class="item-card"><h4>চরকেওতা মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801784725168" class="contact-pill">📞 +8801784725168</a></div>
+                <div class="item-card"><h4>পিংরী মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801778019301" class="contact-pill">📞 +8801778019301</a></div>
+                <div class="item-card"><h4>আনোয়ারা খাতুন বালিকা মা: বি:</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801719574076" class="contact-pill">📞 +8801719574076</a></div>
+                <div class="item-card"><h4>চাড়াখালী বহুমুখী মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801715384154" class="contact-pill">📞 +8801715384154</a></div>
+                <div class="item-card"><h4>উত্তর উত্তমপুর বহুমুখী মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801712653204" class="contact-pill">📞 +8801712653204</a></div>
+                <div class="item-card"><h4>হাজী সৈয়দ আফসার উদ্দিন মাঃ বিঃ</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801718832384" class="contact-pill">📞 +8801718832384</a></div>
+                <div class="item-card"><h4>ইউসুফ আলী বহুমুখী মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801716353439" class="contact-pill">📞 +8801716353439</a></div>
+                <div class="item-card"><h4>তারাবুনিয়া রামবাদক মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801712920816" class="contact-pill">📞 +8801712920816</a></div>
+                <div class="item-card"><h4>সোনারগাঁও জবান আলি খান মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801723841165" class="contact-pill">📞 +8801723841165</a></div>
+                <div class="item-card"><h4>মঠবাড়ী ইউনিয়ন মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801724139972" class="contact-pill">📞 +8801724139972</a></div>
+                <div class="item-card"><h4>মনোহরপুর মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801716799856" class="contact-pill">📞 +8801716799856</a></div>
+                <div class="item-card"><h4>সাংগর আদর্শ মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801712730375" class="contact-pill">📞 +8801712730375</a></div>
+                <div class="item-card"><h4>বামনখান পল্লীমঙ্গল মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801608207032" class="contact-pill">📞 +8801608207032</a></div>
+                <div class="item-card"><h4>মাতৃকল্যাণ বালিকা মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801718660903" class="contact-pill">📞 +8801718660903</a></div>
+                <div class="item-card"><h4>বাঘরী বালিকা মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801712052667" class="contact-pill">📞 +8801712052667</a></div>
+                <div class="item-card"><h4>সপ্তগ্রাম সম্মিলনী মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801717068133" class="contact-pill">📞 +8801717068133</a></div>
+                <div class="item-card"><h4>কানুদাসকাঠী নলবুনিয়া মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801712088730" class="contact-pill">📞 +8801712088730</a></div>
+                <div class="item-card"><h4>আফাজ উদ্দিন বালিকা মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801737199070" class="contact-pill">📞 +8801737199070</a></div>
+                <div class="item-card"><h4>আঙ্গারিয়া মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801747101804" class="contact-pill">📞 +8801747101804</a></div>
+                <div class="item-card"><h4>মোহাম্মদ শাহআলম মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801740567889" class="contact-pill">📞 +8801740567889</a></div>
+                <div class="item-card"><h4>উত্তমপুর আবদুল মালেক বালিকা মাঃ বিঃ</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801733131164" class="contact-pill">📞 +8801733131164</a></div>
+                <div class="item-card"><h4>বারবাকপুর বালিকা মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801878064007" class="contact-pill">📞 +8801878064007</a></div>
+                <div class="item-card"><h4>শুক্তাগড় মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801712209134" class="contact-pill">📞 +8801712209134</a></div>
+                <div class="item-card"><h4>বড়ইয়া বালিকা মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801715576182" class="contact-pill">📞 +8801715576182</a></div>
+                <div class="item-card"><h4>আদাখোলা মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801779932488" class="contact-pill">📞 +8801779932488</a></div>
+                <div class="item-card"><h4>সাউথ রাজাপুর এফ. এম. বালিকা মাঃ বিঃ</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801719884139" class="contact-pill">📞 +8801719884139</a></div>
+                <div class="item-card"><h4>পশ্চিম গালুয়া দুর্গাপুর মাধ্যমিক বিদ্যালয়</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm</span></div><a href="tel:+8801718193480" class="contact-pill">📞 +8801718193480</a></div>
+            `,
+            'colleges': `
+                <h3 style="color:#64ffda; margin-bottom:20px; font-size:20px;">Colleges in Rajapur</h3>
+                <div class="item-card"><h4>Rajapur Govt College</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০৪:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801307995442" class="contact-pill">📞 +8801307995442</a></div>
+                <div class="item-card"><h4>Alhaj Lalmon Hamid Women College</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801716503698" class="contact-pill">📞 +8801716503698</a></div>
+                <div class="item-card"><h4>Boroia Degree College</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801716079731" class="contact-pill">📞 +8801716079731</a></div>
+                <div class="item-card"><h4>Abdul Malek Degree College</h4><div class="item-meta"><span>সময়: ১০:০০ am - ০১:০০ pm (রবি-বৃহস্পতি)</span></div><a href="tel:+8801716079731" class="contact-pill">📞 +8801716079731</a></div>
+            `,
+            'madrasas': `
+                <h3 style="color:#64ffda; margin-bottom:20px; font-size:20px;">Madrasas in Rajapur</h3>
+                <div class="item-card"><h4>রাজাপুর কামিল (এম.এ.) মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801712812960" class="contact-pill">📞 +8801712812960</a></div>
+                <div class="item-card"><h4>পশ্চিম চাড়াখালী আ: দা: মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801757433708" class="contact-pill">📞 +8801757433708</a></div>
+                <div class="item-card"><h4>ডহরশংকর হাইলাকাঠী ইসলামিয়া দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801757309025" class="contact-pill">📞 +8801757309025</a></div>
+                <div class="item-card"><h4>পূর্ব কানুদাসকাঠী দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801715635127" class="contact-pill">📞 +8801715635127</a></div>
+                <div class="item-card"><h4>তারাবুনিয়া ওয়াহেদিয়া দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801714660420" class="contact-pill">📞 +8801714660420</a></div>
+                <div class="item-card"><h4>কেওতা ঘিগড়া ফাজিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801709902444" class="contact-pill">📞 +8801709902444</a></div>
+                <div class="item-card"><h4>পুটিয়াখালী দারুল ইসলাম সিনিয়র মা:</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801748789408" class="contact-pill">📞 +8801748789408</a></div>
+                <div class="item-card"><h4>কানুদাসকাঠী মাওলানা আবদুর রব কামিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801729113563" class="contact-pill">📞 +8801729113563</a></div>
+                <div class="item-card"><h4>আঙ্গারিয়া আলিম মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801726127929" class="contact-pill">📞 +8801726127929</a></div>
+                <div class="item-card"><h4>ভাতকাঠী আদাখোলা দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801712285524" class="contact-pill">📞 +8801712285524</a></div>
+                <div class="item-card"><h4>নারিকেলবাড়ীয়া জাফ: আলিম মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801724853265" class="contact-pill">📞 +8801724853265</a></div>
+                <div class="item-card"><h4>পূর্ব পুটিয়াখালী দারুচ্ছালাম ফা: মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801735627620" class="contact-pill">📞 +8801735627620</a></div>
+                <div class="item-card"><h4>দক্ষিণ আঙ্গারিয়া দারুলহুদা ইসঃ দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801725438394" class="contact-pill">📞 +8801725438394</a></div>
+                <div class="item-card"><h4>চল্লিশ কাহনিয়া উত্তমপুর দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801732440409" class="contact-pill">📞 +8801732440409</a></div>
+                <div class="item-card"><h4>জালালশাহী ইসলামিয়া দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801713953630" class="contact-pill">📞 +8801713953630</a></div>
+                <div class="item-card"><h4>হাজেরা আহম্মদিয়া বা: দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801731442710" class="contact-pill">📞 +8801731442710</a></div>
+                <div class="item-card"><h4>গালুয়া ইসলামিয়া দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801724109336" class="contact-pill">📞 +8801724109336</a></div>
+                <div class="item-card"><h4>বড়ইয়া এমদাদিয়া দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801721413852" class="contact-pill">📞 +8801721413852</a></div>
+                <div class="item-card"><h4>রোলা নেছারিয়া দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801725728685" class="contact-pill">📞 +8801725728685</a></div>
+                <div class="item-card"><h4>জীবনদাসকাঠী এন.এ.এস. দা: মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801723241856" class="contact-pill">📞 +8801723241856</a></div>
+                <div class="item-card"><h4>শুক্তাগড় মাহমুদিয়া দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801724038364" class="contact-pill">📞 +8801724038364</a></div>
+                <div class="item-card"><h4>নর্থ পালট নে: হামিদিয়া দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801721217726" class="contact-pill">📞 +8801721217726</a></div>
+                <div class="item-card"><h4>আলহাজ মুনসুর আলী দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801726711185" class="contact-pill">📞 +8801726711185</a></div>
+                <div class="item-card"><h4>সাউদপুর আলিম মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801779815186" class="contact-pill">📞 +8801779815186</a></div>
+                <div class="item-card"><h4>পূর্ব আঙ্গারিয়া এ.এস. বা: দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801789806098" class="contact-pill">📞 +8801789806098</a></div>
+                <div class="item-card"><h4>উত্তর উত্তমপুর দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801712592693" class="contact-pill">📞 +8801712592693</a></div>
+                <div class="item-card"><h4>পালট মোহাম্মদিয়া দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801727685464" class="contact-pill">📞 +8801727685464</a></div>
+                <div class="item-card"><h4>লেবুবুনিয়া দারুচ্ছান্নাত হা: দাখিল মাদ্রাসা</h4><div class="item-meta"><span>রবিবার - বৃহস্পতিবার খোলা</span></div><a href="tel:+8801741079009" class="contact-pill">📞 +8801741079009</a></div>
             `
         };
 
