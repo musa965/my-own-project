@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajapur Area Service Provider - Premium Hub</title>
+    <title>Rajapur 360° • Digital Hub & Services</title>
     <style>
         :root {
             --bg-primary: #070d18;
@@ -14,8 +14,6 @@
             --accent-green-hover: #00e6a8;
             --text-main: #ffffff;
             --text-muted: #8892b0;
-            --danger-color: #ff5c75;
-            --warning-color: #ffab00;
         }
 
         * {
@@ -37,13 +35,12 @@
 
         .hub-container {
             width: 100%;
-            max-width: 1100px;
+            max-width: 1200px;
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 35px;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
-            position: relative;
         }
 
         .hub-header {
@@ -61,6 +58,7 @@
             color: var(--accent-green);
             font-size: 26px;
             font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
         .brand p {
@@ -84,13 +82,14 @@
             font-weight: 700;
             font-size: 13.5px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
         .tab-btn.active, .tab-btn:hover {
             background: var(--accent-green);
             color: var(--bg-primary);
             border-color: var(--accent-green);
+            box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
         }
 
         .section-view {
@@ -109,7 +108,7 @@
 
         .grid-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 22px;
         }
 
@@ -142,7 +141,7 @@
         }
 
         .detail-container {
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .back-btn {
@@ -157,28 +156,44 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            transition: 0.2s;
         }
+        .back-btn:hover { background: rgba(100, 255, 218, 0.1); }
 
-        .schedule-item {
+        .doctor-item {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 18px;
-            margin-bottom: 15px;
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 18px;
+            transition: 0.3s;
+        }
+        .doctor-item:hover {
+            border-color: var(--accent-green);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
-        .schedule-item h4 {
-            color: var(--text-main);
-            font-size: 15px;
+        .doctor-item h4 {
+            color: var(--accent-green);
+            font-size: 17px;
             margin-bottom: 6px;
             font-weight: 700;
         }
 
-        .schedule-item .time {
-            color: var(--accent-green);
+        .doctor-spec {
+            color: #e6f1ff;
             font-size: 13.5px;
             font-weight: 600;
             margin-bottom: 8px;
+        }
+
+        .doctor-meta {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .contact-pill {
@@ -186,14 +201,16 @@
             background: rgba(100, 255, 218, 0.08);
             border: 1px solid rgba(100, 255, 218, 0.3);
             color: var(--accent-green);
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: 6px;
             font-size: 12px;
             font-weight: 600;
             text-decoration: none;
-            margin-top: 5px;
-            margin-right: 5px;
+            margin-top: 8px;
+            margin-right: 6px;
+            transition: 0.2s;
         }
+        .contact-pill:hover { background: rgba(100, 255, 218, 0.2); }
 
         .footer-credit {
             text-align: center;
@@ -212,13 +229,15 @@
         <!-- Header -->
         <div class="hub-header">
             <div class="brand">
-                <h1>📍 Rajapur Area Service Provider</h1>
-                <p>Find everything you need in one premium digital hub!</p>
+                <h1>📍 Rajapur 360° Digital Hub</h1>
+                <p>All essential area services, medical directories & transport schedules in one place.</p>
             </div>
             <div class="nav-tabs">
                 <button class="tab-btn active" onclick="switchTab('home')">🏠 Home</button>
-                <button class="tab-btn" onclick="switchTab('doctors')">🩺 Doctors & Hospital</button>
+                <button class="tab-btn" onclick="switchTab('doctors')">🩺 Medical & Doctors</button>
                 <button class="tab-btn" onclick="switchTab('buses')">🚌 Bus Schedules</button>
+                <button class="tab-btn" onclick="switchTab('education')">🎓 Institutions</button>
+                <button class="tab-btn" onclick="switchTab('blood')">🩸 Blood Bank</button>
             </div>
         </div>
 
@@ -227,11 +246,19 @@
             <div class="grid-cards">
                 <div class="info-card" onclick="switchTab('doctors')">
                     <h3>🩺 Medical & Doctors</h3>
-                    <p>Find medical specialists, Sohag General Hospital, Doctors Clinic, and Popular Diagnostic Center doctors.</p>
+                    <p>Find specialist doctors, clinic schedules, and diagnostic center contacts in Rajapur.</p>
                 </div>
                 <div class="info-card" onclick="switchTab('buses')">
                     <h3>🚌 Bus Schedules</h3>
-                    <p>Check live bus routes, timings, and ticket contact numbers for Sakura, Labiba, Eagle, Palki, and more.</p>
+                    <p>Check intercity bus routes, departure timings, and counter manager contact numbers.</p>
+                </div>
+                <div class="info-card" onclick="switchTab('education')">
+                    <h3>🎓 Educational Institutions</h3>
+                    <p>Explore schools, madrasas, colleges, and academic schedules.</p>
+                </div>
+                <div class="info-card" onclick="switchTab('blood')">
+                    <h3>🩸 Emergency Blood Bank</h3>
+                    <p>Emergency blood donor contacts for critical health needs.</p>
                 </div>
             </div>
         </div>
@@ -239,19 +266,19 @@
         <!-- DOCTORS VIEW -->
         <div id="doctorsView" class="section-view">
             <button class="back-btn" onclick="switchTab('home')">← Back to Home</button>
-            <h2 style="color: var(--accent-green); margin-bottom: 20px; font-size: 22px;">Select Hospital / Diagnostic Center</h2>
+            <h2 style="color: var(--accent-green); margin-bottom: 20px; font-size: 22px;">Medical & Hospital Directory</h2>
             <div class="grid-cards">
                 <div class="info-card" onclick="loadHospital('sohag')">
                     <h3>Sohag General Hospital</h3>
-                    <p>See all Sohag General Hospital's specialist doctors and chamber schedules.</p>
+                    <p>View all specialist doctors, chamber schedules and room details.</p>
                 </div>
                 <div class="info-card" onclick="loadHospital('doctors-clinic')">
                     <h3>Doctors Clinic & Diagnostic Center</h3>
-                    <p>View doctors at Doctors Clinic and Diagnostic Center.</p>
+                    <p>View consultant doctor schedules and diagnostics.</p>
                 </div>
                 <div class="info-card" onclick="loadHospital('popular')">
                     <h3>Popular Clinic & Diagnostic Center</h3>
-                    <p>See Popular Clinic and Diagnostic Center specialist doctors.</p>
+                    <p>View specialist doctors and visiting hours.</p>
                 </div>
             </div>
             <div id="hospitalDetailsContainer" class="detail-container"></div>
@@ -264,51 +291,48 @@
             <div class="grid-cards">
                 <div class="info-card" onclick="loadBus('sakura')">
                     <h3>Sakura Paribahan</h3>
-                    <p>Check Sakura bus schedules and counter contacts from Rajapur.</p>
+                    <p>Check schedules and counter contacts.</p>
                 </div>
                 <div class="info-card" onclick="loadBus('labiba')">
                     <h3>Labiba Classic Ltd.</h3>
-                    <p>Check Labiba Classic bus schedules and timings.</p>
-                </div>
-                <div class="info-card" onclick="loadBus('eagle')">
-                    <h3>Eagle Paribahan</h3>
-                    <p>Check Eagle Paribahan bus timings and contact numbers.</p>
-                </div>
-                <div class="info-card" onclick="loadBus('palki')">
-                    <h3>Palki Express</h3>
-                    <p>Check Palki Express bus routes and schedules.</p>
-                </div>
-                <div class="info-card" onclick="loadBus('shyamoli')">
-                    <h3>Shyamoli Paribahan</h3>
-                    <p>Check Shyamoli Paribahan schedules from Rajapur.</p>
-                </div>
-                <div class="info-card" onclick="loadBus('evan')">
-                    <h3>Evan Paribahan</h3>
-                    <p>Check Evan Paribahan timings and ticket info.</p>
-                </div>
-                <div class="info-card" onclick="loadBus('emad')">
-                    <h3>Emad Paribahan</h3>
-                    <p>Check Emad Paribahan schedules and contacts.</p>
-                </div>
-                <div class="info-card" onclick="loadBus('comfort')">
-                    <h3>Comfort Line</h3>
-                    <p>Check Comfort Line bus schedule.</p>
-                </div>
-                <div class="info-card" onclick="loadBus('mizan')">
-                    <h3>Mizan Paribahan</h3>
-                    <p>Check Mizan Paribahan schedule.</p>
+                    <p>Check route timings and ticket booking.</p>
                 </div>
             </div>
             <div id="busDetailsContainer" class="detail-container"></div>
         </div>
 
+        <!-- EDUCATION VIEW -->
+        <div id="educationView" class="section-view">
+            <button class="back-btn" onclick="switchTab('home')">← Back to Home</button>
+            <h2 style="color: var(--accent-green); margin-bottom: 20px; font-size: 22px;">Educational Institutions</h2>
+            <div class="grid-cards">
+                <div class="info-card">
+                    <h3>🏫 Rajapur Model Pilot High School</h3>
+                    <p style="color:var(--accent-green); margin-top:8px;">Time: 10:00 AM - 04:00 PM</p>
+                    <a href="tel:+8801715154816" class="contact-pill">📞 +8801715154816</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOOD BANK VIEW -->
+        <div id="bloodView" class="section-view">
+            <button class="back-btn" onclick="switchTab('home')">← Back to Home</button>
+            <h2 style="color: var(--accent-green); margin-bottom: 20px; font-size: 22px;">Emergency Blood Donors</h2>
+            <div class="grid-cards">
+                <div class="info-card">
+                    <h3>🩸 Blood Bank Directory</h3>
+                    <p>Emergency donor contacts will be added here soon.</p>
+                </div>
+            </div>
+        </div>
+
         <!-- Footer -->
         <div class="footer-credit">
-            Rajapur Area Service Provider by <strong>Rajapur Pilot Science and Technology Club (RPST)</strong> | Enhanced & Standardized by <strong>Mahbubur Rahman Musa</strong>
+            Rajapur 360° Digital Hub | Developed by <strong>Mahbubur Rahman Musa</strong>
         </div>
     </div>
 
-    <!-- Script Data & Logic -->
+    <!-- Script Logic & Hospital Data -->
     <script>
         function switchTab(tabName) {
             document.querySelectorAll('.section-view').forEach(el => el.classList.remove('active'));
@@ -316,137 +340,500 @@
             
             if(tabName === 'home') {
                 document.getElementById('homeView').classList.add('active');
-                event && event.currentTarget && event.currentTarget.classList.add('active');
             } else if(tabName === 'doctors') {
                 document.getElementById('doctorsView').classList.add('active');
                 document.getElementById('hospitalDetailsContainer').innerHTML = '';
             } else if(tabName === 'buses') {
                 document.getElementById('busesView').classList.add('active');
                 document.getElementById('busDetailsContainer').innerHTML = '';
+            } else if(tabName === 'education') {
+                document.getElementById('educationView').classList.add('active');
+            } else if(tabName === 'blood') {
+                document.getElementById('bloodView').classList.add('active');
             }
         }
 
         const hospitalData = {
             'sohag': `
-                <h3 style="color:#64ffda; margin-bottom:15px;">Sohag General Hospital - Specialist Doctors</h3>
-                <div class="schedule-item">
-                    <h4>ডাঃ জাকির হোসেন সুলতানা</h4>
-                    <div class="time">প্রতি সোমবার | দুপুর ১ টা থেকে বিকেল ৩ টা</div>
-                    <a href="tel:+8801821361392" class="call-btn contact-pill">📞 +8801821361392</a>
-                    <a href="tel:+8801904126844" class="call-btn contact-pill">📞 +8801904126844</a>
+                <h3 style="color:#64ffda; margin-bottom:20px; font-size:20px;">Sohag General Hospital - All Specialist Doctors</h3>
+                
+                <div class="doctor-item">
+                    <h4>ডাঃ নাসরিন সুলতানা</h4>
+                    <div class="doctor-spec">গাইনী বিশেষজ্ঞ ও সার্জন</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি মঙ্গলবার, দুপুর ২ টা - সন্ধ্যা ৭ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন ২য় তলা, রুম নং- ৭১৫</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                    <a href="tel:+8801904126844" class="contact-pill">📞 +8801904126844</a>
                 </div>
-                <div class="schedule-item">
-                    <h4>ডাঃ সুরজিত হাসান রিংকু</h4>
-                    <div class="time">শুক্রবার ৮ টা থেকে রাত ৮ টা</div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ সুরাইয়া ইয়াসমিন</h4>
+                    <div class="doctor-spec">গাইনী ও প্রসূতী এবং বন্ধাত্বক রোগ বিশেষজ্ঞ ও সার্জন</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি শুক্রবার, সকাল ৮ টা - রাত ৮ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন ২য় তলা, রুম নং- ৭১৫</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ রুনা লায়লা</h4>
+                    <div class="doctor-spec">প্রসূতী স্ত্রী রোগ বিশেষজ্ঞ এবং সার্জন (আল্ট্রাসনো করেন)</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি রবি ও বুধবার, বিকাল ৩ টা - রাত ৮ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন ২য় তলা, রুম নং- ৭১৫</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ ফারহানা আফরিন সারাহ</h4>
+                    <div class="doctor-spec">প্রসূতী, স্ত্রী রোগ ও আল্ট্রাসনোগ্রাফী অভিজ্ঞ এবং সার্জন</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতিদিন, সকাল ৯ টা - বেলা ২ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন ২য় তলা, রুম নং- ৭১১</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ সালাহ আল-দীন-বিন নাসির (রাসেল)</h4>
+                    <div class="doctor-spec">নবজাতক ও শিশু বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি শুক্রবার, সকাল ৯ টা - ১ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন ২য় তলা, রুম নং- ৭০৮</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ টিটপ কুমার বালা</h4>
+                    <div class="doctor-spec">বক্ষব্যাদি মেডিসিন বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি মঙ্গলবার, বিকাল ৩ টা - রাত ৮ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন ২য় তলা, রুম নং- ১০৭</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ হাবিবুর রহমান</h4>
+                    <div class="doctor-spec">চর্ম, যৌন, এলার্জি ও কুষ্ঠ রোগ বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি রবিবার, দুপুর ২ টা - বিকাল ৪:৩০ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন ২য় তলা, রুম নং- ৭০৬</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মীর্জা মাহবুবুর রহমান</h4>
+                    <div class="doctor-spec">চক্ষু বিশেষজ্ঞ ও কনসাল্টেন্ট ফ্যাকো সার্জন</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি শুক্রবার, বেলা ১০ টা - বিকাল ৩ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন ২য় তলা</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ নাফিয়া রহমান</h4>
+                    <div class="doctor-spec">চক্ষু চিকিৎসক</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি সোমবার, বিকাল ৩:৩০ - সন্ধ্যা ৭ টা</span>
+                        <span>📍 সোহাগ জেনারেল হাসপাতাল</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ লোকমান হোসেন</h4>
+                    <div class="doctor-spec">চোখ ও মাথা ব্যাথা রোগে অভিজ্ঞ চিকিৎসক</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতিদিন, সকাল ৯টা-১টা এবং বিকাল ৪টা-রাত ৮টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন ২য় তলা, রুম নং- ৭০৪</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ ফারহান তানভীর তানু</h4>
+                    <div class="doctor-spec">মেডিসিন, স্নায়ুরোগ, হৃদরোগ, ডায়াবেটিস ও শিশুরোগ বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি শুক্রবার, দুপুর ২ টা - সন্ধ্যা ৭ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন ২য় তলা, রুম নং- ৭১৩</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডেন্টিস্ট মোঃ নিয়াজ বিন ইসলাম (নিলয়)</h4>
+                    <div class="doctor-spec">দাঁত, মাড়ি ও দন্ত রোগের চিকিৎসক</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতিদিন, সকাল ৯টা-১টা এবং বিকাল ৪টা-সন্ধ্যা ৭টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ এ.ডি.এইচ শরীফ ভুইয়া</h4>
+                    <div class="doctor-spec">মেডিসিন, সার্জারী, গ্যাস্ট্রিক, হৃদরোগ, গাইনী ও শিশু বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 সোমবার, বিকাল ৩ টা - সন্ধ্যা ৮ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক পুরাতন ভবন, রুম নং- ২</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মো: আরিফ হোসেন</h4>
+                    <div class="doctor-spec">অর্থোপেডিক বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 শুক্রবার সকাল ১০টা-৩টা ও সোমবার বিকাল ৩টা-রাত ৮টা</span>
+                        <span>📍 সোহাগ ক্লিনিক পুরাতন ভবন, রুম নং- ৩</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ রুশদী আবুজর সুজন</h4>
+                    <div class="doctor-spec">নিউরোমেডিসিন, ব্রেইন, নার্ভ ও স্পাইন বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি শুক্রবার, দুপুর ২ টা - সন্ধ্যা ৭ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ আবুয়াল হাসান</h4>
+                    <div class="doctor-spec">মেডিসিন, হৃদরোগ, ডায়াবেটিস ও হরমোন জনিত রোগ বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি শুক্রবার, সকাল ৯ টা - রাত ৮ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন ২য় তলা, রুম নং- ৭০৫</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ আজম খান</h4>
+                    <div class="doctor-spec">মা ও শিশু, ব্যথা, গ্যাস্ট্রিক, চর্ম ও মেডিসিন বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি মঙ্গলবার, দুপুর ২ টা - সন্ধ্যা ৭ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন ২য় তলা, রুম নং- ৭১৫</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ আনোয়ার হোসেন</h4>
+                    <div class="doctor-spec">সার্জারী বিশেষজ্ঞ (অ্যাপেন্ডিক্স, হার্নিয়া, টিউমার অপারেশন)</div>
+                    <div class="doctor-meta">
+                        <span>🕒 মঙ্গলবার ও শুক্রবার সকাল ৯ টা - রাত ৮ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ হাফীজুর রহমান</h4>
+                    <div class="doctor-spec">মেডিসিন, কিডনী, বাত-ব্যাথা ও গিরা-ব্যাথা চিকিৎসক</div>
+                    <div class="doctor-meta">
+                        <span>🕒 বুধবার বিকাল ৪টা-রাত ৮টা এবং শুক্রবার সকাল ৯টা-রাত ৮টা</span>
+                        <span>📍 সোহাগ ক্লিনিক</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মো: রেজাউল হোসেন</h4>
+                    <div class="doctor-spec">পাইলস, সিজার, টিউমার ও জরায়ু অপারেশন বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি সোম ও শুক্রবার</span>
+                        <span>📍 সোহাগ ক্লিনিক পুরাতন ভবন, রুম নং- ১০৩</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ মাহবুবুর রহমান</h4>
+                    <div class="doctor-spec">মেডিসিন, বক্ষব্যাধি, গাইনী ও জেনারেল প্র্যাক্টিশনার</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতিদিন, সকাল ৮টা-১টা ও বিকাল ৪টা-রাত ১০টা</span>
+                        <span>📍 সোহাগ ক্লিনিক পুরাতন ভবন, রুম নং- ০৪</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ মহিউদ্দিন</h4>
+                    <div class="doctor-spec">মা ও শিশু, মেডিসিন, সার্জারী ও ডায়াবেটিস বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতিদিন, সকাল ৯ টা - বেলা ২ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক পুরাতন ভবন, রুম নং- ০২</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ আয়াফুতুল ইসলাম সম্রাট</h4>
+                    <div class="doctor-spec">বাতব্যাথা, প্যারালাইসিস, স্ট্রোক ও আর্থ্রাইটিস বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি শনিবার, সকাল ৯ টা - বিকাল ৫ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক পুরাতন ভবন</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ সৈয়দ নাজমুল ইসলাম</h4>
+                    <div class="doctor-spec">হৃদরোগ, মেডিসিন এবং ডায়াবেটিস বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি বৃহস্পতিবার, দুপুর ২:৩০ - সন্ধ্যা ৮ টা</span>
+                        <span>📍 সোহাগ জেনারেল হাসপাতাল (২য় তলা)</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ হারুন-অর-রশিদ</h4>
+                    <div class="doctor-spec">নাক-কান-গলা রোগ বিশেষজ্ঞ ও সার্জন</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি শুক্রবার, সকাল ৮ টা - ১০ টা</span>
+                        <span>📍 সোহাগ জেনারেল হাসপাতাল (২য় তলা)</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ সাইফুল ইসলাম</h4>
+                    <div class="doctor-spec">নাক-কান-গলা রোগ বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি মঙ্গলবার, সকাল ৮ টা - বিকাল ৪ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন ২য় তলা, রুম নং- ৭০৮</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ জাবের আল সাঙ্গদ</h4>
+                    <div class="doctor-spec">নাক, কান, গলা রোগ বিশেষজ্ঞ ও সার্জন (এন্ডোস্কোপি স্পেশালিস্ট)</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি মঙ্গলবার, বিকাল ৩ টা - সন্ধ্যা ৭ টা</span>
+                        <span>📍 সোহাগ ক্লিনিক নতুন ভবন ২য় তলা, রুম নং- ৭০৯</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ হাসিবুল হোসাইন</h4>
+                    <div class="doctor-spec">চর্ম, যৌন, এলার্জি, লিভার ও পরিপাকতন্ত্র রোগ বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতিদিন, বিকাল ৪ টা - রাত ৮ টা</span>
+                        <span>📍 সোহাগ জেনারেল হাসপাতাল, রুম নং- ৭০১</span>
+                    </div>
+                    <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ শারমিন শাহাদ</h4>
+                    <div class="doctor-spec">জেনারেল প্র্যাকটিশনার (হৃদরোগ, ডায়াবেটিস, মহিলা ও শিশু রোগ)</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতিদিন, সকাল ৮টা-দুপুর ২টা এবং রাত ৮টা-১১টা</span>
+                        <span>📍 সোহাগ জেনারেল হাসপাতাল</span>
+                    </div>
                     <a href="tel:+8801821361392" class="contact-pill">📞 +8801821361392</a>
                 </div>
             `,
             'doctors-clinic': `
-                <h3 style="color:#64ffda; margin-bottom:15px;">Doctors Clinic & Diagnostic Center</h3>
-                <div class="schedule-item">
-                    <h4>ডাঃ এম. এস. জামিল ইসলাম</h4>
-                    <div class="time">প্রতি শনিবার, রবিবার ও মঙ্গলবার বিকেল ৪ টা থেকে রাত ৮ টা</div>
-                    <a href="tel:+8801714134287" class="contact-pill">📞 +8801714134287</a>
-                    <a href="tel:+88010205690" class="contact-pill">📞 +88010205690</a>
+                <h3 style="color:#64ffda; margin-bottom:20px; font-size:20px;">Doctors Clinic & Diagnostic Center</h3>
+                
+                <div class="doctor-item">
+                    <h4>ডাঃ এইচ.এম জহিরুল ইসলাম</h4>
+                    <div class="doctor-spec">মেডিসিন, সার্জারি, গাইনি ও রেডিওলজি বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 শনি, রবি, মঙ্গল, বৃহস্পতিবার (বিকাল ৩টা-রাত ৮টা) ও শুক্রবার সারাদিন</span>
+                    </div>
+                    <a href="tel:+8801741342671" class="contact-pill">📞 +8801741342671</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>আলহাজ্ব ডাঃ মোঃ জাফর আলী খান</h4>
+                    <div class="doctor-spec">মেডিসিন, গাইনী ও ডায়াবেটিকস রোগের চিকিৎসক</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি সোমবার, সকাল ৯ টা - দুপুর ২ টা</span>
+                    </div>
+                    <a href="tel:+8801741342671" class="contact-pill">📞 +8801741342671</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ সুব্রত পাল</h4>
+                    <div class="doctor-spec">মেডিসিন ও গ্যাস্ট্রোলজি বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি শুক্রবার, সকাল ১০ টা - দুপুর ২ টা</span>
+                    </div>
+                    <a href="tel:+8801741342671" class="contact-pill">📞 +8801741342671</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোসাঃ সাবিহা জান্নাত</h4>
+                    <div class="doctor-spec">চর্ম-যৌন ও এলার্জি রোগ বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি বৃহস্পতিবার, দুপুর ২ টা - বিকাল ৫ টা</span>
+                    </div>
+                    <a href="tel:+8801741342671" class="contact-pill">📞 +8801741342671</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ এম.এ করিম (মামুন)</h4>
+                    <div class="doctor-spec">বাত ব্যথা, হাড় ভাঙ্গা ও বিকলঙ্গ বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি বুধবার, সকাল ৯ টা - দুপুর ২ টা</span>
+                    </div>
+                    <a href="tel:+8801741342671" class="contact-pill">📞 +8801741342671</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ আব্দুল কাদের তমাল</h4>
+                    <div class="doctor-spec">মেডিসিন, মা ও শিশুদের যাবতীয় রোগ বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতিদিন সারাদিন</span>
+                    </div>
+                    <a href="tel:+8801741342671" class="contact-pill">📞 +8801741342671</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ আয়েশা ইসলাম</h4>
+                    <div class="doctor-spec">স্ত্রী ও গাইনী রোগ বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 শনি থেকে বৃহস্পতিবার, সকাল ৯ টা - দুপুর ২ টা</span>
+                    </div>
+                    <a href="tel:+8801741342671" class="contact-pill">📞 +8801741342671</a>
                 </div>
             `,
             'popular': `
-                <h3 style="color:#64ffda; margin-bottom:15px;">Popular Clinic & Diagnostic Center</h3>
-                <div class="schedule-item">
+                <h3 style="color:#64ffda; margin-bottom:20px; font-size:20px;">Popular Clinic & Diagnostic Center</h3>
+                
+                <div class="doctor-item">
                     <h4>মোঃ আতাউর রহমান</h4>
-                    <div class="time">প্রতি শুক্রবার | সকাল ১০ টা থেকে বিকেল ৩ টা পর্যন্ত</div>
-                    <a href="tel:+8801714461897" class="contact-pill">📞 +8801714461897</a>
-                    <a href="tel:+880119772032" class="contact-pill">📞 +880119772032</a>
+                    <div class="doctor-spec">মেডিসিন ও হৃদরোগ বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি শুক্রবার, সকাল ১০ টা - বিকাল ৩ টা</span>
+                    </div>
+                    <a href="tel:+8801714081397" class="contact-pill">📞 +8801714081397</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মনি রানী দাস</h4>
+                    <div class="doctor-spec">গাইনী ও প্রসূতি রোগ বিশেষজ্ঞ সার্জন</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি শনি ও সোমবার, বিকাল ৪ টা - সন্ধ্যা ৭ টা</span>
+                    </div>
+                    <a href="tel:+8801714081397" class="contact-pill">📞 +8801714081397</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ গোলাম মুস্তাফা (নওশা)</h4>
+                    <div class="doctor-spec">গ্যাস্ট্রোলিভার বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি বৃহস্পতি ও শুক্রবার সারাদিন</span>
+                    </div>
+                    <a href="tel:+8801714081397" class="contact-pill">📞 +8801714081397</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ মাহবুবুর রহমান</h4>
+                    <div class="doctor-spec">গাইনী ও প্রসূতি রোগ বিশেষজ্ঞ ও সার্জন</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি শনিবার, বিকাল ৩ টা - সন্ধ্যা ৬ টা</span>
+                    </div>
+                    <a href="tel:+8801714081397" class="contact-pill">📞 +8801714081397</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ শোয়েব এইচ খান</h4>
+                    <div class="doctor-spec">নবজাতক, শিশু কিশোর রোগ বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 শুক্র ও সোম (বিকাল ৩টা-৫টা), শুক্রবার (সকাল ১০টা-দুপুর ১টা)</span>
+                    </div>
+                    <a href="tel:+8801714081397" class="contact-pill">📞 +8801714081397</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ এম আর চৌধুরী</h4>
+                    <div class="doctor-spec">অর্থোপেডিক্স সার্জারী বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি বৃহস্পতিবার, বিকাল ৩ টা - সন্ধ্যা ৭ টা</span>
+                    </div>
+                    <a href="tel:+8801714081397" class="contact-pill">📞 +8801714081397</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মোঃ সুপিয়ার রহমান (সুমন)</h4>
+                    <div class="doctor-spec">সার্জারী বিশেষজ্ঞ (FCPS)</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি বুধবার, বিকাল ৩ টা - ৫ টা</span>
+                    </div>
+                    <a href="tel:+8801714081397" class="contact-pill">📞 +8801714081397</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ সুব্রত হাওলাদার (নয়ন)</h4>
+                    <div class="doctor-spec">চক্ষু বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি শুক্রবার ও সোমবার, বিকাল ৪ টা</span>
+                    </div>
+                    <a href="tel:+8801714081397" class="contact-pill">📞 +8801714081397</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ মিরানা আফরোজ অন্নি</h4>
+                    <div class="doctor-spec">চর্মরোগ বিশেষজ্ঞ</div>
+                    <div class="doctor-meta">
+                        <span>🕒 সোম, মঙ্গল ও বুধবার, বিকাল ৪ টা - রাত ৮ টা</span>
+                    </div>
+                    <a href="tel:+8801714081397" class="contact-pill">📞 +8801714081397</a>
+                </div>
+
+                <div class="doctor-item">
+                    <h4>ডাঃ রিপন কুমার রায়</h4>
+                    <div class="doctor-spec">নাক, কান, গলা ও থাইরয়েড রোগ বিশেষজ্ঞ এবং সার্জন</div>
+                    <div class="doctor-meta">
+                        <span>🕒 প্রতি সোমবার ও বৃহস্পতিবার, বিকাল ৩ টা - ৫ টা</span>
+                    </div>
+                    <a href="tel:+8801714081397" class="contact-pill">📞 +8801714081397</a>
                 </div>
             `
         };
 
         const busData = {
             'sakura': `
-                <h3 style="color:#64ffda; margin-bottom:15px;">Sakura Paribahan Schedules</h3>
-                <div class="schedule-item">
-                    <h4>রাজাপুর যাত্রী বাজার টু গাবতলী হয়ে সাভার - গাবতলী - টেকনিক্যাল</h4>
-                    <div class="time">সময়: সকাল ৭.৩০</div>
-                    <a href="tel:+8801755175705" class="contact-pill">📞 +8801755175705</a>
-                </div>
-                <div class="schedule-item">
-                    <h4>রাজাপুর যাত্রী বাজার টু গাবতলী হয়ে সাভার - গাবতলী - টেকনিক্যাল</h4>
-                    <div class="time">সময়: সকাল ৯.৩০</div>
+                <h3 style="color:#64ffda; margin-bottom:15px;">Sakura Paribahan</h3>
+                <div class="doctor-item">
+                    <h4>রাজাপুর টু গাবতলী (সাভার হয়ে)</h4>
+                    <div class="doctor-spec">সময়: সকাল ৭:৩০ ও ৯:৩০</div>
                     <a href="tel:+8801755175705" class="contact-pill">📞 +8801755175705</a>
                 </div>
             `,
             'labiba': `
-                <h3 style="color:#64ffda; margin-bottom:15px;">Labiba Classic Ltd. Schedules</h3>
-                <div class="schedule-item">
-                    <h4>রাজাপুর যাত্রী বাজার টু গাজীপুর - ঢাকা</h4>
-                    <div class="time">সময়: সকাল ৬.০০</div>
+                <h3 style="color:#64ffda; margin-bottom:15px;">Labiba Classic Ltd.</h3>
+                <div class="doctor-item">
+                    <h4>রাজাপুর টু গাজীপুর - ঢাকা</h4>
+                    <div class="doctor-spec">সময়: সকাল ৬:০০</div>
                     <a href="tel:+8801741627334" class="contact-pill">📞 +8801741627334</a>
-                </div>
-            `,
-            'eagle': `
-                <h3 style="color:#64ffda; margin-bottom:15px;">Eagle Paribahan Schedules</h3>
-                <div class="schedule-item">
-                    <h4>রাজাপুর মেডিকেল মোড় টু আবদুল্লাহপুর</h4>
-                    <div class="time">সময়: সকাল ৯.০০</div>
-                    <a href="tel:+8801712653204" class="contact-pill">📞 +8801712653204</a>
-                </div>
-            `,
-            'palki': `
-                <h3 style="color:#64ffda; margin-bottom:15px;">Palki Express Schedules</h3>
-                <div class="schedule-item">
-                    <h4>রাজাপুর বাইপাস মোড় টু গুলিস্তান (মেডিকেল মোড় হয়ে)</h4>
-                    <div class="time">সময়: সকাল ৫.০০</div>
-                    <a href="tel:+8801740889640" class="contact-pill">📞 +8801740889640</a>
-                </div>
-            `,
-            'shyamoli': `
-                <h3 style="color:#64ffda; margin-bottom:15px;">Shyamoli Paribahan Schedules</h3>
-                <div class="schedule-item">
-                    <h4>রাজাপুর যাত্রী বাজার টু গাবতলী</h4>
-                    <div class="time">সময়: সকাল ৮.৩০</div>
-                    <a href="tel:+8801741627334" class="contact-pill">📞 +8801741627334</a>
-                </div>
-            `,
-            'evan': `
-                <h3 style="color:#64ffda; margin-bottom:15px;">Evan Paribahan Schedules</h3>
-                <div class="schedule-item">
-                    <h4>রাজাপুর বাইপাস মোড় টু সায়েদাবাদ</h4>
-                    <div class="time">সময়: সকাল ৫.২০</div>
-                    <a href="tel:+8801741627334" class="contact-pill">📞 +8801741627334</a>
-                </div>
-            `,
-            'emad': `
-                <h3 style="color:#64ffda; margin-bottom:15px;">Emad Paribahan Schedules</h3>
-                <div class="schedule-item">
-                    <h4>রাজাপুর টু গুলিস্তান (মেডিকেল মোড় হয়ে)</h4>
-                    <div class="time">সময়: সকাল ৫.২০</div>
-                    <a href="tel:+8801830718444" class="contact-pill">📞 +8801830718444</a>
-                </div>
-            `,
-            'comfort': `
-                <h3 style="color:#64ffda; margin-bottom:15px;">Comfort Line Schedules</h3>
-                <div class="schedule-item">
-                    <h4>রাজাপুর টু গুলিস্তান (মেডিকেল মোড় হয়ে)</h4>
-                    <div class="time">সময়: সকাল ৫.১০</div>
-                    <a href="tel:+880174889640" class="contact-pill">📞 +880174889640</a>
-                </div>
-            `,
-            'mizan': `
-                <h3 style="color:#64ffda; margin-bottom:15px;">Mizan Paribahan Schedules</h3>
-                <div class="schedule-item">
-                    <h4>রাজাপুর যাত্রী বাজার টু সায়েদাবাদ</h4>
-                    <div class="time">সময়: সকাল ৯.০০</div>
-                    <a href="tel:+8801713962666" class="contact-pill">📞 +8801713962666</a>
                 </div>
             `
         };
 
         function loadHospital(key) {
-            document.getElementById('hospitalDetailsContainer').innerHTML = hospitalData[key] || '<p>তথ্য লোড করা হচ্ছে...</p>';
+            document.getElementById('hospitalDetailsContainer').innerHTML = hospitalData[key] || '';
         }
 
         function loadBus(key) {
-            document.getElementById('busDetailsContainer').innerHTML = busData[key] || '<p>তথ্য লোড করা হচ্ছে...</p>';
+            document.getElementById('busDetailsContainer').innerHTML = busData[key] || '';
         }
     </script>
 </body>
