@@ -4,105 +4,200 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Free Study with Musa</title>
-<meta name="description" content="Marked books from top platforms, sorted and collected in one place by Musa.">
+<meta name="description" content="Premium educational hub for HSC and Admission. Marked books, PDFs, and question banks sorted by subject.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a192f;--panel:#112240;--line:#233554;--text:#ccd6f6;--dim:#8892b0;--mint:#64ffda;--white:#e6f1ff}
+:root{
+  --bg:#0a192f; --panel:#112240; --panel-hover:#172a45;
+  --line:#233554; --text:#ccd6f6; --dim:#8892b0;
+  --mint:#64ffda; --white:#e6f1ff;
+  --shadow:0 10px 30px -10px rgba(2,12,27,0.7);
+}
 *{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.6;min-height:100vh;overflow-x:hidden}
-/* background: notebook lines + faint science motifs */
-.bg{position:fixed;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(to bottom,transparent 0 35px,rgba(100,255,218,.035) 35px 36px)}
-.bg svg{position:absolute;stroke:var(--mint);fill:none;stroke-width:1.2;opacity:.07}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.brand{font-family:'Fraunces',serif;font-weight:700;font-size:1.3rem;color:var(--mint);text-decoration:none}
-.nl{display:flex;gap:10px}
-.btn{font:inherit;font-weight:500;font-size:.92rem;color:var(--mint);background:transparent;border:1px solid var(--mint);padding:8px 16px;border-radius:8px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s}
-.btn:hover{background:rgba(100,255,218,.1)}
-.btn.solid{background:var(--mint);color:#0a192f;font-weight:600}
-.btn.solid:hover{background:#8dffe6}
-a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
-/* hero */
-.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;padding:56px 0 48px}
-h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(2.6rem,8vw,4.8rem);line-height:1.08;color:var(--white);letter-spacing:-.02em}
-.hl{background:linear-gradient(transparent 58%,rgba(100,255,218,.3) 58%) no-repeat;background-size:0 100%;animation:mark 1.1s .4s ease-out forwards}
+/* Live Tracker Background */
+#bg-canvas{position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--bg)}
+.bg-overlay{position:fixed;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(to bottom,transparent 0 35px,rgba(100,255,218,.02) 35px 36px)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* Navbar */
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;position:sticky;top:0;background:rgba(10,25,47,0.85);backdrop-filter:blur(12px);z-index:50;border-bottom:1px solid var(--line)}
+.brand{font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--mint);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nl{display:flex;gap:15px;align-items:center;flex-wrap:wrap}
+.nav-link{color:var(--text);text-decoration:none;font-size:.95rem;font-weight:500;transition:color .2s}
+.nav-link:hover{color:var(--mint)}
+.btn{font:inherit;font-weight:500;font-size:.9rem;color:var(--mint);background:transparent;border:1px solid var(--mint);padding:8px 16px;border-radius:8px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all .2s}
+.btn:hover{background:rgba(100,255,218,.1);transform:translateY(-2px)}
+.btn.solid{background:var(--mint);color:#0a192f;font-weight:600;border:none}
+.btn.solid:hover{background:#8dffe6;box-shadow:0 4px 15px rgba(100,255,218,0.3)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center;padding:70px 0 50px}
+h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(2.5rem,7vw,4.2rem);line-height:1.1;color:var(--white);letter-spacing:-.02em}
+.hl{background:linear-gradient(transparent 60%,rgba(100,255,218,.3) 60%) no-repeat;background-size:0 100%;animation:mark 1.2s .5s ease-out forwards}
 @keyframes mark{to{background-size:100% 100%}}
-.lead{margin-top:20px;font-size:1.2rem;color:var(--text);max-width:34ch}
-.sub{margin-top:10px;color:var(--dim);max-width:46ch}
-.photo{justify-self:center;width:min(280px,70vw);aspect-ratio:4/5;border-radius:18px;border:1px solid var(--line);background:var(--panel);overflow:hidden;box-shadow:12px 12px 0 rgba(100,255,218,.12);display:flex;align-items:center;justify-content:center}
+.lead{margin-top:20px;font-size:1.15rem;color:var(--text);max-width:40ch;font-weight:300}
+.sub{margin-top:12px;color:var(--dim);max-width:46ch;font-size:.95rem}
+.photo{justify-self:center;width:min(300px,80vw);aspect-ratio:4/5;border-radius:20px;border:1px solid var(--line);background:var(--panel);overflow:hidden;box-shadow:15px 15px 0 rgba(100,255,218,.1);display:flex;align-items:center;justify-content:center;transition:transform .3s}
+.photo:hover{transform:translateY(-5px)}
 .photo img{width:100%;height:100%;object-fit:cover;display:block}
 .ph{font-family:'Fraunces',serif;font-size:6rem;color:var(--mint);width:100%;height:100%;display:flex;align-items:center;justify-content:center}
-/* search + zones */
-.bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-bottom:22px}
-h2{font-family:'Fraunces',serif;font-size:1.9rem;color:var(--white)}
-.search{flex:1 1 260px;max-width:380px;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:12px 16px;border-radius:10px;font:inherit}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;cursor:pointer;text-align:left;font:inherit;color:inherit;display:flex;flex-direction:column;gap:10px;transition:transform .25s,border-color .25s}
-.card:hover{transform:translateY(-6px);border-color:var(--mint)}
-.card svg{width:34px;height:34px;stroke:var(--mint);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.card h3{font-family:'Fraunces',serif;font-size:1.35rem;color:var(--white);line-height:1.25}
-.card p{color:var(--dim);font-size:.97rem}
-.card .src{font-size:.85rem;color:var(--dim);border-top:1px dashed var(--line);padding-top:10px;margin-top:auto}
-.card .go{color:var(--mint);font-weight:600}
-.note{font-size:.85rem;color:var(--dim)}
-.empty{color:var(--dim);padding:30px 0}
-/* popup */
-.ov{position:fixed;inset:0;background:rgba(2,12,27,.8);display:none;align-items:center;justify-content:center;padding:20px;z-index:20}
-.ov.on{display:flex}
-.modal{background:var(--panel);border:1px solid var(--mint);border-radius:16px;padding:28px;max-width:420px;width:100%}
-.modal h4{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--white)}
-.modal p{color:var(--dim);margin:8px 0 20px}
-.acts{display:flex;flex-wrap:wrap;gap:10px}
-.subs{display:grid;gap:10px;margin-bottom:16px}
-footer{margin-top:80px;padding:28px 0 40px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;color:var(--dim);font-size:.92rem}
-footer a{color:var(--mint)}
-@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:28px}.photo{order:-1}}
-@media (prefers-reduced-motion:reduce){.hl{animation:none;background-size:100% 100%}.card{transition:none}}
+
+/* Search & Tabs */
+.filter-sec{margin:40px 0 20px;background:var(--panel);padding:20px;border-radius:16px;border:1px solid var(--line);display:flex;flex-wrap:wrap;gap:15px;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+.search{flex:1 1 300px;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:12px 18px;border-radius:10px;font:inherit;outline:none;transition:border .2s}
+.search:focus{border-color:var(--mint)}
+.tabs{display:flex;gap:10px;flex-wrap:wrap}
+.tab{padding:8px 16px;border-radius:8px;background:var(--bg);border:1px solid var(--line);cursor:pointer;font-size:.9rem;transition:all .2s;color:var(--text)}
+.tab.active{background:var(--mint);color:#0a192f;border-color:var(--mint);font-weight:600}
+
+/* Section Headers */
+.sec-title{margin:60px 0 30px;display:flex;align-items:center;gap:15px}
+.sec-title h2{font-family:'Fraunces',serif;font-size:2rem;color:var(--white);white-space:nowrap}
+.sec-title::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--line),transparent)}
+
+/* Grid & Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;cursor:pointer;text-align:left;font:inherit;color:inherit;display:flex;flex-direction:column;gap:12px;transition:all .25s ease;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-6px);border-color:var(--mint);background:var(--panel-hover)}
+.card svg{width:36px;height:36px;stroke:var(--mint);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--white);line-height:1.25}
+.card p{color:var(--dim);font-size:.95rem;flex:1}
+.card .go{color:var(--mint);font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:5px}
+.card .src{font-size:.75rem;color:var(--dim);border-top:1px dashed var(--line);padding-top:12px;margin-top:5px;display:flex;justify-content:space-between;text-transform:uppercase;letter-spacing:0.5px}
+.badge{background:rgba(100,255,218,.1);color:var(--mint);padding:4px 10px;border-radius:20px;font-size:.75rem;font-weight:600;width:fit-content;margin-bottom:5px}
+
+/* Popup */
+.ov{position:fixed;inset:0;background:rgba(2,12,27,.85);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:20px;z-index:100}
+.ov.on{display:flex;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal{background:var(--panel);border:1px solid var(--mint);border-radius:20px;padding:30px;max-width:600px;width:100%;box-shadow:0 20px 40px rgba(0,0,0,.5);max-height:85vh;overflow-y:auto}
+.modal h4{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--white);margin-bottom:8px}
+.modal p{color:var(--dim);margin-bottom:20px;font-size:.95rem}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.subs{display:grid;grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));gap:10px;margin-bottom:16px;max-height:50vh;overflow-y:auto;padding-right:5px}
+.subs a{padding:10px;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);text-decoration:none;font-size:.9rem;transition:all .2s;display:flex;align-items:center;justify-content:center;text-align:center}
+.subs a:hover{background:rgba(100,255,218,.1);border-color:var(--mint);color:var(--mint)}
+
+/* Contact Form */
+.contact-sec{margin:100px 0 60px;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:40px;box-shadow:var(--shadow);max-width:800px;margin-left:auto;margin-right:auto;text-align:center;position:relative;overflow:hidden}
+.contact-sec::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,var(--mint),transparent)}
+.contact-sec h2{font-family:'Fraunces',serif;color:var(--white);font-size:2rem;margin-bottom:5px}
+.contact-sec p{color:var(--mint);font-size:.95rem;margin-bottom:30px}
+.form-group{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;text-align:left}
+.form-group.full{grid-template-columns:1fr}
+.form-group label{display:block;font-size:.85rem;color:var(--dim);margin-bottom:6px;font-weight:500}
+.form-group input,.form-group textarea{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:12px 16px;border-radius:10px;font:inherit;outline:none;transition:border .2s}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--mint)}
+.form-group textarea{resize:vertical;min-height:120px}
+
+/* Footer */
+footer{margin-top:60px;padding:40px 0;border-top:1px solid var(--line);color:var(--dim);font-size:.9rem}
+footer a{color:var(--mint);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;padding-top:40px;gap:30px}
+  .photo{order:-1;width:min(250px,60vw)}
+  .form-group{grid-template-columns:1fr}
+  .subs{grid-template-columns:1fr}
+  nav .nl{display:none}
+}
 </style>
 </head>
 <body>
-<div class="bg" aria-hidden="true">
-  <svg style="top:8%;right:4%;width:210px" viewBox="0 0 100 100"><ellipse cx="50" cy="50" rx="44" ry="16"/><ellipse cx="50" cy="50" rx="44" ry="16" transform="rotate(60 50 50)"/><ellipse cx="50" cy="50" rx="44" ry="16" transform="rotate(120 50 50)"/><circle cx="50" cy="50" r="4"/></svg>
-  <svg style="top:52%;left:3%;width:190px" viewBox="0 0 100 70"><path d="M50 14C38 6 18 6 6 12v48c12-6 32-6 44 2 12-8 32-8 44-2V12C82 6 62 6 50 14zM50 14v48"/></svg>
-  <svg style="bottom:6%;right:8%;width:130px" viewBox="0 0 60 80"><path d="M22 6h16M26 6v24L8 68a6 6 0 0 0 5 9h34a6 6 0 0 0 5-9L34 30V6M14 54h32"/></svg>
-</div>
+<canvas id="bg-canvas"></canvas>
+<div class="bg-overlay"></div>
 
 <div class="wrap">
+  <!-- Navbar -->
   <nav>
-    <a class="brand" href="#top">Musa</a>
+    <a class="brand" href="#top">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      Free Study
+    </a>
     <div class="nl">
-      <a class="btn" id="share" href="#" rel="noopener">Share</a>
-      <a class="btn solid" href="https://musa965.github.io/my-own-project/">Portfolio</a>
+      <a class="nav-link" href="#top">Home</a>
+      <a class="nav-link" href="#academic">Academic</a>
+      <a class="nav-link" href="#admission">Admission</a>
+      <a class="nav-link" href="#exam">Exam Portal</a>
+      <a class="btn solid" href="https://musa965.github.io/my-own-project/" target="_blank">Portfolio</a>
     </div>
   </nav>
 
+  <!-- Hero -->
   <header class="hero" id="top">
     <div>
+      <div class="badge">100% Free Resources</div>
       <h1><span class="hl">Free Study</span> with Musa</h1>
-      <p class="lead">Marked books from top platforms, sorted by subject.</p>
-      <p class="sub">Pick a zone below, open it, and start reading. New zones are added regularly.</p>
+      <p class="lead">Premium marked books, PDFs, and question banks for HSC & University Admission.</p>
+      <p class="sub">This platform is built entirely to empower HSC and university admission aspirants in Bangladesh. The goal is simple: to make quality education accessible by bringing together the best marked books, curated PDF notes, and essential academic resources from top-tier platforms into one single, easy-to-navigate hub—saving students time and effort in their preparation journey.</p>
     </div>
-    <div class="photo"><img src="musa.jpg" alt="Musa" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'M'}))"></div>
+    <div class="photo">
+      <img src="musa.jpg" alt="Musa" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'M'}))">
+    </div>
   </header>
 
-  <main>
-    <div class="bar">
-      <h2>Marked Books Zones</h2>
-      <input class="search" id="q" type="search" placeholder="Search a zone or subject" aria-label="Search a zone or subject">
+  <!-- Filter & Search -->
+  <div class="filter-sec">
+    <input class="search" id="q" type="search" placeholder="Search a subject, book, or source..." aria-label="Search">
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="academic">Academic</button>
+      <button class="tab" data-filter="admission">Admission</button>
+      <button class="tab" data-filter="exam">Exam Portal</button>
     </div>
-    <div class="grid" id="grid"></div>
-    <p class="empty" id="empty" hidden>Nothing found. Try another word.</p>
+  </div>
+
+  <!-- Main Content Area -->
+  <main id="main-content">
+    <!-- Sections will be injected here by JS -->
   </main>
 
+  <!-- Contact Form -->
+  <section class="contact-sec" id="contact">
+    <h2>MESSAGE ME</h2>
+    <p>(If you have any problem or want to include something new, please message me)</p>
+    <form action="https://formsubmit.co/mahbuburrahmanmusa99@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Message from Free Study Website">
+      <div class="form-group">
+        <div>
+          <label>Full Name*</label>
+          <input type="text" name="name" placeholder="Enter your full name" required>
+        </div>
+        <div>
+          <label>Your Email*</label>
+          <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+      </div>
+      <div class="form-group full">
+        <div>
+          <label>About Project*</label>
+          <textarea name="message" placeholder="Write your problem or message here..." required></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn solid" style="width:100%;padding:14px;font-size:1rem;justify-content:center;">Submit</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <span>Collected and arranged by Musa</span>
-    <span>Links open the original sources. <a href="https://musa965.github.io/my-own-project/">See my portfolio</a></span>
+    <div style="width:100%;text-align:center;margin-bottom:24px;font-size:0.85rem;line-height:1.6;background:rgba(100,255,218,0.05);padding:15px;border-radius:10px;border:1px solid rgba(100,255,218,0.1);">
+      <strong>Disclaimer:</strong> This website purely acts as an aggregator of educational resources collected from various public platforms to help students. We strictly do not support or endorse piracy in any form. If you find any material here that belongs to you and wish to have it removed, please let us know and we will take immediate action.
+    </div>
+    <div style="width:100%;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center;">
+      <span>Collected and arranged by Musa</span>
+      <span>For any Question Go To Developer Portfolio <a href="https://musa965.github.io/my-own-project/" target="_blank">See my portfolio</a></span>
+    </div>
   </footer>
 </div>
 
-<div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="mt">
+<!-- Popup Modal -->
+<div class="ov" id="ov" role="dialog" aria-modal="true">
   <div class="modal">
     <h4 id="mt"></h4>
     <p id="md"></p>
@@ -111,58 +206,184 @@ footer a{color:var(--mint)}
 </div>
 
 <script>
-/* To add a zone, copy one block into ZONES.
-   One link:      { name, tag, source, url, icon, note }
-   Subject links: { name, tag, source, subjects:[{n:'Botany', u:'https://...'}], icon } */
-const ZONES=[
- {name:'ACS Marked Books Zone',tag:'A full sheet of marked books, sorted by subject and topic.',source:'ACS',url:'https://docs.google.com/spreadsheets/u/0/d/e/2PACX-1vQB-dsJUEGaOz5Cs-2bY7Q7NGd7LngV_LqDbauX2Z0zg5IpHlnCS9ng4IoWQNYFtlXPUn1d3TGV-tSB/pubhtml?pli=1#gid=0',icon:'sheet'},
- {name:'RTDS Marked Books Zone',tag:'A Drive folder of marked books. Open it, pick a subject, start reading.',source:'RTDS',url:'https://drive.google.com/drive/folders/1XGQ59nDw_ZSixsxhfU9WmoMn_oOA4bCp',icon:'folder'},
- {name:'BHT Marked Books Zone',tag:'Chapter-wise marked books for Biology, Physics, Chemistry and English.',source:'BHT',url:'https://bht.one/free-honey',icon:'dna',note:'This site may ask for a quick sign-up before download.'},
- {name:'HSC Special Notes Zone',tag:'Special notes for HSC, kept together in one Drive folder.',source:'Drive folder',url:'https://drive.google.com/drive/folders/1u8xdP7YgHhbYFsdOCMHyaHCMt69cm8eM',icon:'note'}
-];
-const ICONS={
- sheet:'<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></svg>',
- folder:'<svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>',
- dna:'<svg viewBox="0 0 24 24"><path d="M8 2c0 6 8 6 8 10s-8 4-8 10M16 2c0 6-8 6-8 10s8 4 8 10M9 6h6M9 18h6"/></svg>',
- note:'<svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"/></svg>'
-};
-const $=s=>document.querySelector(s);
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+/* =========================================
+   1. LIVE NEURON TRACKER (Canvas Background)
+   ========================================= */
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+let width, height;
+let particles = [];
+let mouse = { x: null, y: null, radius: 150 };
 
-function draw(){
-  const q=$('#q').value.trim().toLowerCase();
-  const list=ZONES.map((z,i)=>({z,i})).filter(({z})=>{
-    const t=(z.name+' '+z.tag+' '+z.source+' '+(z.subjects||[]).map(s=>s.n).join(' ')).toLowerCase();
-    return !q||t.includes(q);
-  });
-  $('#grid').innerHTML=list.map(({z,i})=>`<button class="card" data-i="${i}">${ICONS[z.icon]||ICONS.note}<h3>${esc(z.name)}</h3><p>${esc(z.tag)}</p><span class="go">Start Reading</span><span class="src">Collected and arranged by Musa · Source: ${esc(z.source)}</span></button>`).join('');
-  $('#empty').hidden=list.length>0;
-}
-let last=null;
-function open(i){
-  const z=ZONES[i];last=document.activeElement;
-  $('#mt').textContent=z.name;
-  if(z.subjects){
-    $('#md').textContent='Choose a subject to open its link.';
-    $('#mb').innerHTML='<div class="subs">'+z.subjects.map(s=>`<a class="btn solid" target="_blank" rel="noopener noreferrer" href="${esc(s.u)}">${esc(s.n)}</a>`).join('')+'</div><div class="acts"><button class="btn" data-x>Close</button></div>';
-  }else{
-    $('#md').textContent='You are about to leave this page and open the original source.'+(z.note?' '+z.note:'');
-    $('#mb').innerHTML=`<div class="acts"><a class="btn solid" id="view" target="_blank" rel="noopener noreferrer" href="${esc(z.url)}">View Site</a><button class="btn" data-x>Cancel</button></div>`;
-  }
-  $('#ov').classList.add('on');
-  ($('#view')||$('#mb a')).focus();
-}
-function close(){$('#ov').classList.remove('on');if(last)last.focus()}
-$('#grid').addEventListener('click',e=>{const c=e.target.closest('.card');if(c)open(+c.dataset.i)});
-$('#ov').addEventListener('click',e=>{if(e.target.id==='ov'||e.target.closest('[data-x]'))close();else if(e.target.closest('#view'))setTimeout(close,100)});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
-$('#q').addEventListener('input',draw);
-$('#share').addEventListener('click',e=>{
-  e.preventDefault();
-  const t='Free Study with Musa: marked books from top platforms, sorted by subject. '+location.href;
-  window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank','noopener');
+window.addEventListener('mousemove', (e) => {
+  mouse.x = e.x;
+  mouse.y = e.y;
 });
-draw();
-</script>
-</body>
-</html>
+window.addEventListener('mouseout', () => {
+  mouse.x = null;
+  mouse.y = null;
+});
+
+function resize() {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * width;
+    this.y = Math.random() * height;
+    this.vx = (Math.random() - 0.5) * 1;
+    this.vy = (Math.random() - 0.5) * 1;
+    this.size = Math.random() * 2 + 1;
+  }
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x < 0 || this.x > width) this.vx *= -1;
+    if (this.y < 0 || this.y > height) this.vy *= -1;
+
+    // Mouse interaction
+    if (mouse.x != null && mouse.y != null) {
+      let dx = mouse.x - this.x;
+      let dy = mouse.y - this.y;
+      let distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < mouse.radius) {
+        const forceDirectionX = dx / distance;
+        const forceDirectionY = dy / distance;
+        const force = (mouse.radius - distance) / mouse.radius;
+        const directionX = forceDirectionX * force * 2;
+        const directionY = forceDirectionY * force * 2;
+        this.x -= directionX;
+        this.y -= directionY;
+      }
+    }
+  }
+  draw() {
+    ctx.fillStyle = 'rgba(100, 255, 218, 0.4)';
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+function init() {
+  particles = [];
+  const count = (width * height) / 15000;
+  for (let i = 0; i < count; i++) {
+    particles.push(new Particle());
+  }
+}
+init();
+
+function animate() {
+  ctx.clearRect(0, 0, width, height);
+  for (let i = 0; i < particles.length; i++) {
+    particles[i].update();
+    particles[i].draw();
+    for (let j = i; j < particles.length; j++) {
+      let dx = particles[i].x - particles[j].x;
+      let dy = particles[i].y - particles[j].y;
+      let distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < 100) {
+        ctx.strokeStyle = `rgba(100, 255, 218, ${1 - distance / 100})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(animate);
+}
+animate();
+
+
+
+
+
+  /* =========================================
+   2. DATA & LOGIC (Cards, Filters, Popups)
+   ========================================= */
+const ICONS = {
+  folder: '<svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>',
+  sheet: '<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></svg>',
+  note: '<svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"/></svg>',
+  book: '<svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
+  dna: '<svg viewBox="0 0 24 24"><path d="M8 2c0 6 8 6 8 10s-8 4-8 10M16 2c0 6-8 6-8 10s8 4 8 10M9 6h6M9 18h6"/></svg>',
+  flask: '<svg viewBox="0 0 24 24"><path d="M9 2v6l-5.5 10a2 2 0 0 0 1.8 3h13.4a2 2 0 0 0 1.8-3L15 8V2M9 2h6M6 15h12"/></svg>',
+  medical: '<svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>',
+  exam: '<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>'
+};
+
+const DATABASE = [
+  {
+    section: "academic",
+    title: "📚 Academic Resources (HSC & A to Z)",
+    items: [
+      {
+        name: "ACS Marked Books", desc: "A full sheet of marked books, sorted by subject.", tag: "Academic", source: "ACS", url: "https://docs.google.com/spreadsheets/u/0/d/e/2PACX-1vQB-dsJUEGaOz5Cs-2bY7Q7NGd7LngV_LqDbauX2Z0zg5IpHlnCS9ng4IoWQNYFtlXPUn1d3TGV-tSB/pubhtml", icon: "sheet"
+      },
+      {
+        name: "RTDS Marked Books", desc: "A Drive folder of marked books. Open it, pick a subject.", tag: "Academic", source: "RTDS", url: "https://drive.google.com/drive/folders/1XGQ59nDw_ZSixsxhfU9WmoMn_oOA4bCp", icon: "folder"
+      },
+      {
+        name: "BHT Marked Books", desc: "Chapter-wise marked books for Biology, Physics, Chemistry.", tag: "Academic", source: "BHT", url: "https://bht.one/free-honey", icon: "dna", note: "This site may ask for a quick sign-up before download."
+      },
+      {
+        name: "HSC Special Notes", desc: "Special notes for HSC, kept together in one Drive.", tag: "Academic", source: "Drive", url: "https://drive.google.com/drive/folders/1u8xdP7YgHhbYFsdOCMHyaHCMt69cm8eM", icon: "note"
+      },
+      {
+        name: "A&A Pathsala", desc: "Comprehensive academic resource portal.", tag: "All Subjects", source: "A&A Pathsala", url: "https://www.mulboi.com/", icon: "book"
+      },
+      {
+        name: "Ratina (Subject Wise)", desc: "Marked books and notes by subject.", tag: "HSC Academic", source: "Ratina", icon: "folder",
+        subjects: [
+          {n: 'Botany', u: 'https://t.me/MediHour/4305'}, {n: 'Zoology', u: 'https://t.me/MediHour/4306'},
+          {n: 'Physics 1st', u: 'https://t.me/MediHour/4307'}, {n: 'Physics 2nd', u: 'https://t.me/MediHour/4308'},
+          {n: 'Chemistry 1st', u: 'https://t.me/MediHour/4327'}, {n: 'Chemistry 2nd', u: 'https://t.me/MediHour/4328'}
+        ]
+      },
+      {
+        name: "Ummes (Subject Wise)", desc: "Master question banks and biology notes.", tag: "HSC Academic", source: "Ummes", icon: "dna",
+        subjects: [
+          {n: 'Biology 1st & 2nd', u: 'https://t.me/MediHour/3416'}, {n: 'Chemistry 1st & 2nd', u: 'https://t.me/MediHour/3517'},
+          {n: 'Physics 1st & 2nd', u: 'https://t.me/MediHour/3552'}, {n: 'English Master Qst', u: 'https://t.me/MediHour/3555'},
+          {n: 'GK Master Qst Bank', u: 'https://t.me/MediHour/388'}
+        ]
+      },
+      {
+        name: "Premium A to Z (Teacher Wise)", desc: "Handwritten notes and solutions by top teachers.", tag: "Premium PDF", source: "A to Z", icon: "note",
+        subjects: [
+          {n: 'Botany - Abul Hasan', u: 'https://drive.google.com/file/d/1Fj4CRRCABkK4CChF7zJxMHDHpaiImFmE/view'},
+          {n: 'Zoology - Gazi Ajmal', u: 'https://drive.google.com/file/d/1j65qv6jXrHB2KBklEO8MH536Sf6nAavJ/view'},
+          {n: 'Zoology - Abdul Alim', u: 'https://drive.google.com/file/d/1XheN7ZRziWv_Nqf83PRw1eYy973slIoC/view'},
+          {n: 'Physics 1st - Ishaq', u: 'https://drive.google.com/file/d/1dmSsPhtU1EUSE9ybhZNRqq47gkah_mAB/view'},
+          {n: 'Physics 2nd - Ishaq', u: 'https://drive.google.com/file/d/1FYhO6LcAxdQl3VU4HUab2AmRY6Nw_fIx/view'},
+          {n: 'Physics 1st - Topon', u: 'https://drive.google.com/file/d/1Lxurzjj9nb-YfcuxlxOapKPylDBE6FDB/view'},
+          {n: 'Chemistry 1st - Hajari', u: 'https://drive.google.com/drive/u/0/mobile/folders/175tm3S9eHxgO0mOWhgpGSp9EjaL3NS4h'},
+          {n: 'Chemistry 1st - Sanjit', u: 'https://drive.google.com/file/d/10qTgsXI7O1hpEftp3sZTOyY6KITow-Ov/view'},
+          {n: 'Chemistry 2nd - Sanjit', u: 'https://drive.google.com/file/d/1pO-ptJtPVIc8PxWnJR_Qq7pdsjAsad4M/view'},
+          {n: 'Chemistry 2nd - Hajari', u: 'https://drive.google.com/file/d/1ibj2N1C14-1dVNahhLY_EJGNjqekJbK1/view'},
+          {n: 'Math 1st - Asim', u: 'https://drive.google.com/drive/u/0/mobile/folders/11BFhDv_jmy85jBLGuPNu5fBv_yH1QNaX'},
+          {n: 'Math 1st - Ketab', u: 'https://drive.google.com/drive/u/0/mobile/folders/1139EaSISzgHXEnKX6WQD_xZzmYNtdQq0'},
+          {n: 'Math 2nd - S U Ahmed', u: 'https://drive.google.com/drive/u/0/mobile/folders/117YgR4k59gAohuM3TH3gda4jzE'}
+        ]
+      },
+      {
+        name: "Bangla & English Special", desc: "Poetry explanations, test papers, and grammar books.", tag: "Language", source: "Special", icon: "book",
+        subjects: [
+          {n: 'Bangla Kobitar Byakhya', u: 'https://cutt.ly/8zH0G6s'}, {n: 'Bangla 1st Test Paper', u: 'https://drive.google.com/file/d/1fo_9W4Cwvl19DlnuGGuVil74bKqhVIYI/view'},
+          {n: 'Bangla 2nd Test Paper', u: 'https://drive.google.com/file/d/1Kv1M1t9saeYZ7ePoZSv8pOSZBki3WQTM/view'}, {n: 'HSC 1st Part Book', u: 'https://drive.google.com/file/d/1q_np2iPDz-vw9Q5e15KHt5PVkxmSX-kh/view'},
+          {n: 'HSC Rearrange', u: 'https://drive.google.com/file/d/1ISYFCOrkyC28tAl_G5hCoKNnckS2ZiHf/view'}, {n: 'English 2nd Paper', u: 'https://cutt.ly/lzH1pPr'},
+          {n: 'Synonym - Antonym', u: 'https://drive.google.com/file/d/1FrGhFCSWARowG1JRNWiab5M4jhaXOd9d/view'}, {n: 'HSC English Test Paper', u: 'https://cutt.ly/3zH03i2'},
+          {n: 'English Advanced Learner', u: 'https://drive.google.com/file/d/1ilyFwlwWNWXAUM8pdxXlejUNSOlFv78I/view'}
+        ]
+      },
+      {
+        name: "ICT Master Pack", desc: "ICT books, test papers, and MCQ suggestions.", tag: "ICT", source: "Special", icon: "sheet",
+        subjects: [
+          {n: 'ICT BOOK', u: 'https://cutt.ly/xzHM0Jv'}, {n: 'ICT TEST PAPER', u: 'https://drive.google.com/file/d/16Smj0bwosG1TcJM2K0udiIM8wKrfZjZ7/view
