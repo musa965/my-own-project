@@ -48,7 +48,7 @@ h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(2.5rem,7vw,4.2re
 .search{flex:1 1 300px;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:12px 18px;border-radius:10px;font:inherit;outline:none;transition:border .2s}
 .search:focus{border-color:var(--mint)}
 .tabs{display:flex;gap:10px;flex-wrap:wrap}
-.tab{padding:8px 16px;border-radius:8px;background:var(--bg);border:1px solid var(--line);cursor:pointer;font-size:.9rem;transition:all .2s;color:var(--text)}
+.tab{padding:8px 16px;border-radius:8px;background:var(--bg);border:1px solid var(--line);cursor:pointer;font-size:.9rem;transition:all .2s}
 .tab.active{background:var(--mint);color:#0a192f;border-color:var(--mint);font-weight:600}
 
 /* Section Headers */
@@ -148,9 +148,9 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
-  <main id="main-content"></main>
+  <main id="main-content"></main>       
 
-  <section class="contact-sec" id="contact">
+    <section class="contact-sec" id="contact">
     <h2>MESSAGE ME</h2>
     <p>(If you have any problem or want to include something new, please message me)</p>
     <form action="https://formsubmit.co/mahbuburrahmanmusa99@gmail.com" method="POST">
@@ -212,11 +212,21 @@ const DATABASE = [
     section: "academic",
     title: "📚 Academic Resources (HSC & A to Z)",
     items: [
-      { name: "ACS Marked Books", desc: "A full sheet of marked books, sorted by subject.", tag: "Academic", source: "ACS", url: "https://docs.google.com/spreadsheets/u/0/d/e/2PACX-1vQB-dsJUEGaOz5Cs-2bY7Q7NGd7LngV_LqDbauX2Z0zg5IpHlnCS9ng4IoWQNYFtlXPUn1d3TGV-tSB/pubhtml", icon: "sheet" },
-      { name: "RTDS Marked Books", desc: "A Drive folder of marked books. Open it, pick a subject.", tag: "Academic", source: "RTDS", url: "https://drive.google.com/drive/folders/1XGQ59nDw_ZSixsxhfU9WmoMn_oOA4bCp", icon: "folder" },
-      { name: "BHT Marked Books", desc: "Chapter-wise marked books for Biology, Physics, Chemistry.", tag: "Academic", source: "BHT", url: "https://bht.one/free-honey", icon: "dna", note: "This site may ask for a quick sign-up before download." },
-      { name: "HSC Special Notes", desc: "Special notes for HSC, kept together in one Drive.", tag: "Academic", source: "Drive", url: "https://drive.google.com/drive/folders/1u8xdP7YgHhbYFsdOCMHyaHCMt69cm8eM", icon: "note" },
-      { name: "A&A Pathsala", desc: "Comprehensive academic resource portal.", tag: "All Subjects", source: "A&A Pathsala", url: "https://www.mulboi.com/", icon: "book" },
+      {
+        name: "ACS Marked Books", desc: "A full sheet of marked books, sorted by subject.", tag: "Academic", source: "ACS", url: "https://docs.google.com/spreadsheets/u/0/d/e/2PACX-1vQB-dsJUEGaOz5Cs-2bY7Q7NGd7LngV_LqDbauX2Z0zg5IpHlnCS9ng4IoWQNYFtlXPUn1d3TGV-tSB/pubhtml", icon: "sheet"
+      },
+      {
+        name: "RTDS Marked Books", desc: "A Drive folder of marked books. Open it, pick a subject.", tag: "Academic", source: "RTDS", url: "https://drive.google.com/drive/folders/1XGQ59nDw_ZSixsxhfU9WmoMn_oOA4bCp", icon: "folder"
+      },
+      {
+        name: "BHT Marked Books", desc: "Chapter-wise marked books for Biology, Physics, Chemistry.", tag: "Academic", source: "BHT", url: "https://bht.one/free-honey", icon: "dna", note: "This site may ask for a quick sign-up before download."
+      },
+      {
+        name: "HSC Special Notes", desc: "Special notes for HSC, kept together in one Drive.", tag: "Academic", source: "Drive", url: "https://drive.google.com/drive/folders/1u8xdP7YgHhbYFsdOCMHyaHCMt69cm8eM", icon: "note"
+      },
+      {
+        name: "A&A Pathsala", desc: "Comprehensive academic resource portal.", tag: "All Subjects", source: "A&A Pathsala", url: "https://www.mulboi.com/", icon: "book"
+      },
       {
         name: "Ratina (Subject Wise)", desc: "Marked books and notes by subject.", tag: "HSC Academic", source: "Ratina", icon: "folder",
         subjects: [
@@ -292,109 +302,4 @@ const DATABASE = [
         subjects: [
           {n: 'Botany', u: 'https://t.me/confusingQuestions6/6744'}, {n: 'Zoology', u: 'https://t.me/confusingQuestions6/6745'},
           {n: 'Chemistry 1', u: 'https://t.me/confusingQuestions6/6750'}, {n: 'Chemistry 2', u: 'https://t.me/confusingQuestions6/6751'},
-          {n: 'Physics 1', u: 'https://t.me/confusingQuestions6/6759'}, {n: 'Physics 2', u: 'https://t.me/confusingQuestions6/6760'}
-        ]
-      }
-    ]
-  }
-];
-
-// App Rendering Logic
-function renderCards(filter = 'all', query = '') {
-  const main = document.getElementById('main-content');
-  main.innerHTML = '';
-
-  DATABASE.forEach(sec => {
-    if (filter !== 'all' && sec.section !== filter) return;
-
-    const filteredItems = sec.items.filter(item => {
-      const q = query.toLowerCase();
-      return item.name.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q) || item.source.toLowerCase().includes(q);
-    });
-
-    if (filteredItems.length === 0) return;
-
-    const secEl = document.createElement('section');
-    secEl.id = sec.section;
-    secEl.innerHTML = `
-      <div class="sec-title"><h2>${sec.title}</h2></div>
-      <div class="grid"></div>
-    `;
-
-    const grid = secEl.querySelector('.grid');
-    filteredItems.forEach(item => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        ${ICONS[item.icon] || ICONS.folder}
-        <h3>${item.name}</h3>
-        <p>${item.desc}</p>
-        <div class="go">Open Resource →</div>
-        <div class="src"><span>${item.source}</span><span>${item.tag}</span></div>
-      `;
-      card.onclick = () => openModal(item);
-      grid.appendChild(card);
-    });
-
-    main.appendChild(secEl);
-  });
-}
-
-function openModal(item) {
-  const ov = document.getElementById('ov');
-  document.getElementById('mt').innerText = item.name;
-  document.getElementById('md').innerText = item.desc;
-  const mb = document.getElementById('mb');
-  mb.innerHTML = '';
-
-  if (item.subjects) {
-    const subContainer = document.createElement('div');
-    subContainer.className = 'subs';
-    item.subjects.forEach(sub => {
-      const a = document.createElement('a');
-      a.href = sub.u;
-      a.target = '_blank';
-      a.innerText = sub.n;
-      subContainer.appendChild(a);
-    });
-    mb.appendChild(subContainer);
-  }
-
-  const acts = document.createElement('div');
-  acts.className = 'acts';
-  if (item.url) {
-    acts.innerHTML += `<a class="btn solid" href="${item.url}" target="_blank">Visit Main Resource</a>`;
-  }
-  acts.innerHTML += `<button class="btn" onclick="closeModal()">Close</button>`;
-  mb.appendChild(acts);
-
-  ov.classList.add('on');
-}
-
-function closeModal() {
-  document.getElementById('ov').classList.remove('on');
-}
-
-// Event Listeners
-document.getElementById('q').addEventListener('input', (e) => {
-  const activeTab = document.querySelector('.tab.active').dataset.filter;
-  renderCards(activeTab, e.target.value);
-});
-
-document.getElementById('tabs').addEventListener('click', (e) => {
-  if (e.target.classList.contains('tab')) {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    e.target.classList.add('active');
-    renderCards(e.target.dataset.filter, document.getElementById('q').value);
-  }
-});
-
-document.getElementById('ov').addEventListener('click', (e) => {
-  if (e.target.id === 'ov') closeModal();
-});
-
-// Initial Render
-renderCards();
-</script>
-</body>
-</html>
+          {n: 'Physics 1', u: 'https://t.me/confusingQuestions6/6759'}, {n: 'Physics 2', u:
